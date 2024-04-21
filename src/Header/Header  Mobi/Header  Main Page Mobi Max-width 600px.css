@@ -1,0 +1,114 @@
+.header__main__page__mobi {
+  width: 100%;
+}
+.header__main__page__mobi--layout {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.header__main__page__mobi__box--search {
+  flex: 1;
+  position: relative;
+  background: #ffffff;
+}
+
+.header__main__page__mobi__box__search__input--text {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.7rem;
+  padding-left: 3.5rem;
+  outline: none;
+}
+.header__main__page__mobi__box__search__input--text::placeholder {
+  color: tomato;
+}
+.header__main__page__mobi__box__search__input--text:not(:focus) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.header__main__page__mobi__box__search--svg {
+  position: absolute;
+  width: 3.5rem;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  fill: gray;
+  padding: 1rem;
+}
+.header__main__page__mobi__box--img {
+  width: 2.4rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+}
+.header__main__page__mobi__box--svg-shoping {
+  width: 2.4rem;
+  fill: #fff;
+}
+.header__main__page__mobi__box__search--dropDown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  z-index: -1;
+}
+.header__main__page__mobi__box__search__dropDown--event {
+  width: 100%;
+  outline: none;
+  display: flex;
+  z-index: 0;
+  text-decoration: none;
+  box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.088);
+  z-index: 11;
+}
+.header__main__page__mobi__box__search--dropDown::after {
+  position: absolute;
+  content: "";
+  left: 100vw;
+  right: 0;
+  bottom: 0;
+  background: #0000003e;
+  z-index: 19;
+  width: 100vw;
+  height: 100vh;
+}
+.header__main__page__mobi__box__search__dropDown__event--title {
+  padding: 1rem;
+  flex: 1;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.header__main__page__mobi__box__search__dropDown__event--image {
+  width: 10rem;
+  display: flex;
+  align-items: center;
+}
+.header__main__page__mobi__box--search:focus-within
+  > .header__main__page__mobi__box__search--dropDown {
+  top: 100%;
+  opacity: 1;
+  z-index: 10;
+  left: 0;
+  bottom: auto;
+}
+.header__main__page__mobi__box__search__dropDown--option {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
