@@ -149,7 +149,7 @@
     top: calc(100% + 1.5rem);
     right: 0;
     background: #fff;
-    z-index: 1;
+    z-index: 12;
     scale: 0;
     transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
@@ -276,5 +276,18 @@
   .header__pc__main__page__navigation__info__language__dropdown--option:hover {
     color: #f53d2d;
     background: #f53e2d5c;
+  }
+  .header__pc__main__page__box--logo-shopping-search {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .header__pc__main__page--logo{
+   
+  }
+  .header__pc__main__page__box--search {
+    flex: 1;
   }
 }

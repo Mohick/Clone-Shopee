@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-import "./Header PC Min-width--1000px.css";
+import "./Header Pc Max-width 600px.css";
+import "./Header PC Min-width 1000px.css";
 import IconFacebook from "../../Container  Component  SVG ICON/Icon Facebook";
 import IconIntargram from "../../Container  Component  SVG ICON/Icon Intargram";
 import IconBell from "../../Container  Component  SVG ICON/Icon Bell";
 import IconQuestion from "../../Container  Component  SVG ICON/Icon Question";
 import IconAngleDown from "../../Container  Component  SVG ICON/Icon Angle Down";
 import IconEarth from "../../Container  Component  SVG ICON/Icon Earth";
+import IconLogoShopee from "../../Container  Component  SVG ICON/Icon Logo Shopee";
+import InputSearchHeader from "../Input Search/Input Search";
+import Shopping from "../Shopping/Shopping";
 
 function HeaderPCMainPage() {
   function getNextDate() {
@@ -141,17 +145,26 @@ function HeaderPCMainPage() {
                   </Link>
                   <Link className="header__pc__main__page__navigation__info__notification__dropdown__content--freeShip">
                     <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip--image">
-                    <img
+                      <img
                         width={"100%"}
                         src="./Image Notfication/free ship logo.png"
                         alt=""
                       />
                     </div>
                     <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip--text">
-                      <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip__text--title">Tặng Bạn 01 mã khuyến mãi free ship cho đơn từ 0Đ !</div>
-                      <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip__text--description">Mã Giảm Giá Sẽ Kết Thúc vào  {getNextDate()} Siêu giảm giá , sale linh đình Dùng Ngay Thôi</div>
+                      <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip__text--title">
+                        Tặng Bạn 01 mã khuyến mãi free ship cho đơn từ 0Đ !
+                      </div>
+                      <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip__text--description">
+                        Mã Giảm Giá Sẽ Kết Thúc vào {getNextDate()} Siêu giảm
+                        giá , sale linh đình Dùng Ngay Thôi
+                      </div>
                       <div className="header__pc__main__page__navigation__info__notification__dropdown__content__freeShip__text--banner">
-                        <img width={'100%'} src="./Image Notfication/free ship baner.png" alt="" />
+                        <img
+                          width={"100%"}
+                          src="./Image Notfication/free ship baner.png"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </Link>
@@ -200,14 +213,31 @@ function HeaderPCMainPage() {
                 phnhn762
               </div>
               <div className="header__pc__main__page__navigation__info__profiles--dropdown">
-                <Link className="header__pc__main__page__navigation__info__profiles__dropdown--option">My Account</Link>
-                <Link className="header__pc__main__page__navigation__info__profiles__dropdown--option">My purchase</Link>
-                <Link className="header__pc__main__page__navigation__info__profiles__dropdown--option">Logout</Link>
+                <Link className="header__pc__main__page__navigation__info__profiles__dropdown--option">
+                  My Account
+                </Link>
+                <Link className="header__pc__main__page__navigation__info__profiles__dropdown--option">
+                  My purchase
+                </Link>
+                <Link className="header__pc__main__page__navigation__info__profiles__dropdown--option">
+                  Logout
+                </Link>
               </div>
             </Link>
           </div>
         </div>
-        <div></div>
+        <div className="header__pc__main__page__box--logo-shopping-search">
+          <div className="header__pc__main__page--logo">
+            <IconLogoShopee width={'16,2rem'} height={'5rem'} fill={'#fff'}/>
+          </div>
+          <div className="header__pc__main__page__box--search">
+              <InputSearchHeader />
+            <div className="header__pc__main__pag__box__earch--last">
+
+            </div>
+          </div>
+          <Shopping />
+        </div>
       </div>
     </div>
   );

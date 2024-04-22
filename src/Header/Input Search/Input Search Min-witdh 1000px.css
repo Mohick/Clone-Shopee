@@ -1,0 +1,29 @@
+@media screen and (min-width: 1000px) {
+  .input__search__header__box--search {
+    flex: 1;
+    position: relative;
+    background: #ffffff;
+    padding:0 .3rem;
+    display: flex;
+    align-items: center;
+  }
+  .input__search__header__box__search--input {
+    flex: 1;
+  }
+  .input__search__header__box__search__input--text {
+    padding-left:1rem ;
+  }
+  .input__search__header__box__search--svg {
+    position: relative;
+    height: 100%;
+    display: flex;
+    background: #fb5533;
+    width: 8rem;
+    justify-content: center;
+    fill: #fff;
+    cursor: pointer;
+  }
+  .input__search__header__box__search--dropDown {
+    margin-top: 1rem;
+  }
+}
