@@ -7,7 +7,7 @@
 ## Folder :Container Component SVG ICON
 
 - Container All Component Tag SVG in Project you can use set width and height with prop Example:
-  <NameComponentIcon width = {"100%"} height = {"100%"} />
+  <NameComponentIcon width = {"100%"} height = {"100%"} fill={"color"} />
 
 ## Folder : Header
 

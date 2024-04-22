@@ -1,8 +1,13 @@
-function IconShopping({ width = undefined, height = undefined }) {
+function IconShopping({
+  width = undefined,
+  height = undefined,
+  fill = undefined,
+}) {
   return (
     <svg
       width={width}
       height={height}
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
     >
