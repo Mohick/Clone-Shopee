@@ -13,7 +13,7 @@
   }
   .banner__main__page__box--banner {
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;

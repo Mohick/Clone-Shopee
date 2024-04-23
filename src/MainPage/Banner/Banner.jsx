@@ -12,7 +12,7 @@ function BannerMainPage() {
     let allow = true;
     if (allow) {
       axios
-        .get("https://run.mocky.io/v3/d88c8bff-4820-4a79-b988-64207da8bfab")
+        .get("https://run.mocky.io/v3/34474113-9890-44c1-8565-1b00af195ece")
         .then((res) => {
           setItems(res.data);
         });
