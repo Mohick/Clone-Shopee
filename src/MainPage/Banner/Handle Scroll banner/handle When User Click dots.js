@@ -11,10 +11,13 @@ function handleWhenUserClickDotsBanner(tag) {
     }
   });
   const getFrameBannerImg = document.querySelector('.banner__main__page__box--frame-banner').clientWidth
-  const getContainerBannerImg = document.querySelector('.banner__main__page__box__banner--items')
   tag.setAttribute("current-index", tag.getAttribute('data-index'));
   tag.classList.add('banner__main__page__box__dots__item--active')
-  getContainerBannerImg.style.transform = `translateX(-${getFrameBannerImg * Number(tag.getAttribute('data-index'))}px)`;
+  const getCOntainerBanner = document.querySelector(".banner__main__page__box--banner")
+  getCOntainerBanner.scrollTo({
+    left: getFrameBannerImg * Number(tag.getAttribute('data-index')),
+    behavior: 'smooth' 
+});
 }
 
 export { handleWhenUserClickDotsBanner };

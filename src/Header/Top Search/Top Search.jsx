@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './Top Search Min-width 100px.css'
+import './Top Search Min-width 1000px.css'
 function TopSearchHeader() {
   const [items, setItems] = useState([]);
   useEffect(() => {

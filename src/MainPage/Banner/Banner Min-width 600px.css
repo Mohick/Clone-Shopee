@@ -1,0 +1,5 @@
+@media screen and (min-width: 600px) {
+    #banner__main__page {
+        display: none;
+      }
+}
