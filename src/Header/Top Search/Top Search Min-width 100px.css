@@ -1,0 +1,9 @@
+
+@media screen and (min-width: 1000px){
+    .top__search__header--item {
+        color: inherit;
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

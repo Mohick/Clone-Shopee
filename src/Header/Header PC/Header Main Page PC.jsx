@@ -10,6 +10,7 @@ import IconEarth from "../../Container  Component  SVG ICON/Icon Earth";
 import IconLogoShopee from "../../Container  Component  SVG ICON/Icon Logo Shopee";
 import InputSearchHeader from "../Input Search/Input Search";
 import Shopping from "../Shopping/Shopping";
+import TopSearchHeader from "../Top Search/Top Search";
 
 function HeaderPCMainPage() {
   function getNextDate() {
@@ -228,12 +229,12 @@ function HeaderPCMainPage() {
         </div>
         <div className="header__pc__main__page__box--logo-shopping-search">
           <div className="header__pc__main__page--logo">
-            <IconLogoShopee width={'16,2rem'} height={'5rem'} fill={'#fff'}/>
+            <IconLogoShopee width={'100%'} height={'5rem'} fill={'#fff'}/>
           </div>
           <div className="header__pc__main__page__box--search">
               <InputSearchHeader />
-            <div className="header__pc__main__pag__box__earch--last">
-
+            <div className="header__pc__main__page__box__search--last">
+               <TopSearchHeader/>
             </div>
           </div>
           <Shopping />

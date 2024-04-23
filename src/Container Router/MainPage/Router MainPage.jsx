@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router";
+import MainPage from "../../MainPage/Main Page";
 const HeaderPC = lazy(() =>
   import("../../Header/Header PC/Header Main Page PC")
 );
@@ -15,6 +16,7 @@ function RouterMainPage() {
           <Suspense>
             <HeaderPC />
             <HeaderMobi/>
+            <MainPage/>
           </Suspense>
         }
       />

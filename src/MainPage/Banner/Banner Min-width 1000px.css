@@ -1,0 +1,114 @@
+@media screen and (min-width: 1000px) {
+  #banner__main__page {
+    margin-top: 2rem;
+  }
+  .banner__main__page--layout {
+    display: flex;
+    gap: 1rem;
+  }
+  .banner__main__page__box--frame-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .banner__main__page__box--banner {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    
+  }
+  .banner__main__page__box--banner::-webkit-scrollbar {
+    display: none;
+  }
+  .banner__main__page__box__banner--items {
+    display: flex;
+    width: 100%;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    height: 100%;
+
+  }
+  .banner__main__page__box__banner--img {
+    flex: 0 0 100%;
+    display: block;
+    scroll-snap-align: center;
+    width: 500px;
+  }
+  .banner__main__page__box--arrow {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+  .banner__main__page__box__arrow--left,
+  .banner__main__page__box__arrow--right {
+    width: 4rem;
+    fill: #fff;
+    padding: 1rem;
+    background: #55555555;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+  }
+  .banner__main__page__box__arrow--left:hover,
+  .banner__main__page__box__arrow--right:hover {
+    background: #77777777;
+  }
+  .banner__main__page__box--frame-banner:hover
+    > .banner__main__page__box--arrow {
+    opacity: 1;
+  }
+  .banner__main__page__box--dots {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+  }
+  .banner__main__page__box__dots--item {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 1;
+    border: 1px solid hsla(0, 0%, 53.7%, 0.4);
+    background-color: hsla(0, 0%, 100%, 0.4);
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+  }
+  .banner__main__page__box__dots--item:hover {
+    background: #ee4d2d;
+  }
+  .banner__main__page__box__dots--item.banner__main__page__box__dots__item--active {
+    background: #ee4d2d;
+  }
+}
