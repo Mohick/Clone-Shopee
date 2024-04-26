@@ -9,6 +9,7 @@ import { handleWhenUserClickArrow } from "./Handle Scroll banner/handle Arrow Ba
 import { handleWhenUserDragBanner } from "./Handle Scroll banner/handle Drag Banner";
 function BannerMainPage() {
   const [items, setItems] = useState([]);
+  const [changes, setChangesBanner] = useState(0)
   useEffect(() => {
     const autoNextBanner = setInterval(()=>{
       handleWhenUserClickArrow('next')
@@ -32,7 +33,7 @@ function BannerMainPage() {
       clearInterval(autoNextBanner)
       return (allow = false);
     };
-  }, []);
+  }, [changes]);
   return (
     <div id="banner__main__page">
       <div className="banner__main__page--layout layout">
@@ -78,13 +79,19 @@ function BannerMainPage() {
           <div className="banner__main__page__box--arrow">
             <div
               className="banner__main__page__box__arrow--left"
-              onClick={(e) => handleWhenUserClickArrow("prev")}
+              onClick={(e) => (
+                handleWhenUserClickArrow("prev"),
+                setChangesBanner(changes+1)
+              )}
             >
               <IconAngleLeft />
             </div>
             <div
               className="banner__main__page__box__arrow--right"
-              onClick={(e) => handleWhenUserClickArrow("next")}
+              onClick={(e) => (
+                handleWhenUserClickArrow("next"),
+                setChangesBanner(changes-1)
+              )}
             >
               <IconAngleRight />
             </div>
@@ -95,7 +102,10 @@ function BannerMainPage() {
                 return (
                   <div
                     key={index}
-                    onClick={(e) => handleWhenUserClickDotsBanner(e.target)}
+                    onClick={(e) => (
+                      handleWhenUserClickDotsBanner(e.target),
+                      setChangesBanner(changes+1)
+                    )}
                     className="banner__main__page__box__dots--item  banner__main__page__box__dots__item--active"
                     data-index={index}
                     current-index={index}
@@ -105,7 +115,10 @@ function BannerMainPage() {
                 return (
                   <div
                     key={index}
-                    onClick={(e) => handleWhenUserClickDotsBanner(e.target)}
+                    onClick={(e) => (
+                      handleWhenUserClickDotsBanner(e.target),
+                      setChangesBanner(changes-1)
+                    )}
                     className="banner__main__page__box__dots--item"
                     data-index={index}
                   ></div>

@@ -1,0 +1,18 @@
+@media screen and (min-width: 1000px) {
+  #side__event {
+    background: transparent;
+    border-bottom: 1px solid #51505032;
+  }
+  .side__event--layout {
+    padding: 0;
+  }
+  .side__event--banner {
+    margin: 0;
+  }
+  .side__event__banner--img--pc {
+    display: block;
+  }
+  .side__event__banner--img--mobi {
+    display: none;
+  }
+}

@@ -1,0 +1,66 @@
+
+.side__event__mobi__main__page--items {
+    overflow: hidden ;
+    overflow-x: scroll;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.side__event__mobi__main__page__items--seccond,
+.side__event__mobi__main__page__items--first {
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+    padding-bottom: 1rem;
+}
+.side__event__mobi__main__page__items__seccond--box,
+.side__event__mobi__main__page__items__first--box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    min-width: 12rem;
+}
+.side__event__mobi__main__page__items__seccond__box--img,
+.side__event__mobi__main__page__items__first__box--img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+}
+.side__event__mobi__main__page__items__seccond__box--title,
+.side__event__mobi__main__page__items__first__box--title  {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
+.side__event__mobi__main__page--scroll {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.side__event__mobi__main__page__scroll--box {
+    width: 5rem;
+    height: .5rem;
+    background: #fff;
+    position: relative;
+}
+.side__event__mobi__main__page__scroll__box--bar {
+    background: tomato;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}

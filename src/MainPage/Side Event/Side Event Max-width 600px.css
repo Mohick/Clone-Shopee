@@ -1,0 +1,16 @@
+#side__event {
+  background: #113366;
+}
+.side__event--layout {
+  overflow: hidden;
+  padding: 2rem;
+}
+.side__event--banner {
+    margin-top: 2rem;
+}
+.side__event__banner--img--mobi {
+  display: block;
+}
+.side__event__banner--img--pc {
+  display: none;
+}

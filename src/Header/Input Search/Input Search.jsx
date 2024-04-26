@@ -9,7 +9,7 @@ function InputSearchHeader() {
   const [items, setItems] = useState("");
   useEffect(() => {
     const callAPI =   setTimeout(() => {
-      console.log(keySearch);
+   
     }, 300);
 return ()=>{
   clearTimeout(callAPI);

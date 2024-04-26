@@ -11,20 +11,8 @@ import IconLogoShopee from "../../Container  Component  SVG ICON/Icon Logo Shope
 import InputSearchHeader from "../Input Search/Input Search";
 import Shopping from "../Shopping/Shopping";
 import TopSearchHeader from "../Top Search/Top Search";
-
+import {getNextDate} from './End Date  Product'
 function HeaderPCMainPage() {
-  function getNextDate() {
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
-    if (dd < 30) {
-      return dd + 1 + "-" + mm + "-" + yyyy;
-    } else {
-      return 1 + "-" + mm + "-" + yyyy;
-    }
-  }
-
   return (
     <div id="header__pc__main__page">
       <div className="header__pc__main__page--layout layout">

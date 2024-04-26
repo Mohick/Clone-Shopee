@@ -4,6 +4,7 @@ import InputSearchHeader from "../Input Search/Input Search";
 import Shopping from "../Shopping/Shopping";
 import BgSliderHeaderMobi from "./Bg Slider Header Mobi";
 function HeaderMainPageMobi() {
+
   return (
     <div id="header__main__page__mobi">
       <BgSliderHeaderMobi />

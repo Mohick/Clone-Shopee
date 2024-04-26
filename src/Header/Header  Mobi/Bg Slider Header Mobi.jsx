@@ -7,6 +7,7 @@ import { handleWhenUserClickDotsSliderMobi } from "./handle slider bg/handle Whe
 import { handleWhenUserClickArrowSliderMobi } from "./handle slider bg/handle Arrow slider";
 function BgSliderHeaderMobi() {
   const [items, setItems] = useState([]);
+  const [ChangeSlider, setChangeSlider] = useState(0);
   useEffect(() => {
     const setNextSlider = setInterval(()=> {
         handleWhenUserClickArrowSliderMobi('next')
@@ -24,13 +25,14 @@ function BgSliderHeaderMobi() {
       );
       getCOntainerBanner.addEventListener("scrollend", () => {
         handleWhenUserDragSliderHeaderMobi()
+        setChangeSlider(ChangeSlider + 1)
       });
     }
     return () => {
         clearInterval(setNextSlider);
       return (allow = false);
     };
-  }, []);
+  }, [ChangeSlider]);
   return (
     <div className="header__main__page__mobi--slider">
       <div className="header__main__page__mobi__slider--layout">
@@ -78,7 +80,10 @@ function BgSliderHeaderMobi() {
                 return (
                   <div
                     key={index}
-                    onClick={(e) => handleWhenUserClickDotsSliderMobi(e.target)}
+                    onClick={(e) => (
+                        handleWhenUserClickDotsSliderMobi(e.target),
+                        setChangeSlider(ChangeSlider + 1)
+                    )}
                     className="header__main__page__mobi__slider__box__dots--item  header__main__page__mobi__slider__box__dots__item--active"
                     data-index={index}
                     current-index={index}
@@ -88,7 +93,10 @@ function BgSliderHeaderMobi() {
                 return (
                   <div
                     key={index}
-                    onClick={(e) => handleWhenUserClickDotsSliderMobi(e.target)}
+                    onClick={(e) => (
+                        handleWhenUserClickDotsSliderMobi(e.target),
+                        setChangeSlider(ChangeSlider + 1)
+                    )}
                     className="header__main__page__mobi__slider__box__dots--item"
                     data-index={index}
                   ></div>
