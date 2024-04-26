@@ -1,4 +1,5 @@
-import "./Categories Max-width 1000px.css";
+import "./Categories Max-width 600px.css";
+import "./Categories Min-width 1000px.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CategoriesFirstItemsMainPage from "./Categories first items";
