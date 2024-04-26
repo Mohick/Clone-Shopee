@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 function CategoriesFirstItemsMainPage({ firstData = [] }) {
-  console.log(firstData);
+
 
   return firstData.map((item, index) => {
     return (

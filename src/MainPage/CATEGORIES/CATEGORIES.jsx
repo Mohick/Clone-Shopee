@@ -31,7 +31,6 @@ function CategoriesMainPage() {
     };
   }, []);
 
-  console.log(3);
   return (
     <div id="categories__main__page">
       <div className="categories__main__page--layout layout">
