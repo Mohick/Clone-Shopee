@@ -1,0 +1,55 @@
+
+
+.flash__sale__time--minute,
+.flash__sale__time--seconds,
+.flash__sale__time--houre {
+    display: flex;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.flash__sale__time--minute::after,
+.flash__sale__time--seconds::after,
+.flash__sale__time--houre::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+}
+.flash__sale__time__seconds--seccond,
+.flash__sale__time__seconds--first,
+.flash__sale__time__minute--seccond,
+.flash__sale__time__minute--first,
+.flash__sale__time__hours--seccond,
+.flash__sale__time__hours--first {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    overflow: scroll;
+    scrollbar-width: none;
+  
+}
+
+.flash__sale__time__seconds__seccond--number,
+.flash__sale__time__seconds__first--number,
+.flash__sale__time__minute__seccond--number,
+.flash__sale__time__minute__first--number,
+.flash__sale__time__houre__seccond--number,
+.flash__sale__time__houre__first--number {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+}

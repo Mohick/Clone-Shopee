@@ -1,0 +1,47 @@
+@media screen and (min-width: 1000px) {
+  .flash__sale__body--arrow--left,
+  .flash__sale__body--arrow--right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    box-shadow: inset 0 0 0.1rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0.6;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    cursor: default;
+    opacity: 0;
+    transform-origin: center;
+  }
+  .flash__sale__body--arrow--left.flash__sale__body__arrow--active,
+  .flash__sale__body--arrow--right.flash__sale__body__arrow--active {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .flash__sale__body--arrow--left {
+    left: -3rem;
+  }
+  .flash__sale__body--arrow--right {
+    right: -3rem;
+  }
+
+  .flash__sale--body:hover > .flash__sale__body__arrow--active {
+    scale: 0.8;
+  }
+}

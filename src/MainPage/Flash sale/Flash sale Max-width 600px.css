@@ -1,0 +1,52 @@
+#flash__sale {
+  background: #efefef;
+  padding-top: 2rem;
+}
+.flash__sale--layout {
+  background: #fff;
+  padding: 1rem;
+  position: relative;
+}
+.flash__sale--header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.flash__sale__header--time--last--sale {
+  display: flex;
+  gap: 1rem;
+}
+.flash__sale--last--sale {
+  background: url("../../../public/Logo Flash  Sale/Logo Flash Sale.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 8.6rem;
+  height: 4.2rem;
+}
+.flash__sale--time {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+.flash__sale__header--View--more {
+  display: flex;
+  gap: .5rem;
+  display: flex;
+  align-items: center;
+}
+.flash__sale__header__View__more--title{
+  color: #0000008a;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.flash__sale__header__View__more--icon{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  fill: #0000008a;
+}
+.flash__sale--footer{
+  display: none;
+}

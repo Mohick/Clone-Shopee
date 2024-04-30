@@ -1,0 +1,8 @@
+@media screen and (min-width: 1000px) {
+  .flash__sale--footer{
+    display: block;
+    margin-top: 3rem;
+    width: 100%;
+  }
+  
+}
