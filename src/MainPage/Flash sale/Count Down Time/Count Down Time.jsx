@@ -30,7 +30,6 @@ function CountDownTimeFlashSale() {
         </div>
         <div className="flash__sale__time__hours--first">
           <div className="flash__sale__time__houre__first--body">
-            <div className="flash__sale__time__houre__first--number">2</div>
             <div className="flash__sale__time__houre__first--number">1</div>
             <div className="flash__sale__time__houre__first--number">0</div>
             <div className="flash__sale__time__houre__first--number">9</div>

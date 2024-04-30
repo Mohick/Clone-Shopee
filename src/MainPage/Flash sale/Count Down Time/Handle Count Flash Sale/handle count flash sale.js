@@ -44,7 +44,7 @@ class HandleCountDownTimeMainPage {
         }
 
       case Math.floor(hours) <= 12:
-        const currentTime =  Math.floor(hours );
+        const currentTime =  Math.floor(hours);
         if (currentTime >= 10) {
           boxSeccondHours.scrollTo({
             top: boxFirstHours.clientHeight * Math.abs(currentTime),
