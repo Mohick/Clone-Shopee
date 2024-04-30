@@ -4,7 +4,7 @@ class HandleCountDownTimeMainPage {
     boxItemsScroll.addEventListener("scroll", () => {
       const bodyOfItems = document.querySelector(classBody);
       const firstItem = document.querySelector(classNumber);
-     
+      bodyOfItems.appendChild(firstItem);
     });
   }
 
@@ -44,7 +44,7 @@ class HandleCountDownTimeMainPage {
         }
 
       case Math.floor(hours) <= 12:
-        const currentTime = 12 - Math.floor(hours);
+        const currentTime =  Math.floor(hours );
         if (currentTime >= 10) {
           boxSeccondHours.scrollTo({
             top: boxFirstHours.clientHeight * Math.abs(currentTime),
