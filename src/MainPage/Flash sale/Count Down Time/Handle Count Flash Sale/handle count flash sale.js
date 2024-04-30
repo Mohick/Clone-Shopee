@@ -23,7 +23,7 @@ class HandleCountDownTimeMainPage {
 
         if (transferTime >= 10) {
           boxSeccondHours.scrollTo({
-            top: 0,
+            top: boxSeccondHours.clientHeight * 2,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({
@@ -33,7 +33,7 @@ class HandleCountDownTimeMainPage {
           break;
         } else {
           boxSeccondHours.scrollTo({
-            top: boxSeccondHours.clientHeight * 2,
+            top: 0,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({
@@ -47,7 +47,7 @@ class HandleCountDownTimeMainPage {
         const currentTime =  Math.floor(hours);
         if (currentTime >= 10) {
           boxSeccondHours.scrollTo({
-            top: boxFirstHours.clientHeight * Math.abs(currentTime),
+            top: 0,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({

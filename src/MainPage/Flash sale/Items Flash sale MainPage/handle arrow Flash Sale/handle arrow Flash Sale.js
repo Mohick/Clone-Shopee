@@ -13,6 +13,8 @@ function handleArrowFlashSale(arrow) {
         left: frameSCroll.scrollLeft - frameSCroll.offsetWidth,
         behavior: "smooth",
       });
+      btnArrowRight.classList.add("flash__sale__body__arrow--active");
+
       if (Math.floor(frameSCroll.scrollLeft) - frameSCroll.offsetWidth < 1) {
         btnArrowLeft.classList.remove("flash__sale__body__arrow--active");
         btnArrowRight.classList.add("flash__sale__body__arrow--active");
@@ -24,8 +26,7 @@ function handleArrowFlashSale(arrow) {
         behavior: "smooth",
       });
       btnArrowLeft.classList.add("flash__sale__body__arrow--active");
-      
-      if (Math.floor(frameSCroll.scrollLeft+frameSCroll.clientWidth) == frameSCroll.scrollWidth) {
+      if (Math.floor(frameSCroll.scrollLeft+frameSCroll.clientWidth) >= frameSCroll.scrollWidth) {
         btnArrowRight.classList.remove("flash__sale__body__arrow--active");
         btnArrowLeft.classList.add("flash__sale__body__arrow--active");
       }
