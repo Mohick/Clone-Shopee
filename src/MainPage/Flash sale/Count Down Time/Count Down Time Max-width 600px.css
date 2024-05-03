@@ -42,6 +42,7 @@
     -moz-transition: all 1s ease-in-out;
     -ms-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
+    scroll-snap-type: x mandatory;
 }
 
 .flash__sale__time__seconds__seccond--number,
@@ -56,4 +57,5 @@
     text-align: center;
     width: 2rem;
     height: 2rem;
+    scroll-snap-align: center;
 }

@@ -1,0 +1,8 @@
+@media screen and (min-width: 1000px) {
+    .shopee__small--navigations {
+        display: none;
+    }
+    .shopee__small--body{
+        display: flex;
+    }
+}

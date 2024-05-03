@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./Count Down Time Max-width 600px.css";
 import HandleCountDownTimeMainPage from "./Handle Count Flash Sale/handle count flash sale";
+
 function CountDownTimeFlashSale() {
   useEffect(() => {
     const houre = setInterval(() => {
@@ -17,6 +18,7 @@ function CountDownTimeFlashSale() {
       clearInterval(houre);
       clearInterval(minutes);
       clearInterval(seconds);
+      
     };
   }, []);
   return (
@@ -93,7 +95,7 @@ function CountDownTimeFlashSale() {
             <div className="flash__sale__time__seconds__first--number">3</div>
             <div className="flash__sale__time__seconds__first--number">2</div>
             <div className="flash__sale__time__seconds__first--number">1</div>
-            <div className="flash__sale__time__seconds__first--number">0</div>
+            <div className="flash__sale__time__seconds__first--number flash__sale__time__seconds__first--end--count--down">0</div>
           </div>
         </div>
       </div>

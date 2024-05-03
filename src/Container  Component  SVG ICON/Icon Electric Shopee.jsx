@@ -20,8 +20,8 @@ return  <svg
         y2="16"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#EE4D2D"></stop>
-        <stop offset="1" stop-color="#FF7337"></stop>
+        <stop stopColor="#EE4D2D"></stop>
+        <stop offset="1" stopColor="#FF7337"></stop>
       </linearGradient>
     </defs>
   </svg>;

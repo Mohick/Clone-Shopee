@@ -1,0 +1,64 @@
+
+
+.shopee__small__body--banner{
+    
+    position: relative;
+}
+.shopee__small__body__banner--img{
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.shopee__small__body__banner__img--last--sub {
+    flex: 0 0 100%;
+    order: 0;
+    scroll-snap-align: center;
+}
+.shopee__small__body__banner__img--main {
+    display: flex;
+    order: 1;
+    
+}
+
+.shopee__small__body__banner__img__main--items {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+.shopee__small__body__banner__img--first--sub {
+    order: 2;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+.shopee__small__body__banner--dots {
+    position: absolute;
+    width: 100%;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: .4rem;
+}
+.shopee__small__body__banner__dot--items{
+    padding: .5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: #f3e0d4;
+    transition:  all 0.3s ease-in-out;
+    -webkit-transition:  all 0.3s ease-in-out;
+    -moz-transition:  all 0.3s ease-in-out;
+    -ms-transition:  all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.shopee__small__body__banner__dot--items.shopee__small__body__banner__dot__items--active {
+    background: #ee4d2d;
+}
+.shopee__small__body__banner--arrow--right, 
+.shopee__small__body__banner--arrow--left {
+    display: none;
+}

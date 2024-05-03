@@ -17,13 +17,12 @@ class HandleCountDownTimeMainPage {
     const boxFirstHours = document.querySelector(
       ".flash__sale__time__hours--first"
     );
-    switch (!!hours) {
-      case Math.floor(hours) > 12:
-        const transferTime = Math.abs(12 - Math.floor(hours + 1 / 2));
-
-        if (transferTime >= 10) {
+    switch (!!cpmtTime) {
+      case Math.floor(hours) >= 12:
+        const transferTime = Math.abs(hours - 12);
+        if (transferTime <= 1 ) {
           boxSeccondHours.scrollTo({
-            top: boxSeccondHours.clientHeight * 2,
+            top: 0,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({
@@ -32,8 +31,9 @@ class HandleCountDownTimeMainPage {
           });
           break;
         } else {
+
           boxSeccondHours.scrollTo({
-            top: 0,
+            top: boxFirstHours.clientHeight * 2,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({
@@ -43,22 +43,22 @@ class HandleCountDownTimeMainPage {
           break;
         }
 
-      case Math.floor(hours) <= 12:
+      case Math.floor(hours) < 12:
         const currentTime =  Math.floor(hours);
         if (currentTime >= 10) {
           boxSeccondHours.scrollTo({
-            top: 0,
+            top: boxFirstHours.clientHeight * 2,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({
-            top: 0,
+            top: boxFirstHours.clientHeight * Math.abs(currentTime),
             behavior: "smooth",
           });
 
           break;
         } else {
           boxSeccondHours.scrollTo({
-            top: boxFirstHours.clientHeight * 2,
+            top: 0,
             behavior: "smooth",
           });
           boxFirstHours.scrollTo({
@@ -93,6 +93,7 @@ class HandleCountDownTimeMainPage {
           top: clientHeightShowItems * 0,
           behavior: "smooth",
         });
+        
         break;
       case 2:
         boxFirstSeconds.scrollTo({
@@ -141,6 +142,7 @@ class HandleCountDownTimeMainPage {
         break;
     }
   }
+ 
 }
 
 export default new HandleCountDownTimeMainPage();

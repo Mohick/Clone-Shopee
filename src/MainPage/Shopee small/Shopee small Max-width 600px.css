@@ -1,0 +1,50 @@
+#shopee__small {
+  background: #efefef;
+  padding-top: 2rem;
+}
+
+.shopee__small--layout {
+  background: #fff;
+}
+.shopee__small--header {
+  padding: 1rem;
+}
+.shopee__small__header__box--title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid #e8e8e8;
+    padding: 2rem 0;
+}
+.shopee__small__header--title {
+  font-family: -apple-system, HelveticaNeueMedium, HelveticaNeue-Medium,
+    Helvetica Neue Medium, Helvetica Neue, Roboto, Droid Sans, Arial Bold, Arial,
+    sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #d0011b;
+  display: flex;
+  align-items: center;
+}
+.shopee__small__header__box__views__more--title {
+  color: #ccc;
+}
+.shopee__small__header__box--views--more {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.shopee__small--navigations {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.shopee__small__navigations--items {
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.shopee__small__navigations__items--icon {
+  display: flex;
+  align-items: center;
+}
