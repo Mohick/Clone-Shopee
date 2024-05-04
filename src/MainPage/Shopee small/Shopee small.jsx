@@ -12,19 +12,23 @@ function ShopeeSmallMainPage() {
           <div className="shopee__small__header__box--title">
             <div className="shopee__small__header--title">SHOPEE MALL</div>
             <div className="shopee__small__header--navigations">
-              <div className="shopee__small__header__navigations">
-                <div className="shopee__small__header__navigations--items">
-                  <div className="shopee__small__header__navigations__items--icon"></div>
-                  <div className="shopee__small__header__navigations__items--name"></div>
+              <div className="shopee__small__header__navigations--items">
+                <div className="shopee__small__header__navigations__items--icon">
+                  <img width={'100%'} height={'100%'} src="./Img Shopee small/return product.png" alt="" />
                 </div>
-                <div className="shopee__small__header__navigations--items">
-                  <div className="shopee__small__header__navigations__items--icon"></div>
-                  <div className="shopee__small__header__navigations__items--name"></div>
+                <div className="shopee__small__header__navigations__items--name">7 Days Return</div>
+              </div>
+              <div className="shopee__small__header__navigations--items">
+                <div className="shopee__small__header__navigations__items--icon">
+                  <img width={'100%'} height={'100%'} src="./Img Shopee small/secure.png" alt="" />
                 </div>
-                <div className="shopee__small__header__navigations--items">
-                  <div className="shopee__small__header__navigations__items--icon"></div>
-                  <div className="shopee__small__header__navigations__items--name"></div>
+                <div className="shopee__small__header__navigations__items--name">100% Authentic</div>
+              </div>
+              <div className="shopee__small__header__navigations--items">
+                <div className="shopee__small__header__navigations__items--icon">
+                  <img width={'100%'} height={'100%'} src="./Img Shopee small/ship.png" alt="" />
                 </div>
+                <div className="shopee__small__header__navigations__items--name">Free Shipping</div>
               </div>
             </div>
             <div className="shopee__small__header__box--views--more">
@@ -66,7 +70,7 @@ function ShopeeSmallMainPage() {
         </div>
         <div className="shopee__small--body">
           <BannerShopeeSmall />
-          <ShopeeSmallItemsMainPage/>
+          <ShopeeSmallItemsMainPage />
         </div>
       </div>
     </div>

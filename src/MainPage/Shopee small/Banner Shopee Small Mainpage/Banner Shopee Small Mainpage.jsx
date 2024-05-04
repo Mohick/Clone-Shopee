@@ -44,9 +44,9 @@ function BannerShopeeSmall() {
           {items.map((item, index) => {
             return (
               <div
+              key={index}
                 style={{ flex: `0 0 calc(100% / ${items.length})` }}
                 className="shopee__small__body__banner__img__main--items"
-                index--items={index}
               >
                 <img width={"100%"} height={"100%"} src={item.url} alt="" />
               </div>
@@ -62,10 +62,8 @@ function BannerShopeeSmall() {
           if (index === 0) {
             return (
               <div
-                key={index}
-                data--dots={index}
+              key={index}
                 className="shopee__small__body__banner__dot--items shopee__small__body__banner__dot__items--active"
-                location={true}
                 onClick={()=>{
                   HandleScrollBannerShopeeSmall.handleDotsItems(item,index)
                 }}

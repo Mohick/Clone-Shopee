@@ -18,7 +18,7 @@ function HandleScrollBannerSmall() {
         clearTimeout(createScroll);
         clearInterval(setTimeAutoNext);
     };
-}, time);
+}, [time]);
   return <></>
 }
 

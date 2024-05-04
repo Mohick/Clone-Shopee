@@ -8,12 +8,14 @@
 }
 .shopee__small--header {
   padding: 1rem;
+ 
 }
 .shopee__small__header__box--title {
     display: flex;
     justify-content: space-between;
     border-bottom: 0.1rem solid #e8e8e8;
     padding: 2rem 0;
+    gap: 1rem;
 }
 .shopee__small__header--title {
   font-family: -apple-system, HelveticaNeueMedium, HelveticaNeue-Medium,

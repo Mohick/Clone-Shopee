@@ -1,7 +1,10 @@
 @media screen and (min-width: 1000px) {
   .shopee__small__body--banner {
-    flex: 1;
+    flex: 3.5;
   }
+.shopee__small__body__banner--img{
+  height: 100%;
+}
   .shopee__small__body__banner--arrow--right,
   .shopee__small__body__banner--arrow--left {
     display: block;

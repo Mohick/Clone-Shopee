@@ -57,7 +57,7 @@ class HandleScrollBannerShopeeSmall {
   }
   handleDotsItems(item,index) {
     const getDotActive = document.querySelector(".shopee__small__body__banner__dot__items--active");
-    getDotActive.classList.remove("shopee__small__body__banner__dot__items--active");
+    getDotActive?.classList.remove("shopee__small__body__banner__dot__items--active");
     const frameShowBanner = document.querySelector(".shopee__small__body__banner--img")
     const allItemsDots=document.querySelectorAll(".shopee__small__body__banner__dot--items")
     allItemsDots[index].classList.add("shopee__small__body__banner__dot__items--active")
@@ -78,11 +78,13 @@ class HandleScrollBannerShopeeSmall {
     }
    const convertMapToObjects =  Object.fromEntries(objectsContainerNearLeftFrame)
    const getValuesObjects = Object.values(convertMapToObjects).filter((item)=>{
-    return item.locationsItem == -1 || item.locationsItem == 0
+    if(item.locationsItem+frameShowBanner.clientWidth/2) {
+      return item.locationsItem == -1 || item.locationsItem == 0
+    }
    })
 
    const getDotActive = document.querySelector(".shopee__small__body__banner__dot__items--active");
-   getDotActive.classList.remove("shopee__small__body__banner__dot__items--active");
+   getDotActive?.classList.remove("shopee__small__body__banner__dot__items--active");
    const getAllDotsItems = document.querySelectorAll('.shopee__small__body__banner__dot--items')
    getAllDotsItems[getValuesObjects[0].index].classList.add("shopee__small__body__banner__dot__items--active")
   }
