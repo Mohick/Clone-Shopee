@@ -23,9 +23,7 @@ function handleBtnArrowShopeeSmall(arrow = "right") {
       break;
     case "right":
       boxFrame.scrollTo({
-        left:
-          boxFrame.scrollLeft +
-          (boxFrame.clientWidth - boxFrame.clientWidth / 3),
+        left: boxFrame.scrollLeft + boxFrame.offsetWidth,
         behavior: "smooth",
       });
       arrayLeft.classList.add("shopee__small__body__frame__arrow--active");
