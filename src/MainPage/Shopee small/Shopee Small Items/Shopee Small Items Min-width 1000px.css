@@ -1,4 +1,8 @@
 @media screen and (min-width: 1000px) {
+    .shopee__small__body__frame__items--last,
+.shopee__small__body__frame__items--first {
+  gap: 0;
+}
   .shopee__small__body--frame {
     flex: 5;
     width: 0;
@@ -54,4 +58,5 @@
     opacity: 1;
     cursor: pointer;
   }
+  
 }
