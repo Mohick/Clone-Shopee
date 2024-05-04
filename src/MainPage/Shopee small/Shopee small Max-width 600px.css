@@ -8,7 +8,6 @@
 }
 .shopee__small--header {
   padding: 1rem;
- 
 }
 .shopee__small__header__box--title {
     display: flex;
@@ -49,4 +48,7 @@
 .shopee__small__navigations__items--icon {
   display: flex;
   align-items: center;
+}
+.shopee__small__header--navigations{
+  display: none;
 }
