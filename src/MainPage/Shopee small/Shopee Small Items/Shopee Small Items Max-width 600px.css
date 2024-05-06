@@ -15,7 +15,7 @@
   gap: 0.5rem;
 }
 .shopee__small__body__box--items--more {
-  min-width: calc(100% / 4);
+  min-width: 13.2rem;
   display: flex;
   gap: 0.3rem;
   justify-content: center;

@@ -1,7 +1,7 @@
 
 
 .shopee__small__body--banner{
-    
+    transform: rotateY(347deg);
     position: relative;
 }
 .shopee__small__body__banner--img{

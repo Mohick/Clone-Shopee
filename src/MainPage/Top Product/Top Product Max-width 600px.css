@@ -1,0 +1,89 @@
+#top__product__main__page {
+  padding-top:  1rem;
+  background: #efefef;
+}
+.top__product__main__page--layout {
+  background: #fff;
+}
+.top__product__main__page--header {
+  padding:2rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: .1rem solid rgba(128, 128, 128, 0.171);
+}
+.top__product__main__page__header--title {
+  flex: 1;
+  color: rgb(238, 77, 45);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.top__product__main__page__header--more{
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+
+}
+.top__product__main__page__header__more--title{
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+.top__product__main__page__header__more--icon{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.top__product__main__page__body--frame{
+    display: flex;
+    overflow-y: auto;
+    gap: 1rem;
+    scrollbar-width: none;
+    padding: 1rem;
+}
+.top__product__main__page__body--items{
+    position: relative;
+    width: 28rem;
+    box-shadow:inset 0 0 0 .1rem #efefef;
+}
+.top__product__main__page__body__items__logo--top{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.1rem;
+    height: 3rem;
+}
+.top__product__main__page__body__items--header{
+    width: 12rem;
+    height: 12rem;
+    margin: auto;
+    position: relative;
+    padding: 1rem;
+}
+.top__product__main__page__body__items__header--length--month{
+    display: none;
+}
+.top__product__main__page__body__items__title{
+    background: rgba(0,0,0,.03);
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 4.5rem;
+    line-height: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1rem;
+}
+.top__product__main__page__body__items__sold{
+    background: rgba(0,0,0,.03);
+    font-size: 1rem;
+    padding: 2rem 1rem;
+    color: rgba(0,0,0,.54);
+
+}
+.top__product__main__page__body--arrow--right,
+.top__product__main__page__body--arrow--left {
+    display: none;
+}

@@ -1,0 +1,42 @@
+@media screen and (min-width: 1000px) {
+  .daily__discover__main__page--header {
+    border-bottom: 0.4rem solid #ee4d2d;
+  }
+  .daily__discover__main__page__header--title {
+    text-align: center;
+    font-weight: 600;
+  }
+  .daily__discover__main__page__header--more {
+    display: none;
+  }
+  .daily__discover__main__page--body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+  .daily__discover__main__page__footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .daily__discover__main__page__footer--title {
+    display: inline-block;
+    font-weight: 200;
+    font-size: 1.5rem;
+    text-align: center;
+    background: #fff;
+    border: 0.1rem solid #0003;
+    padding: 1rem 15rem;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+  }
+  .daily__discover__main__page__footer--title:hover {
+
+    background: #eeeded;
+
+  }
+}

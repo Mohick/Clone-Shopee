@@ -33,7 +33,7 @@ function SideEventMainPage() {
         />
           <SideEventPcMainPage dataSideEventPcFirts={items[0]} />
         <div className="side__event--banner">
-          <div className="side__event__banner--img--mobi"><img width={'100%'} src="./Main Page Site Event/sub banner mobi.png" alt="" /></div>
+          <div className="side__event__banner--img--mobi"><img loading="lazy" width={'100%'} src="./Main Page Site Event/sub banner mobi.png" alt="" /></div>
           
         </div>
       </div>

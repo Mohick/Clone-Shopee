@@ -14,6 +14,8 @@
   }
   .shopee__small__body__box--items--more {
     box-shadow: 0 0 0 transparent;
+    min-width: calc(100% / 4);
+
   }
   .shopee__small__body__frame--arrow--left,
   .shopee__small__body__frame--arrow--right {

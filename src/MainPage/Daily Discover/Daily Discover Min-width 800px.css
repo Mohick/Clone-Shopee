@@ -1,0 +1,7 @@
+@media screen and (min-width:800px){
+    .daily__discover__main__page--body{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 1rem;
+    }
+}

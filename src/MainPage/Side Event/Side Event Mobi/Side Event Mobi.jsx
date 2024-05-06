@@ -14,7 +14,7 @@ function SideEventMobiMainPage({
             return (
               <div className="side__event__mobi__main__page__items__first--box" key={index}>
                 <div className="side__event__mobi__main__page__items__first__box--img">
-                  <img width={"100%"} height={"100%"} src={item.img} alt="" />
+                  <img loading="lazy" width={"100%"} height={"100%"} src={item.img} alt="" />
                 </div>
                 <div className="side__event__mobi__main__page__items__first__box--title">
                   {item.name}
@@ -31,7 +31,7 @@ function SideEventMobiMainPage({
                 key={index}
               >
                 <div className="side__event__mobi__main__page__items__seccond__box--img">
-                  <img width={"100%"} height={"100%"} src={item.img} alt="" />
+                  <img loading="lazy" width={"100%"} height={"100%"} src={item.img} alt="" />
                 </div>
                 <div className="side__event__mobi__main__page__items__seccond__box--title">
                   {item.name}

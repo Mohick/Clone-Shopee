@@ -15,9 +15,14 @@ function handleBtnArrowShopeeSmall(arrow = "right") {
       arrayRight.classList.add("shopee__small__body__frame__arrow--active");
       setTimeout(() => {
         boxFrame.addEventListener("scrollend", () => {
-            if(Math.floor(boxFrame.scrollLeft) == 0) {
-                arrayLeft.classList.remove("shopee__small__body__frame__arrow--active");
-            }
+          if (Math.floor(boxFrame.scrollLeft) == 0) {
+            arrayLeft.classList.remove(
+              "shopee__small__body__frame__arrow--active"
+            );
+            arrayRight.classList.add(
+              "shopee__small__body__frame__arrow--active"
+            );
+          }
         });
       }, 0);
       break;
@@ -30,10 +35,13 @@ function handleBtnArrowShopeeSmall(arrow = "right") {
       setTimeout(() => {
         boxFrame.addEventListener("scrollend", () => {
           if (
-            Math.floor(boxFrame.scrollLeft + boxFrame.clientWidth) + 1>=
+            Math.floor(boxFrame.scrollLeft + boxFrame.clientWidth)  + 10 >=
             Math.floor(boxFrame.scrollWidth)
           ) {
             arrayRight.classList.remove(
+              "shopee__small__body__frame__arrow--active"
+            );
+            arrayLeft.classList.add(
               "shopee__small__body__frame__arrow--active"
             );
           }

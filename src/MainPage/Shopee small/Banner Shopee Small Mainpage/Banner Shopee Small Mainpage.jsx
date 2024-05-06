@@ -30,7 +30,7 @@ function BannerShopeeSmall() {
     <div className="shopee__small__body--banner">
       <div className="shopee__small__body__banner--img">
         <div className="shopee__small__body__banner__img--last--sub">
-          <img
+          <img loading="lazy"
             width={"100%"}
             height={"100%"}
             src={items[items.length - 1]?.url}
@@ -48,13 +48,13 @@ function BannerShopeeSmall() {
                 style={{ flex: `0 0 calc(100% / ${items.length})` }}
                 className="shopee__small__body__banner__img__main--items"
               >
-                <img width={"100%"} height={"100%"} src={item.url} alt="" />
+                <img loading="lazy" width={"100%"} height={"100%"} src={item.url} alt="" />
               </div>
             );
           })}
         </div>
         <div className="shopee__small__body__banner__img--first--sub">
-          <img width={"100%"} height={"100%"} src={items[0]?.url} alt="" />
+          <img loading="lazy" width={"100%"} height={"100%"} src={items[0]?.url} alt="" />
         </div>
       </div>
       <div className="shopee__small__body__banner--dots">

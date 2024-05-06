@@ -29,10 +29,10 @@ function ItemsFlashSaleMainPage() {
           <div className="flash__sale__body--items" key={index}>
             <div className="flash__sale__body__items--img">
               <div className="flash__sale__body__items__img--main">
-                <img width={"100%"} height={"100%"} src={items.img} alt="" />
+                <img  loading="lazy" width={"100%"} height={"100%"} src={items.img} alt="" />
               </div>
               <div className="flash__sale__body__items__img--event">
-                <img width={"100%"} height={"100%"}  src="./Logo Flash  Sale/day sale.png" alt="" />
+                <img  loading="lazy" width={"100%"} height={"100%"}  src="./Logo Flash  Sale/day sale.png" alt="" />
               </div>
               <div className="flash__sale__body__items__img--discount">
                 <div className="flash__sale__body__items__img__discount--icon">

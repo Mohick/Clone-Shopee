@@ -1,0 +1,135 @@
+#daily__discover__main__page {
+  background: #efefef;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.daily__discover__main__page--header {
+  padding: 2rem;
+  background: transparent;
+  display: flex;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 3;
+}
+.daily__discover__main__page__header--title {
+  font-family: -apple-system, HelveticaNeueMedium, HelveticaNeue-Medium,
+    Helvetica Neue Medium, Helvetica Neue, Roboto, Droid Sans, Arial Bold, Arial,
+    sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: rgb(238, 77, 45);
+  flex: 1;
+}
+.daily__discover__main__page__header--more {
+  display: flex;
+  gap: 0.2rem;
+}
+.daily__discover__main__page__header__more--title {
+  font-family: -apple-system, HelveticaNeueMedium, HelveticaNeue-Medium,
+    Helvetica Neue Medium, Helvetica Neue, Roboto, Droid Sans, Arial Bold, Arial,
+    sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #74706f;
+}
+
+.daily__discover__main__page--body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+.daily__discover__main__page__body--item {
+  width: 100%;
+  background: #fff;
+}
+.daily__discover__main__page__body__item--header {
+  position: relative;
+}
+.daily__discover__main__page__body__item__header--event--img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.daily__discover__main__page__body__item__header--status {
+  position: absolute;
+  left: -0.3rem;
+  top: 1%;
+  width: 4.6rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.daily__discover__main__page__body__item__header--status > img:last-child {
+  display: none;
+}
+.daily__discover__main__page__body__item__header--status > img:first-child {
+  display: block;
+}
+
+.daily__discover__main__page__body__item__header--icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 1%;
+}
+
+.daily__discover__main__page__body__item__header--icon--text {
+  padding: 0.2rem 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 200;
+  background: #0003;
+}
+
+.daily__discover__main__page__body__item--body {
+  padding: 1rem;
+}
+.daily__discover__main__page__body__item--title {
+  font-size: 1.4rem;
+  height: 4rem;
+  line-height: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 100;
+}
+
+.daily__discover__main__page__body__item--voucher {
+  position: relative;
+  display: inline-flex;
+  gap: 0;
+  background: #f69113;
+}
+.daily__discover__main__page__body__item__voucher--title {
+  color: #fff;
+  flex: 1;
+  padding: 0 1rem;
+}
+.daily__discover__main__page__body__item--cost--sold {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+.daily__discover__main__page__body__item--cost {
+    font-size: 1.6rem;
+    color: #ee4d2d;
+    font-weight: 500;
+}
+.daily__discover__main__page__body__item--sold {
+    font-size: 1.2rem;
+    color: #757575;
+    font-weight: 100;
+}
+.daily__discover__main__page__footer {
+    display: none;
+}

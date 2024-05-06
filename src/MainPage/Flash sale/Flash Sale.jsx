@@ -26,7 +26,7 @@ function FlashSale() {
         </div>
         <ItemsFlashSaleMainPage />
         <div className="flash__sale--footer">
-          <img width={"100%"} height={'110'} src="./Logo Flash  Sale/flash sale Banner.png" alt="" />
+          <img width={"100%"} loading="lazy" height={'110'} src="./Logo Flash  Sale/flash sale Banner.png" alt="" />
         </div>
       </div>
     </div>

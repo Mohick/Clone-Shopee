@@ -1,0 +1,12 @@
+@media screen and (min-width:900px){
+    .daily__discover__main__page--header{
+        border-bottom: .4rem solid #ee4d2d;
+    }
+    .daily__discover__main__page__header--title{
+        text-align: center;
+        font-weight: 600;
+    }
+    .daily__discover__main__page__header--more{
+       display: none;
+    }
+}
