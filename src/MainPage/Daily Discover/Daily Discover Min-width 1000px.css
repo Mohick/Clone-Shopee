@@ -1,4 +1,7 @@
 @media screen and (min-width: 1000px) {
+  #daily__discover__main__page {
+    padding: 8rem;
+  }
   .daily__discover__main__page--header {
     border-bottom: 0.4rem solid #ee4d2d;
   }
@@ -13,6 +16,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
+    margin-top: 1rem;
   }
   .daily__discover__main__page__footer {
     margin-top: 2rem;
@@ -35,8 +39,66 @@
     -o-transition: all 0.3s linear;
   }
   .daily__discover__main__page__footer--title:hover {
-
     background: #eeeded;
-
+  }
+  .daily__discover__main__page__body--item {
+    transform: translateY(.3rem);
+    -webkit-transform: translateY(.3rem);
+    -moz-transform: translateY(.3rem);
+    -ms-transform: translateY(.3rem);
+    -o-transform: translateY(.3rem);
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+}
+  .daily__discover__main__page__body--item:hover {
+    border: 0.1rem solid hsl(10, 85%, 55%);
+    transform: translateY(-1rem);
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+  .daily__discover__main__page__body--item::after {
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    background: #ee4d2d;
+    font-weight: 100;
+    font-size: 1.4rem;
+    position: absolute;
+    top: calc(100% + 0.1rem);
+    width: calc(100%);
+    left: 0;
+    content: "find similar";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 101%;
+    z-index: 2;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 1rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    left: -.5%;
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+}
+  .daily__discover__main__page__body--item:hover::after {
+    opacity: 1;
+    height: auto;   
   }
 }

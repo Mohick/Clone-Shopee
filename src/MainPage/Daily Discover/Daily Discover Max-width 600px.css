@@ -44,6 +44,9 @@
 .daily__discover__main__page__body--item {
   width: 100%;
   background: #fff;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 0 0  .1rem  #0000;
 }
 .daily__discover__main__page__body__item--header {
   position: relative;

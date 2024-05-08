@@ -1,0 +1,110 @@
+@media screen and (min-width: 1000px) {
+  #footer__main__page {
+    border-top: 0.4rem solid #ee4d2d;
+    background: #fff;
+  }
+  .footer__main__page--introduce {
+    padding: 4rem 0;
+    border-bottom: 0.1rem solid #e8e8e8;
+  }
+  .footer__main__page__categories__body__col--items
+    + .footer__main__page__categories__body__col--items,
+  .footer__main__page__categories__body__col__items--title
+    + .footer__main__page__categories__body__col__items--cotent,
+  .footer__main__page__introduce__text__list--items
+    + .footer__main__page__introduce__text__list--items,
+  .footer__main__page__introduce__text--list
+    + .footer__main__page__introduce__text--description,
+  .footer__main__page__introduce__text--description
+    + .footer__main__page__introduce__text--list,
+  .footer__main__page__introduce--text + .footer__main__page__introduce--text,
+  .footer__main__page__introduce__text--title
+    + .footer__main__page__introduce__text--title,
+  .footer__main__page__introduce__text--title
+    + .footer__main__page__introduce__text--description {
+    padding-top: 1rem;
+  }
+
+  .footer__main__page__introduce__text--title {
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  .footer__main__page__introduce__text__list--items,
+  .footer__main__page__introduce__text--description {
+    font-weight: 400;
+    font-size: 1.2rem;
+    /* letter-spacing: .1rem; */
+  }
+  .footer__main__page__introduce__text__description--highlight {
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0.4rem;
+    text-decoration: underline;
+    text-underline-position: auto;
+    cursor: pointer;
+  }
+
+  .footer__main__page__introduce__text--list {
+    padding-left: 3rem;
+  }
+  .footer__main__page__categories__body__col__items__cotent__options--bar,
+  .footer__main__page__introduce__text__description--bar {
+    margin: 0 0.4rem;
+  }
+  .footer__main__page__introduce__text--country {
+    text-decoration: underline;
+    text-underline-position: auto;
+  }
+  .footer__main__page--categories {
+    margin-top: 2rem;
+  }
+  .footer__main__page__categories--title {
+    font-size: 1.4rem;
+  }
+  .footer__main__page__categories__body__col__items--title,
+  .footer__main__page__categories--title {
+    font-weight: 700;
+    color: #757575;
+  }
+  .footer__main__page__categories__body__col__items--title {
+    font-size: 1.2rem;
+    transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+  }
+  .footer__main__page__categories__body__col__items--title:hover {
+    color: #ee4d2d;
+}
+  .footer__main__page__categories--body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  .footer__main__page__categories__body__col__items--cotent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer__main__page__categories__body__col__items__cotent--options {
+    display: flex;
+  }
+  .footer__main__page__categories__body__col__items__cotent--options {
+    font-size: 1.2rem;
+  }
+  
+  .footer__main__page__categories__body__col__items__cotent__options--text:hover {
+    color: #ee4d2d;
+    cursor: pointer;
+  }
+  .footer__main__page__categories__body__col__items__cotent__options--bar,
+  .footer__main__page__categories__body__col__items__cotent__options--text {
+    color: rgba(0, 0, 0, 0.54);
+    transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+  }
+}
