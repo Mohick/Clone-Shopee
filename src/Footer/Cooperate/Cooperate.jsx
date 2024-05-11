@@ -1,7 +1,7 @@
 import IconFacebook from "../../Container  Component  SVG ICON/Icon Facebook";
 import IconIntargram from "../../Container  Component  SVG ICON/Icon Intargram";
+import './Cooperate Max-width 600px.css'
 import "./Cooperate Min-width 1000px.css";
-
 function FooterCooperate() {
   return (
     <div id="footer__cooperate">
@@ -293,20 +293,51 @@ function FooterCooperate() {
           <div className="footer__cooperate__items--body">
             <div className="footer__cooperate__items__body--download">
               <div className="footer__cooperate__items__body__download--qr">
-                <img width={'100%'} height={'auto'} src="./Code QR And Place DownLoad App/QR code.png" alt="" />
+                <img
+                  width={"100%"}
+                  height={"auto"}
+                  src="./Code QR And Place DownLoad App/QR code.png"
+                  alt=""
+                />
               </div>
               <div className="footer__cooperate__items__body__download--cooperate">
                 <div className="footer__cooperate__items__body__download__cooperate--img">
-                  <img width={'100%'} height={'100%'} src="./Code QR And Place DownLoad App/App Store.png" alt="" />
+                  <img
+                    width={"100%"}
+                    height={"100%"}
+                    src="./Code QR And Place DownLoad App/App Store.png"
+                    alt=""
+                  />
                 </div>
                 <div className="footer__cooperate__items__body__download__cooperate--img">
-                  <img width={'100%'} height={'100%'} src="./Code QR And Place DownLoad App/AppGallery.png" alt="" />
+                  <img
+                    width={"100%"}
+                    height={"100%"}
+                    src="./Code QR And Place DownLoad App/AppGallery.png"
+                    alt=""
+                  />
                 </div>
                 <div className="footer__cooperate__items__body__download__cooperate--img">
-                  <img width={'100%'} height={'100%'} src="./Code QR And Place DownLoad App/CH Play.png" alt="" />
+                  <img
+                    width={"100%"}
+                    height={"100%"}
+                    src="./Code QR And Place DownLoad App/CH Play.png"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="layout">
+        <div className="footer__cooperate--license">
+          <div className="footer__cooperate___license--signUp">
+            © 2024 Shopee. All Rights Reserved .
+          </div>
+          <div className="footer__cooperate___license--country">
+            Country & Region: Singapore | Indonesia | Thailand | Malaysia | Vietnam | 
+            Philippines| Brazil | México | Colombia | Chile | Taiwan
           </div>
         </div>
       </div>

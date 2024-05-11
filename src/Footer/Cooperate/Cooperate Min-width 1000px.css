@@ -2,6 +2,7 @@
   #footer__cooperate {
     background: #fbfbfb;
     padding-top: 2rem;
+    display: block;
   }
   .footer__cooperate--layout {
     display: grid;
@@ -55,7 +56,7 @@
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
-}
+  }
   .footer__cooperate__items__body--media {
     display: flex;
     gap: 1rem;
@@ -75,21 +76,21 @@
     cursor: pointer;
   }
 
-  .footer__cooperate__items__body--download{
+  .footer__cooperate__items__body--download {
     display: flex;
     gap: 1rem;
   }
   .footer__cooperate__items__body__download--qr {
-    padding: .3rem;
+    padding: 0.3rem;
     background: #fff;
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.35);
-    border-radius: .4rem ;
-    -webkit-border-radius: .4rem ;
-    -moz-border-radius: .4rem ;
-    -ms-border-radius: .4rem ;
-    -o-border-radius: .4rem ;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
     height: auto;
-}
+  }
   .footer__cooperate__items__body__download--cooperate {
     display: flex;
     gap: 1rem;
@@ -99,13 +100,32 @@
   .footer__cooperate__items__body__download__cooperate--img {
     width: 7.6rem;
     height: 2.4rem;
-    padding: .6rem;
+    padding: 0.6rem;
     background: #fff;
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.35);
-    border-radius: .4rem ;
-    -webkit-border-radius: .4rem ;
-    -moz-border-radius: .4rem ;
-    -ms-border-radius: .4rem ;
-    -o-border-radius: .4rem ;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+  }
+  .footer__cooperate--license {
+    display: flex;
+    width: 100%;
+    padding: 2rem 0;
+    border-top: 0.1rem solid #3333;
+  }
+  .footer__cooperate___license--country {
+    flex: 1;
+    text-align: end;
+    line-height: 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.4rem;
+  }
+  .footer__cooperate--license {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: rgba(0, 0, 0, 0.54);
   }
 }

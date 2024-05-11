@@ -47,3 +47,6 @@
 .shopee__small__body__frame--arrow--right {
     display: none;
 }
+.shopee__small__body--frame {
+  padding-bottom: 1rem;
+}

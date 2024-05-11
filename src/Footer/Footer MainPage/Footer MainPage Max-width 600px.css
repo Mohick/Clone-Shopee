@@ -1,3 +1,7 @@
+#footer__main__page  {
+    display: none;
+}
+
 .footer__main__page--layout {
     padding: 2rem 0;
 }

@@ -5,7 +5,6 @@
 }
   .shopee__small__body--frame {
     flex: 5;
-    width: 0;
     position: relative;
   }
   .shopee__small__body__frame--items {

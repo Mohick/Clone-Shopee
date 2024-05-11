@@ -1,9 +1,11 @@
 import IconAngleRight from "../../Container  Component  SVG ICON/Icon Angle Right";
 import IconBorderCheck from "../../Container  Component  SVG ICON/Icon Border Check";
-import BannerShopeeSmall from "./Banner Shopee Small Mainpage/Banner Shopee Small Mainpage";
+import BannerShope from "../../Library Banner/Banner Shopee";
 import ShopeeSmallItemsMainPage from "./Shopee Small Items/Shopee Small Items";
 import "./Shopee small Max-width 600px.css";
+import './Shopee Small Min-width 900px.css'
 import "./Shopee small Min-width 1000px.css";
+
 function ShopeeSmallMainPage() {
   return (
     <div id="shopee__small">
@@ -14,21 +16,45 @@ function ShopeeSmallMainPage() {
             <div className="shopee__small__header--navigations">
               <div className="shopee__small__header__navigations--items">
                 <div className="shopee__small__header__navigations__items--icon">
-                  <img loading="lazy" width={'100%'} height={'100%'} src="./Img Shopee small/return product.png" alt="" />
+                  <img
+                    loading="lazy"
+                    width={"100%"}
+                    height={"100%"}
+                    src="./Img Shopee small/return product.png"
+                    alt=""
+                  />
                 </div>
-                <div className="shopee__small__header__navigations__items--name">7 Days Return</div>
+                <div className="shopee__small__header__navigations__items--name">
+                  7 Days Return
+                </div>
               </div>
               <div className="shopee__small__header__navigations--items">
                 <div className="shopee__small__header__navigations__items--icon">
-                  <img loading="lazy" width={'100%'} height={'100%'} src="./Img Shopee small/secure.png" alt="" />
+                  <img
+                    loading="lazy"
+                    width={"100%"}
+                    height={"100%"}
+                    src="./Img Shopee small/secure.png"
+                    alt=""
+                  />
                 </div>
-                <div className="shopee__small__header__navigations__items--name">100% Authentic</div>
+                <div className="shopee__small__header__navigations__items--name">
+                  100% Authentic
+                </div>
               </div>
               <div className="shopee__small__header__navigations--items">
                 <div className="shopee__small__header__navigations__items--icon">
-                  <img loading="lazy" width={'100%'} height={'100%'} src="./Img Shopee small/ship.png" alt="" />
+                  <img
+                    loading="lazy"
+                    width={"100%"}
+                    height={"100%"}
+                    src="./Img Shopee small/ship.png"
+                    alt=""
+                  />
                 </div>
-                <div className="shopee__small__header__navigations__items--name">Free Shipping</div>
+                <div className="shopee__small__header__navigations__items--name">
+                  Free Shipping
+                </div>
               </div>
             </div>
             <div className="shopee__small__header__box--views--more">
@@ -69,7 +95,11 @@ function ShopeeSmallMainPage() {
           </div>
         </div>
         <div className="shopee__small--body">
-          <BannerShopeeSmall />
+          <div className="shopee__small__body--banner">
+          <BannerShope
+            url={"https://run.mocky.io/v3/24ca186f-cb3a-4a2f-8cf8-8f65370e91ec"} classItems={'small'}
+          />
+          </div>
           <ShopeeSmallItemsMainPage />
         </div>
       </div>

@@ -1,0 +1,15 @@
+
+.footer__certificate--layout{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.footer__certificate__items--title{
+    font-size: 1rem;
+}
+.footer__certificate--items {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 1rem;
+}

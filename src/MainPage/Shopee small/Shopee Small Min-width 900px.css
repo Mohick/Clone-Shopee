@@ -1,0 +1,6 @@
+@media screen  and (min-width:900px){
+    .shopee__small__body--banner {
+        height:40rem;
+        padding: 0;
+      }
+}

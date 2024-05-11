@@ -2,6 +2,7 @@
   #footer__main__page {
     border-top: 0.4rem solid #ee4d2d;
     background: #fff;
+    display: none;
   }
   .footer__main__page--introduce {
     padding: 4rem 0;

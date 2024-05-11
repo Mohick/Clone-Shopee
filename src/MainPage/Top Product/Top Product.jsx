@@ -11,7 +11,7 @@ function TopProductMainPage() {
     let allow = true;
 
     axios
-      .get("https://run.mocky.io/v3/39915347-a966-466b-b303-11ec4f2939bc")
+      .get("https://run.mocky.io/v3/d2f151ce-c441-4b60-8e51-8de84486fc18")
       .then((response) => {
         if (allow) {
           const data = response.data;
@@ -56,7 +56,7 @@ function TopProductMainPage() {
                     </div>
 
                     <div className="top__product__main__page__body__items__header--length--month">
-                      {item.lengthItems}
+                    {item.lengthItems}
                     </div>
                   </div>
                   <div className="top__product__main__page__body__items__logo--top">

@@ -6,13 +6,12 @@ import RenderItemsShopeeSmallMainPage from "./Hanle Render Items/Render Items  S
 import IconAngleRight from "../../../Container  Component  SVG ICON/Icon Angle Right";
 import IconAngleLeft from "../../../Container  Component  SVG ICON/Icon Angle Left";
 import { handleBtnArrowShopeeSmall } from "./handle btn arrow shopee small/handle btn arrow shopee small";
-
 function ShopeeSmallItemsMainPage() {
   const [items, setItems] = useState([]);
   useEffect(() => {
     let allow = true;
     axios
-      .get("https://run.mocky.io/v3/04d455d2-06ed-4e91-a7b1-33dfa53cfcf4")
+      .get("https://run.mocky.io/v3/8fc070c2-cf1f-4010-bd51-8ab0dfe920d1")
       .then((response) => {
         if (allow) {
           const data = response.data;

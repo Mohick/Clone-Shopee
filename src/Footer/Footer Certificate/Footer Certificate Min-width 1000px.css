@@ -1,0 +1,5 @@
+@media screen and (min-width: 1000px) {
+    .footer__certificate--layout {
+        grid-template-columns: repeat(4,1fr);
+    }
+}

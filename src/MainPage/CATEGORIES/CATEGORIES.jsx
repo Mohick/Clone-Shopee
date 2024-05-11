@@ -14,7 +14,7 @@ function CategoriesMainPage() {
     let mounted = true;
 
     axios
-      .get("https://run.mocky.io/v3/9eaae28b-f764-4cd4-b1c5-f0a2ab87ecd1")
+      .get("https://run.mocky.io/v3/32501418-769c-42fe-b3cd-46404a7aaebd")
       .then((response) => {
         if (mounted) {
           const data = response.data;
@@ -43,7 +43,7 @@ function CategoriesMainPage() {
             <CategoriesFirstItemsMainPage firstData={items[1]} />
           </div>
         </div>
-          <div onClick={()=>handleArrowcateGoriesMainPage('prev')} className="categories__main__page--arrow-left ">
+          <div onClick={()=>handleArrowcateGoriesMainPage('prev')} className="categories__main__page--arrow-left">
             <IconAngleLeft />
           </div>
           <div onClick={()=>handleArrowcateGoriesMainPage('next')}  className="categories__main__page--arrow-right categories__main__page--arrow-active">

@@ -1,46 +1,53 @@
 @media screen and (min-width: 1000px) {
-    .shopee__small__header--navigations{
-        display: flex;
-        flex: 1;
-        gap: .6rem;
-    }
-    .shopee__small__header__navigations--items{
-        display: flex;
-        gap: .2rem;
-        align-items: center;
-    }
-    .shopee__small__header__navigations__items--icon{
-        width: 1.7rem;
-        height: 1.7rem;
-        display: flex;
-    }
-    .shopee__small__header__navigations__items--name{
-        font-size: 1.6rem;
-        font-weight: 600;
-    }
-    .shopee__small--navigations {
-        display: none;
-    }
-    .shopee__small--body{
-        display: flex;
-    }
-    .shopee__small__header__box--views--more{
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-    .shopee__small__header__box__views__more--title{
-        color: #d0011b;
-        font-size: 1.4rem;
-        text-transform: capitalize;
-    }
-    .shopee__small__header__box__views__more--icon{
-        padding: .5rem;
-        background: #d0011b;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-}
+  .shopee__small__header--navigations {
+    display: flex;
+    flex: 1;
+    gap: 0.6rem;
+  }
+  .shopee__small__body__box--items {
+    padding-top: 20rem;
+  }
+  .shopee__small__header__navigations--items {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+  }
+  .shopee__small__header__navigations__items--icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    display: flex;
+  }
+  .shopee__small__header__navigations__items--name {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .shopee__small--navigations {
+    display: none;
+  }
+  .shopee__small--body {
+    display: flex;
+  }
+  .shopee__small__header__box--views--more {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .shopee__small__header__box__views__more--title {
+    color: #d0011b;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+  }
+  .shopee__small__header__box__views__more--icon {
+    padding: 0.5rem;
+    background: #d0011b;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  .shopee__small__body--banner {
+    flex: 3;
+    height: 100%;
+  }
 }

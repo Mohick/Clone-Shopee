@@ -52,3 +52,7 @@
 .shopee__small__header--navigations{
   display: none;
 }
+.shopee__small__body--banner {
+  height:30rem;
+  padding: 1rem;
+}

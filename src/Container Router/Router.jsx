@@ -9,7 +9,7 @@ const HeaderMainPageMobi = lazy(() =>
 );
 const FooterMainPage = lazy(() => import("../Footer/Footer MainPage/Footer MainPage"));
 const FooterCooperate = lazy(() => import("../Footer/Cooperate/Cooperate"));
-
+const FooterCertificate = lazy(() => import("../Footer/Footer Certificate/Footer Certificate"));
 function RouterPage() {
   return (
     <Routes>
@@ -22,6 +22,7 @@ function RouterPage() {
             <MainPage />
             <FooterMainPage />
             <FooterCooperate/>
+            <FooterCertificate/>
           </Suspense>
         }
       />
