@@ -1,66 +1,86 @@
 import { Link } from "react-router-dom";
 import IconSearch from "../../Container  Component  SVG ICON/Icon Search";
 import "./Input Search Max-witdh 600px.css";
-import './Input Search Min-witdh 1000px.css'
+import "./Input Search Min-witdh 1000px.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import IconStore from "../../Container  Component  SVG ICON/Icon Store";
 
 function InputSearchHeader() {
   const [keySearch, setKeySearch] = useState("");
-  const [items, setItems] = useState("");
+  const [items, setItems] = useState([]);
   useEffect(() => {
-    const callAPI =   setTimeout(() => {
-   
-    }, 300);
-return ()=>{
-  clearTimeout(callAPI);
-}
+    const callAPI = setTimeout(() => {
+      if (keySearch.trim().length > 0) {
+        axios
+          .get("https://run.mocky.io/v3/e99a5be3-9162-4969-be88-8df53da91724")
+          .then((response) => {
+            const data = response.data;
+            const items = data
+              .filter((item) => {
+                return item.name.includes(keySearch);
+              })
+              .slice(0, 6);
+            setItems(items);
+          });
+      }
+    }, 100);
+    return () => {
+      clearTimeout(callAPI);
+    };
   }, [keySearch]);
   return (
     <div className="input__search__header__box--search">
       <div className="input__search__header__box__search--input">
         <input
-          onChange  ={(e) => setKeySearch(e.target.value)}
+          onChange={(e) => setKeySearch(e.target.value)}
           placeholder="Siêu sale hàng Nhật"
           className="input__search__header__box__search__input--text"
           type="text"
         />
       </div>
-      <div className="input__search__header__box__search--svg">
-        <IconSearch width={'1.4rem'}/>
-      </div>
+      <Link
+        to={
+          keySearch.trim().length > 0
+            ? `/search/${keySearch}`
+            : "/search/Siêu sale hàng Nhật"
+        }
+        className="input__search__header__box__search--svg"
+      >
+        <IconSearch width={"1.4rem"} />
+      </Link>
       <div className="input__search__header__box__search--dropDown">
-        {true ? (
+        {keySearch.trim().length > 0 ? (
           <>
             <Link
-              className="input__search__header__box__search__dropDown--option"
-              to={"#Event"}
+              className="input__search__header__box__search__dropDown--option--store"
+              to={`/search/${keySearch}`}
             >
-              <div className="input__search__header__box__search__dropDown__event--title">
-                Siêu sale hàng Nhật
+              <div className="input__search__header__box__search__dropDown__option__store--icon">
+                <IconStore styles={{enableBackground:"new 0 0 15 15",strokeWidth:"0",fill: "#ee4d2d",height:"1.6rem", width:'1.6rem'}} />
+              </div>
+              <div className="input__search__header__box__search__dropDown__option__store--title">
+                "{keySearch}" Shops
               </div>
             </Link>
-            <Link
-              className="input__search__header__box__search__dropDown--option"
-              to={"#Event"}
-            >
-              <div className="input__search__header__box__search__dropDown__event--title">
-                Siêu sale hàng Nhật
-              </div>
-            </Link>
-            <Link
-              className="input__search__header__box__search__dropDown--option"
-              to={"#Event"}
-            >
-              <div className="input__search__header__box__search__dropDown__event--title">
-                Siêu sale hàng Nhật
-              </div>
-            </Link>
+            {items.map((item) => {
+              return (
+                <Link
+                  className="input__search__header__box__search__dropDown--option"
+                  to={`/search/${item.name}`}
+                >
+                  <div className="input__search__header__box__search__dropDown__event--title">
+                    {item.name}
+                  </div>
+                </Link>
+              );
+            })}
           </>
         ) : (
           <>
             <Link
               className="input__search__header__box__search__dropDown--event"
-              to={"#Event"}
+              to={"/search/Siêu sale hàng Nhật"}
             >
               <div className="input__search__header__box__search__dropDown__event--title">
                 Siêu sale hàng Nhật

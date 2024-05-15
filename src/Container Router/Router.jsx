@@ -1,5 +1,6 @@
 import { Route, Router, Routes } from "react-router";
 import { Suspense, lazy, memo } from "react";
+import HeaderResultSearchMobi from "../Header/Header result search mobi/Header Result Search Mobi";
 const MainPage = lazy(() => import("../MainPage/Main Page"));
 const HeaderPCMainPage = lazy(() =>
   import("../Header/Header PC/Header Main Page PC")
@@ -23,6 +24,15 @@ function RouterPage() {
             <FooterMainPage />
             <FooterCooperate/>
             <FooterCertificate/>
+          </Suspense>
+        }
+      />
+      <Route
+        path="/search/:title"
+        element={
+          <Suspense loading="....">
+            <HeaderPCMainPage />
+            <HeaderResultSearchMobi/>
           </Suspense>
         }
       />

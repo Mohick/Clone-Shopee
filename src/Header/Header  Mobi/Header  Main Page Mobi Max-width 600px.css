@@ -27,6 +27,7 @@
 }
 .header__main__page__mobi--box--cpm--search {
   flex: 3;
+  background: #fff;
 }
 .header__main__page__mobi--box--info {
   flex: 1;
