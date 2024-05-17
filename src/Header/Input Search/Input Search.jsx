@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IconSearch from "../../Container  Component  SVG ICON/Icon Search";
 import "./Input Search Max-witdh 600px.css";
 import "./Input Search Min-witdh 1000px.css";
@@ -9,6 +9,15 @@ import IconStore from "../../Container  Component  SVG ICON/Icon Store";
 function InputSearchHeader() {
   const [keySearch, setKeySearch] = useState("");
   const [items, setItems] = useState([]);
+  const history = useNavigate();
+  const navigate = useNavigate();
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      navigate(`/search/${keySearch}`);
+    }
+  };
+
   useEffect(() => {
     const callAPI = setTimeout(() => {
       if (keySearch.trim().length > 0) {
@@ -37,6 +46,7 @@ function InputSearchHeader() {
           placeholder="Siêu sale hàng Nhật"
           className="input__search__header__box__search__input--text"
           type="text"
+          onKeyDown={handleKeyPress}
         />
       </div>
       <Link
@@ -57,7 +67,15 @@ function InputSearchHeader() {
               to={`/search/${keySearch}`}
             >
               <div className="input__search__header__box__search__dropDown__option__store--icon">
-                <IconStore styles={{enableBackground:"new 0 0 15 15",strokeWidth:"0",fill: "#ee4d2d",height:"1.6rem", width:'1.6rem'}} />
+                <IconStore
+                  styles={{
+                    enableBackground: "new 0 0 15 15",
+                    strokeWidth: "0",
+                    fill: "#ee4d2d",
+                    height: "1.6rem",
+                    width: "1.6rem",
+                  }}
+                />
               </div>
               <div className="input__search__header__box__search__dropDown__option__store--title">
                 "{keySearch}" Shops

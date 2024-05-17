@@ -2,6 +2,7 @@ import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import InputSearchHeader from "../Input Search/Input Search";
 import "./Header Result Search Mobi Max-width 600px.css";
 import ModalFilterResultSearch from "./Modal Filter/Modal Filter";
+import HandleFilterResultSearch from "./Modal Filter/handle  filter result search/Handle FIlter";
 function HeaderResultSearchMobi() {
   return (
     <div id="header__result__search__mobi">
@@ -13,7 +14,10 @@ function HeaderResultSearchMobi() {
           <div className="header__result__search__mobi__header--search">
             <InputSearchHeader />
           </div>
-          <div className="header__result__search__mobi__header--filter">
+          <div
+            className="header__result__search__mobi__header--filter"
+            onClick={HandleFilterResultSearch.openModalFilter}
+          >
             <Icons.filter className="header__result__search__mobi__header__filter--icon" />
             <span className="header__result__search__mobi__header__filter--title">
               Filter

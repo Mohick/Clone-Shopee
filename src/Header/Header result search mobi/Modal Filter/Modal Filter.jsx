@@ -3,9 +3,9 @@ import { Icons } from "../../../Container  Component  SVG ICON/Manage Icon";
 import "./Modal Filter Max-width 600px.css";
 import axios from "axios";
 import { useParams } from "react-router";
-
+import HandleFilterResultSearch from "./handle  filter result search/Handle FIlter";
+import HandleFIlter from "./handle  filter result search/Handle FIlter";
 function ModalFilterResultSearch() {
-  let { title } = useParams();
   const [items, setItems] = useState([]);
   useEffect(() => {
     const getDate = setTimeout(() => {
@@ -13,11 +13,9 @@ function ModalFilterResultSearch() {
         .get("https://run.mocky.io/v3/1a0f57fa-e361-4b7f-8c4f-74dfe3d67a39")
         .then((response) => {
           const data = response.data;
-          const filterDate = data.filter((item) => {
-            return item.name.includes(title);
-          });
+
           let setDate = new Map();
-          filterDate.forEach((item) => {
+          data.forEach((item) => {
             const getKind = ("" + item.kind).trim().toLowerCase();
             if (setDate.get(getKind)?.kind != getKind) {
               setDate.set(getKind, { kind: getKind, length: 1 });
@@ -33,6 +31,7 @@ function ModalFilterResultSearch() {
           const configValueMapToArray = Object.values(
             Object.fromEntries(setDate)
           );
+
           if (configValueMapToArray.length > 3) {
             setItems([
               configValueMapToArray.slice(0, 4),
@@ -48,8 +47,14 @@ function ModalFilterResultSearch() {
     };
   }, []);
   return (
-    <div id="modal__filter__result__search">
-      <div className="modal__filter__result__search--frame ">
+    <div
+      id="modal__filter__result__search"
+      onClick={HandleFilterResultSearch.closeModalFilter}
+    >
+      <div
+        className="modal__filter__result__search--frame"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="modal__filter__result__search--header">
           Search Filter
         </div>
@@ -62,7 +67,12 @@ function ModalFilterResultSearch() {
               <div className="modal__filter__result__search__body__box--options">
                 {items[0]?.map((item) => {
                   return (
-                    <div className="modal__filter__result__search__body__items--options">
+                    <div
+                      className="modal__filter__result__search__body__items--options"
+                      onClick={(e) =>
+                        HandleFIlter.createClassChooseForOptions(e.target)
+                      }
+                    >
                       <span className="modal__filter__result__search__body__items__options--text">
                         {item.kind}
                       </span>
@@ -73,22 +83,141 @@ function ModalFilterResultSearch() {
                   );
                 })}
               </div>
-              {items.length > 4 ? (
-                <div className="modal__filter__result__search__body__box--options--views--more">
-                  {items[1]?.map((item) => {
-                    return (
-                      <div className="modal__filter__result__search__body__items--options">
-                        <span className="modal__filter__result__search__body__items__options--text">
-                          {item.kind}
-                        </span>
-                        <span className="modal__filter__result__search__body__items__options--length">
-                          ( {item.length})
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
+              {items[1]?.length > 4 ? (
+                <>
+                  {" "}
+                  <div className="modal__filter__result__search__body__box--options--views--more">
+                    {items[1]?.map((item) => {
+                      return (
+                        <div
+                          className="modal__filter__result__search__body__items--options"
+                          onClick={(e) =>
+                            HandleFIlter.createClassChooseForOptions(e.target)
+                          }
+                        >
+                          <span className="modal__filter__result__search__body__items__options--text">
+                            {item.kind}
+                          </span>
+                          <span className="modal__filter__result__search__body__items__options--length">
+                            ( {item.length})
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div
+                    className="modal__filter__result__search__body__items--btn--show--more"
+                    onClick={(e) => {
+                      HandleFIlter.showMore(e.target.parentElement);
+                    }}
+                  >
+                    <span className="modal__filter__result__search__body__items__btn__show--text">
+                      Show
+                    </span>
+                    <span className="modal__filter__result__search__body__items__btn__show--changes">
+                      More
+                    </span>
+                    <Icons.arrowAngleDown className="modal__filter__result__search__body__items__btn__show--icon--down" />
+                  </div>
+                </>
               ) : undefined}
+            </div>
+          </div>
+          <div className="modal__filter__result__search__body--items">
+            <div className="modal__filter__result__search__body__items--title">
+              Shipped from
+            </div>
+            <div className="modal__filter__result__search__body__items--body">
+              <div className="modal__filter__result__search__body__box--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="01"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    TP.HCM
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="02"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    dong nai
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="03"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    Ha Noi
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="04"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    oversea
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="05"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    Dong Thap
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="06"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    Phu Tho
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="07"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    Quang Ninh
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                  data-code="08"
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    Thanh Hoa
+                  </span>
+                </div>
+              </div>
               <div className="modal__filter__result__search__body__items--btn--show--more">
                 <span className="modal__filter__result__search__body__items__btn__show--text">
                   Show
@@ -102,103 +231,36 @@ function ModalFilterResultSearch() {
           </div>
           <div className="modal__filter__result__search__body--items">
             <div className="modal__filter__result__search__body__items--title">
-              Shipped from
-            </div>
-            <div className="modal__filter__result__search__body__items--body">
-              <div className="modal__filter__result__search__body__box--options">
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="01"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    TP.HCM
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="02"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    dong nai
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="03"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    Ha Noi
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="04"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    oversea
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="05"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    Dong Thap
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="06"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    Phu Tho
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="07"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    Quang Ninh
-                  </span>
-                </div>
-                <div
-                  className="modal__filter__result__search__body__items--options"
-                  data-code="08"
-                >
-                  <span className="modal__filter__result__search__body__items__options--text">
-                    Thanh Hoa
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="modal__filter__result__search__body__items--btn--show--more">
-              <span className="modal__filter__result__search__body__items__btn__show--text">
-                Show
-              </span>
-              <span className="modal__filter__result__search__body__items__btn__show--changes">
-                More
-              </span>
-              <Icons.arrowAngleDown className="modal__filter__result__search__body__items__btn__show--icon--down" />
-            </div>
-          </div>
-          <div className="modal__filter__result__search__body--items">
-            <div className="modal__filter__result__search__body__items--title">
               Shipping options
             </div>
             <div className="modal__filter__result__search__body__items--body">
               <div className="modal__filter__result__search__body__box--options">
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Express
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Fast
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Saving
                   </span>
@@ -212,40 +274,75 @@ function ModalFilterResultSearch() {
             </div>
             <div className="modal__filter__result__search__body__items--body">
               <div className="modal__filter__result__search__body__box--options">
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     VN
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     ALong
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     MUSHIHUI
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     UNDERCOOL
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__box--options--views--more">
-                  <div className="modal__filter__result__search__body__items--options">
-                    <span className="modal__filter__result__search__body__items__options--text">
-                      GOTI
-                    </span>
-                  </div>
-                  <div className="modal__filter__result__search__body__items--options">
-                    <span className="modal__filter__result__search__body__items__options--text">
-                      VM STYLE
-                    </span>
-                  </div>
+              </div>
+              <div className="modal__filter__result__search__body__box--options--views--more">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    GOTI
+                  </span>
+                </div>
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
+                  <span className="modal__filter__result__search__body__items__options--text">
+                    VM STYLE
+                  </span>
                 </div>
               </div>
-              <div className="modal__filter__result__search__body__items--btn--show--more">
+              <div
+                className="modal__filter__result__search__body__items--btn--show--more"
+                onClick={(e) => {
+                  HandleFIlter.showMore(e.target.parentElement);
+                }}
+              >
                 <span className="modal__filter__result__search__body__items__btn__show--text">
                   Show
                 </span>
@@ -265,23 +362,38 @@ function ModalFilterResultSearch() {
                 <input
                   className="modal__filter__result__search__body__items__body__search__price--min"
                   placeholder="MIN"
-                  type="text"
+                  type="number"
                 />
                 <div className="modal__filter__result__search__body__items__body__search__price--row--bar"></div>
                 <input
                   className="modal__filter__result__search__body__items__body__search__price--max"
                   placeholder="MAX"
-                  type="text"
+                  type="number"
                 />
               </div>
               <div className="modal__filter__result__search__body__items__body--btn--price">
-                <div className="modal__filter__result__search__body__items__body__btn__price--options">
+                <div
+                  className="modal__filter__result__search__body__items__body__btn__price--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForPriceRange(e.target,{min:0,max:100000})
+                  }
+                >
                   0-100k
                 </div>
-                <div className="modal__filter__result__search__body__items__body__btn__price--options">
+                <div
+                  className="modal__filter__result__search__body__items__body__btn__price--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForPriceRange(e.target,{min:100000,max:200000})
+                  }
+                >
                   100k-200k
                 </div>
-                <div className="modal__filter__result__search__body__items__body__btn__price--options">
+                <div
+                  className="modal__filter__result__search__body__items__body__btn__price--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForPriceRange(e.target,{min:200000,max:300000})
+                  }
+                >
                   200k-300k
                 </div>
               </div>
@@ -292,23 +404,45 @@ function ModalFilterResultSearch() {
               Shop Type
             </div>
             <div className="modal__filter__result__search__body__items--body">
-              <div className="modal__filter__result__search__body__box--options">
-                <div className="modal__filter__result__search__body__items--options">
+              <div
+                className="modal__filter__result__search__body__box--options"
+              >
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Shopee Mall
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Preferred Shop
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Preferred Shop +
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Trending Shop
                   </span>
@@ -322,12 +456,22 @@ function ModalFilterResultSearch() {
             </div>
             <div className="modal__filter__result__search__body__items--body">
               <div className="modal__filter__result__search__body__box--options">
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     Used
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     New with tag
                   </span>
@@ -341,7 +485,12 @@ function ModalFilterResultSearch() {
             </div>
             <div className="modal__filter__result__search__body__items--body">
               <div className="modal__filter__result__search__body__box--options">
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     0% INSTALLMENT
                   </span>
@@ -355,27 +504,52 @@ function ModalFilterResultSearch() {
             </div>
             <div className="modal__filter__result__search__body__items--body">
               <div className="modal__filter__result__search__body__box--options">
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForRating(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     5 Stars
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForRating(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     4 Stars & Up
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForRating(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     3 Stars & Up
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForRating(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     2 Stars & Up
                   </span>
                 </div>
-                <div className="modal__filter__result__search__body__items--options">
+                <div
+                  className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForRating(e.target)
+                  }
+                >
                   <span className="modal__filter__result__search__body__items__options--text">
                     1 Stars & Up
                   </span>
@@ -391,6 +565,9 @@ function ModalFilterResultSearch() {
               <div className="modal__filter__result__search__body__box--options">
                 <div
                   className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
                   data-code="01"
                 >
                   <span className="modal__filter__result__search__body__items__options--text">
@@ -399,6 +576,9 @@ function ModalFilterResultSearch() {
                 </div>
                 <div
                   className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
                   data-code="02"
                 >
                   <span className="modal__filter__result__search__body__items__options--text">
@@ -407,6 +587,9 @@ function ModalFilterResultSearch() {
                 </div>
                 <div
                   className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
                   data-code="03"
                 >
                   <span className="modal__filter__result__search__body__items__options--text">
@@ -415,6 +598,9 @@ function ModalFilterResultSearch() {
                 </div>
                 <div
                   className="modal__filter__result__search__body__items--options"
+                  onClick={(e) =>
+                    HandleFIlter.createClassChooseForOptions(e.target)
+                  }
                   data-code="04"
                 >
                   <span className="modal__filter__result__search__body__items__options--text">
@@ -425,9 +611,13 @@ function ModalFilterResultSearch() {
             </div>
           </div>
         </div>
-        <div className="modal__filter__result__search--footer"> 
-          <div className="modal__filter__result__search__footer--reset">Reset</div>
-          <div className="modal__filter__result__search__footer--apply">Apply</div>
+        <div className="modal__filter__result__search--footer">
+          <div className="modal__filter__result__search__footer--reset">
+            Reset
+          </div>
+          <div className="modal__filter__result__search__footer--apply">
+            Apply
+          </div>
         </div>
       </div>
     </div>
