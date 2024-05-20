@@ -1,0 +1,8 @@
+#result__search__items__page {
+    background: #efefef;
+    padding: 0.4rem;
+    padding-top: 2rem;
+}
+.result__search__items__page--filter {
+    display: none;
+}

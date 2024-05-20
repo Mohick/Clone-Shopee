@@ -1,0 +1,71 @@
+
+@media screen and (min-width: 1000px){
+    .relate__shop__sesult__search__items--header {
+        margin: 1rem 0;
+        display: flex;
+        gap: 1rem;
+    }
+    .relate__shop__sesult__search__items--body {
+        display: flex;
+    }
+    .relate__shop__sesult__search__items__header--relate {
+        flex: 1;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 100;
+        color: #999;
+    }
+    .relate__shop__sesult__search__items__header--more {
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+    }
+    .relate__shop__sesult__search__items__header__more--text {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        font-weight: 100;
+        text-wrap: nowrap;
+        color: #ee4d2d;
+    }
+    .relate__shop__sesult__search__items__header__more--icon {
+        width: 1rem;
+        height: 1rem;
+        fill: #ee4d2d;
+    }
+    .relate__shop__sesult__search__items__box--body--footer {
+        display: flex;
+    }
+    .relate__shop__sesult__search__items__body--box--info {
+        justify-content: center;
+    }
+    .relate__shop__sesult__search__items__body__box__info__product--title {
+        width: 100%;
+        text-align: center;
+    }
+    .relate__shop__sesult__search__items__body--box--visit {
+        background: #fef6f5;
+        padding: .4rem 2rem;
+        border-radius: .4rem;
+        -webkit-border-radius: .4rem;
+        -moz-border-radius: .4rem;
+        -ms-border-radius: .4rem;
+        -o-border-radius: .4rem;
+        cursor: pointer;
+        border: .2rem solid #d0011b;
+}
+    .relate__shop__sesult__search__items__body__box__visit--icon {
+        display: none;
+    }
+
+    .relate__shop__sesult__search__items__body__box__visit--text {
+        color: #d0011b;
+        font-size: 1.4rem;
+        font-weight: 100;
+        line-height: auto;
+
+    }
+    .relate__shop__sesult__search__items__footer__items--price {
+        font-size: 1.4rem;
+        line-height: auto;
+    }
+}

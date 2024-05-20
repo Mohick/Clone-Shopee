@@ -1,0 +1,15 @@
+@media screen and (min-width:1000px){
+    .result__search__items__page--layout {
+        display: flex;
+        gap: 1rem;
+    }
+    .result__search__items__page--filter {
+        flex: 1;
+    }
+    .result__search__items__page--items {
+        flex: 5;
+    }
+    .result__search__items__page--filter {
+        display: block;
+    }
+}

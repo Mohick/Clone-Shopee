@@ -9,7 +9,6 @@ import IconStore from "../../Container  Component  SVG ICON/Icon Store";
 function InputSearchHeader() {
   const [keySearch, setKeySearch] = useState("");
   const [items, setItems] = useState([]);
-  const history = useNavigate();
   const navigate = useNavigate();
 
   const handleKeyPress = (event) => {

@@ -218,7 +218,7 @@ function ModalFilterResultSearch() {
                   </span>
                 </div>
               </div>
-              <div className="modal__filter__result__search__body__items--btn--show--more">
+              {/* <div className="modal__filter__result__search__body__items--btn--show--more">
                 <span className="modal__filter__result__search__body__items__btn__show--text">
                   Show
                 </span>
@@ -226,7 +226,7 @@ function ModalFilterResultSearch() {
                   More
                 </span>
                 <Icons.arrowAngleDown className="modal__filter__result__search__body__items__btn__show--icon--down" />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="modal__filter__result__search__body--items">
