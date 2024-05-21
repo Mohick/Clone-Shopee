@@ -1,6 +1,7 @@
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
+import './Items Need Search Max-width 600px.css'
 import "./Items Need Search Min-width 1000px.css";
-
+import RenderItemsNeedSearch from "./Render Items/Render Items";
 const ItemsNeedSearch = function () {
   return (
     <div id="result__search__items__page__items__need__search">
@@ -54,7 +55,9 @@ const ItemsNeedSearch = function () {
             </div>
           </div>
         </div>
-        <div></div>
+        <div className="result__search__items__page__items__need__search__body--items">
+          <RenderItemsNeedSearch url={"https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c"}/>
+        </div>
       </div>
     </div>
   );

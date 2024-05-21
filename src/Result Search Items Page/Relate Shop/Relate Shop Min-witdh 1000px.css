@@ -68,4 +68,7 @@
         font-size: 1.4rem;
         line-height: auto;
     }
+    .result__search__items__page__items__need__search__body--items {
+        grid-template-columns: repeat(4,1fr) !important;
+    }
 }

@@ -1,4 +1,4 @@
-@media screen and (min-width:1000px){
+@media screen and (min-width:1300px){
     .result__search__items__page--layout {
         display: flex;
         gap: 1rem;
@@ -13,6 +13,6 @@
         display: block;
     }
     .result__search__items__page__items__need__search__body--items {
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(5,1fr) !important;
     }
 }

@@ -2,6 +2,7 @@ import FilterResultSearchItems from "./Filter Result Search Items/Filter Result 
 import ItemsNeedSearch from "./Items Need Search/Items Need Search";
 import RelateShopResultSearchItems from "./Relate Shop/Relate Shop";
 import "./Result Search Items Page Max-width 600px.css";
+
 import './Result Search Items Page Min-width 1000px.css'
 const ResultSearchItemsPage = () => {
   return (
