@@ -13,7 +13,7 @@ function InputSearchHeader() {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      navigate(`/search/${keySearch}`);
+      navigate(`/search?search=${keySearch}&sortby=relevance`);
     }
   };
 
@@ -51,8 +51,8 @@ function InputSearchHeader() {
       <Link
         to={
           keySearch.trim().length > 0
-            ? `/search/${keySearch}`
-            : "/search/Siêu sale hàng Nhật"
+            ? `/search?search=${keySearch}&sortby=relevance`
+            : "/search?search=Siêu sale hàng Nhật&sortby=relevance"
         }
         className="input__search__header__box__search--svg"
       >
@@ -63,7 +63,7 @@ function InputSearchHeader() {
           <>
             <Link
               className="input__search__header__box__search__dropDown--option--store"
-              to={`/search/${keySearch}`}
+              to={`/search?search=${item.name}&sortby=relevance`}
             >
               <div className="input__search__header__box__search__dropDown__option__store--icon">
                 <IconStore
@@ -84,7 +84,7 @@ function InputSearchHeader() {
               return (
                 <Link
                   className="input__search__header__box__search__dropDown--option"
-                  to={`/search/${item.name}`}
+                  to={`/search?search=${item.name}&sortby=relevance`}
                 >
                   <div className="input__search__header__box__search__dropDown__event--title">
                     {item.name}
@@ -97,7 +97,7 @@ function InputSearchHeader() {
           <>
             <Link
               className="input__search__header__box__search__dropDown--event"
-              to={"/search/Siêu sale hàng Nhật"}
+              to={"/search?search=${item.name}&sortby=relevance"}
             >
               <div className="input__search__header__box__search__dropDown__event--title">
                 Siêu sale hàng Nhật

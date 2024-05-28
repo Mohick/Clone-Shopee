@@ -1,17 +1,33 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import css from "./Render Items.module.css";
+import { useLocation } from "react-router";
 const RenderItemsNeedSearch = ({ url }) => {
   const [items, setItems] = useState([]);
-
+  const useQuery = function () {
+    return new URLSearchParams(useLocation().search);
+  };
+  const query = useQuery();
+  const byCategory = query.get("byCategory");
   useEffect(() => {
     const getDate = setTimeout(() => {
       axios
         .get(url)
         .then((response) => {
           const data = response.data;
-          console.log(data);
-          setItems(data);
+          const arrayNameByCategory = byCategory.split("_");
+
+          const filDate = data.filter((item) => {
+            const kind = item.kind
+              .toLocaleLowerCase()
+              .trim()
+              .replace(/\s+/g, "")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "");
+
+            return arrayNameByCategory.includes(kind);
+          });
+          setItems(filDate);
         })
         .catch((error) => {
           console.log(error);
@@ -101,9 +117,9 @@ const RenderItemsNeedSearch = ({ url }) => {
               <img src="/Car Ship/car_ship.svg" alt="" /> {item.shipTime} Days
             </div>
             <div className={css.items__body__location__shop}>
-              <img src="/location/location.svg" alt="" /> 
+              <img src="/location/location.svg" alt="" />
               <span className={css.items__body__location__shop__name}>
-              {item.ShippedFrom}
+                {item.ShippedFrom}
               </span>
             </div>
           </div>

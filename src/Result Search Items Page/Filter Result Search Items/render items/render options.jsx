@@ -1,8 +1,19 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router";
+import HandleFilterNavigation from "../handle filter navigation/handle filter navigation";
 
 function RenderFilterOptionsResultSearch() {
   const [items, setItems] = useState([]);
+  const navigation = useNavigate();
+  let UseQuery;
+  useCallback(
+    (UseQuery = () => {
+      return new URLSearchParams(useLocation().search);
+    }),
+    []
+  );
+  const query = UseQuery();
   useEffect(() => {
     const getDate = setTimeout(() => {
       axios
@@ -45,10 +56,21 @@ function RenderFilterOptionsResultSearch() {
   return (
     <>
       <div className="result__search__items__page__filter__body__items--options">
-        {items[0]?.map((item,index) => {
+        {items[0]?.map((item, index) => {
           return (
-            <div key={index} className="result__search__items__page__filter__body__items__options--choose">
+            <div
+              key={index}
+              className="result__search__items__page__filter__body__items__options--choose"
+            >
               <input
+                onClick={() =>
+                  HandleFilterNavigation.multipleOptions(
+                    navigation,
+                    item.kind,
+                    query,
+                    "byCategory"
+                  )
+                }
                 className="result__search__items__page__filter__body__items__options__choose--check"
                 type="checkbox"
                 name={item.kind}
@@ -61,9 +83,20 @@ function RenderFilterOptionsResultSearch() {
         })}
       </div>
       <div className="result__search__items__page__filter__body__items--options--more">
-        {items[1]?.map((item,index) => {
+        {items[1]?.map((item, index) => {
           return (
-            <div key={index} className="result__search__items__page__filter__body__items__options--choose">
+            <div
+              key={index}
+              onClick={() =>
+                HandleFilterNavigation.multipleOptions(
+                  navigation,
+                  item.kind,
+                  query,
+                  "byCategory"
+                )
+              }
+              className="result__search__items__page__filter__body__items__options--choose"
+            >
               <input
                 className="result__search__items__page__filter__body__items__options__choose--check"
                 type="checkbox"

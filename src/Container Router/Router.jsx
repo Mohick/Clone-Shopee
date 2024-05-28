@@ -29,7 +29,7 @@ function RouterPage() {
         }
       />
       <Route
-        path="/search/:title"
+        path="/search"
         element={
           <Suspense loading="....">
             <HeaderPCMainPage />

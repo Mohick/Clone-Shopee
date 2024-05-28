@@ -1,0 +1,6 @@
+@media screen and (min-width:900px){
+    .result__search__items__page__items__need__search__body--items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+}

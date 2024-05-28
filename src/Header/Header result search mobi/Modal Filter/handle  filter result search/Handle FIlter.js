@@ -27,7 +27,7 @@ class HandleFilterResultSearch {
       modalFilter?.classList.remove("modal__filter__result__search--active");
     }, 299);
   }
-  createClassChooseForOptions(tag) {
+  createClassChooseForOptions(tag, name) {
     switch (true) {
       case !tag.getAttribute("check"):
         const tagIconSVG = `  <svg
@@ -52,7 +52,7 @@ class HandleFilterResultSearch {
         );
         createDiv.appendChild(createDivContainerIcon);
         tag.appendChild(createDiv);
-        tag.setAttribute("check", true);
+        tag.setAttribute("check", name);
         break;
       case !!tag.getAttribute("check"):
         const divCreate = tag.querySelector(
@@ -100,7 +100,7 @@ class HandleFilterResultSearch {
         break;
     }
   }
-  createClassChooseForRating(tag) {
+  createClassChooseForRating(tag, name) {
     const itemsHasChoose = tag.parentElement.querySelectorAll(
       ".modal__filter__result__search__body__items__options--choose"
     );
@@ -133,7 +133,7 @@ class HandleFilterResultSearch {
         );
         createDiv.appendChild(createDivContainerIcon);
         tag.appendChild(createDiv);
-        tag.setAttribute("check", true);
+        tag.setAttribute("check", name);
         break;
       case !!tag.getAttribute("check"):
         const divCreate = tag.querySelector(
@@ -197,6 +197,120 @@ class HandleFilterResultSearch {
         inputValueMax.value = "";
         break;
     }
+  }
+  handleBtnApplyFilter(navigation, query) {
+    const checkAll = document.querySelectorAll(
+      ".modal__filter__result__search__body__items--options"
+    );
+    const filterAllItemsHadChecked = [...checkAll].filter((item) => {
+      return item.getAttribute("check");
+    });
+    const bar = "_".trim();
+    const sortby = query.get("sortby");
+    const mapSaveName = new Map();
+    const inputMin = document.querySelector(
+      ".modal__filter__result__search__body__items__body__search__price--min"
+    );
+    const inputMax = document.querySelector(
+      ".modal__filter__result__search__body__items__body__search__price--max"
+    );
+
+    filterAllItemsHadChecked.map((item) => {
+      if (!!mapSaveName.get(item.getAttribute("title"))) {
+        const multipleName = mapSaveName
+          .get(item.getAttribute("title"))
+          .name.push(
+            item
+              .getAttribute("name")
+              .toLocaleLowerCase()
+              .trim()
+              .replace(/\s+/g, "")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") + bar
+          );
+        const conFigArrToString = mapSaveName
+          .get(item.getAttribute("title"))
+          .name.join("");
+        const configStrToArr = [conFigArrToString];
+        mapSaveName.get(item.getAttribute("title")).name = configStrToArr;
+        mapSaveName.set(
+          item.getAttribute("title"),
+          mapSaveName.get(item.getAttribute("title"))
+        );
+      } else {
+        mapSaveName.set(item.getAttribute("title"), {
+          name: [
+            item
+              .getAttribute("name")
+              .toLocaleLowerCase()
+              .trim()
+              .replace(/\s+/g, "")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") + bar,
+          ],
+        });
+      }
+    });
+    const inputValueMin = inputMin.value.trim();
+    const inputValueMax = inputMax.value.trim();
+    let price;
+    if (inputValueMin && inputValueMax) {
+      price = `&price=${inputValueMin}${bar}${inputValueMax}`.trim();
+    }
+    const configMapToObject = Object.fromEntries(mapSaveName);
+    const getKeyFromOb = Object.keys(configMapToObject);
+    const queryNavigation = getKeyFromOb.map((keyName) => {
+      return `&${keyName}=${configMapToObject[keyName].name.join("")}`;
+    });
+    const querySearch = query.get("search");
+    const textNavigation = !!price
+      ? "?search=" + querySearch+`&sortby=${sortby}` + queryNavigation.join("") + price
+      : "?search=" + querySearch+`&sortby=${sortby}` + queryNavigation.join("");
+    navigation(textNavigation);
+  }
+  resetOptions(navigation, query, clearOptions) {
+    const checkAll = document.querySelectorAll(
+      ".modal__filter__result__search__body__items--options"
+    );
+    const filterAllItemsHadChecked = [...checkAll].filter((item) => {
+      return item.getAttribute("check");
+    });
+    [...filterAllItemsHadChecked].map((item) => {
+      clearOptions(item);
+    });
+    const getSearch = query.get("search");
+    const inputMin = document.querySelector(
+      ".modal__filter__result__search__body__items__body__search__price--min"
+    );
+    const inputMax = document.querySelector(
+      ".modal__filter__result__search__body__items__body__search__price--max"
+    );
+    inputMin.value = "";
+    inputMax.value = "";
+    const sortby = query.get("sortby");
+    const textNavigation = `?search=${getSearch}&sortby=${sortby}`;
+    navigation(textNavigation);
+  }
+  autoSelectOptions(autoPickOptions) {
+    const checkAll = document.querySelectorAll(
+      ".modal__filter__result__search__body__items--options"
+    );
+    const filterAllItemsHadSameWithQuery = [...checkAll].filter((item) => {
+
+      return window.location.search.includes(
+        item
+          .getAttribute("name")
+          .toLocaleLowerCase()
+          .trim()
+          .replace(/\s+/g, "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+      );
+    });
+    [...filterAllItemsHadSameWithQuery].map((item) => {
+      autoPickOptions(item, item.getAttribute("name"));
+    });
+    
   }
 }
 

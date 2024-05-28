@@ -1,4 +1,7 @@
 @media screen and (min-width:1000px){
+    #result__search__items__page {
+        padding-top: 2rem;
+    }
     .result__search__items__page--layout {
         display: flex;
         gap: 1rem;
@@ -12,7 +15,5 @@
     .result__search__items__page--filter {
         display: block;
     }
-    .result__search__items__page__items__need__search__body--items {
-        grid-template-columns: repeat(4,1fr);
-    }
+  
 }

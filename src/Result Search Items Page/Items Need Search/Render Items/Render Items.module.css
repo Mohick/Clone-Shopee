@@ -1,5 +1,15 @@
 .items {
   background: #fff;
+  transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transform: translateY(.3rem);
+  -webkit-transform: translateY(.3rem);
+  -moz-transform: translateY(.3rem);
+  -ms-transform: translateY(.3rem);
+  -o-transform: translateY(.3rem);
 }
 .items__header {
   display: block;

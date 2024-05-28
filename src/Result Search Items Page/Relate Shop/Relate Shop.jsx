@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import "./Relate Shop Max-witdh 400px.css";
-import "./Relate Shop Min-witdh 400px.css";
-import './Relate Shop Min-width 800px.css'
+// import "./Relate Shop Min-witdh 400px.css";
 import "./Relate Shop Min-witdh 1000px.css";
-import './Relate Shop Min-width 1300px.css'
+
 import axios from "axios";
 
 const RelateShopResultSearchItems = function () {
