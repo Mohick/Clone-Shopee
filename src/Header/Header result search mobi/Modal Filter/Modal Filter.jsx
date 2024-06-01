@@ -1,64 +1,50 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Icons } from "../../../Container  Component  SVG ICON/Manage Icon";
 import "./Modal Filter Max-width 600px.css";
 import axios from "axios";
-import {
-  useLocation,
-  useNavigate,
-  useNavigation,
-  useParams,
-} from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import HandleFIlterResultSearch from "./handle  filter result search/Handle FIlter";
 import HandleFIlter from "./handle  filter result search/Handle FIlter";
-function ModalFilterResultSearch() {
+function ModalFilterResultSearch({ data }) {
   const [items, setItems] = useState([]);
   const useQuery = function () {
     return new URLSearchParams(useLocation().search);
   };
   const navigation = useNavigate();
   const query = useQuery();
-  
+
   useEffect(() => {
     const getDate = setTimeout(() => {
-      HandleFIlter.autoSelectOptions(HandleFIlter.createClassChooseForOptions)
-      axios
-        .get("https://run.mocky.io/v3/1a0f57fa-e361-4b7f-8c4f-74dfe3d67a39")
-        .then((response) => {
-          const data = response.data;
-
-          let setDate = new Map();
-          data.forEach((item) => {
-            const getKind = ("" + item.kind).trim().toLowerCase();
-            if (setDate.get(getKind)?.kind != getKind) {
-              setDate.set(getKind, { kind: getKind, length: 1 });
-            } else {
-              if (setDate.get(getKind)?.length > 0) {
-                setDate.set(setDate.get(getKind), {
-                  kind: setDate.get(getKind).kind,
-                  length: ++setDate.get(getKind).length,
-                });
-              }
-            }
-          });
-          const configValueMapToArray = Object.values(
-            Object.fromEntries(setDate)
-          );
-
-          if (configValueMapToArray.length > 3) {
-            setItems([
-              configValueMapToArray.slice(0, 4),
-              configValueMapToArray.slice(4, configValueMapToArray.length - 1),
-            ]);
-          } else {
-            setItems([configValueMapToArray]);
+      let setDate = new Map();
+      data.forEach((item) => {
+        const getKind = ("" + item.kind).trim().toLowerCase();
+        if (setDate.get(getKind)?.kind != getKind) {
+          setDate.set(getKind, { kind: getKind, length: 1 });
+        } else {
+          if (setDate.get(getKind)?.length > 0) {
+            setDate.set(setDate.get(getKind), {
+              kind: setDate.get(getKind).kind,
+              length: ++setDate.get(getKind).length,
+            });
           }
-        });
+        }
+      });
+      const configValueMapToArray = Object.values(Object.fromEntries(setDate));
+
+      if (configValueMapToArray.length > 3) {
+        setItems([
+          configValueMapToArray.slice(0, 4),
+          configValueMapToArray.slice(4, configValueMapToArray.length - 1),
+        ]);
+      } else {
+        setItems([configValueMapToArray]);
+      }
     }, 0);
     return () => {
       clearTimeout(getDate);
     };
   }, []);
-  return (
+  return items.length == 0 ? undefined : (
     <div
       id="modal__filter__result__search"
       onClick={HandleFIlterResultSearch.closeModalFilter}
@@ -153,7 +139,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="01"
                   name="TP.HCM"
                 >
@@ -166,7 +152,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="02"
                   name="dong nai"
                 >
@@ -179,7 +165,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="03"
                   name="Ha Noi"
                 >
@@ -192,7 +178,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="04"
                   name="oversea"
                 >
@@ -205,7 +191,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="05"
                   name="Dong Thap"
                 >
@@ -218,7 +204,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="06"
                   name="Phu Tho"
                 >
@@ -231,7 +217,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="07"
                   name="Quang Ninh"
                 >
@@ -244,7 +230,7 @@ function ModalFilterResultSearch() {
                   onClick={(e) =>
                     HandleFIlter.createClassChooseForOptions(e.target)
                   }
-                  title="shippedFrom"
+                  title="shipFrom"
                   data-code="08"
                   name="Thanh Hoa"
                 >
@@ -577,10 +563,15 @@ function ModalFilterResultSearch() {
           </div> */}
         </div>
         <div className="modal__filter__result__search--footer">
-          <div className="modal__filter__result__search__footer--reset" 
-           onClick={() => {
-            HandleFIlter.resetOptions(navigation, query,HandleFIlter.createClassChooseForRating);
-          }}
+          <div
+            className="modal__filter__result__search__footer--reset"
+            onClick={() => {
+              HandleFIlter.resetOptions(
+                navigation,
+                query,
+                HandleFIlter.createClassChooseForRating
+              );
+            }}
           >
             Reset
           </div>

@@ -15,5 +15,11 @@
     .result__search__items__page--filter {
         display: block;
     }
+    .result__search__items__page__items--length {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
   
 }

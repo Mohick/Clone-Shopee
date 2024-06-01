@@ -8,16 +8,19 @@ import "./Items Need Search Min-width 1000px.css";
 import "./Items Need Search Min-width 1300px.css";
 import RenderItemsNeedSearch from "./Render Items/Render Items";
 import { useLocation, useNavigate } from "react-router";
-import HandleNavigationResultItemsSortby from "./handle navigation/handle navigation ";
+import HandleNavigationResultItems from "./handle navigation/handle navigation ";
 
-const ItemsNeedSearch = function () {
+const ItemsNeedSearch = function ({ data }) {
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
+  const maximumShowItems = 40;
   const navigation = useNavigate();
   const query = useQuery();
   const sortby = query.get("sortby");
-
+  const page = query.get("pages");
+  const maxSteps = Math.floor(data.length / maximumShowItems) + 1;
+  const minSteps = 1;
   return (
     <div id="result__search__items__page__items__need__search">
       <div className="result__search__items__page__items__need__search--header">
@@ -36,7 +39,7 @@ const ItemsNeedSearch = function () {
             </div>
             <div
               onClick={(e) => {
-                HandleNavigationResultItemsSortby.rename({
+                HandleNavigationResultItems.rename({
                   tag: e.target,
                   query: sortby,
                   navigation: navigation,
@@ -49,7 +52,7 @@ const ItemsNeedSearch = function () {
             </div>
             <div
               onClick={(e) => {
-                HandleNavigationResultItemsSortby.rename({
+                HandleNavigationResultItems.rename({
                   tag: e.target,
                   query: sortby,
                   navigation: navigation,
@@ -62,7 +65,7 @@ const ItemsNeedSearch = function () {
             </div>
             <div
               onClick={(e) => {
-                HandleNavigationResultItemsSortby.rename({
+                HandleNavigationResultItems.rename({
                   tag: e.target,
                   query: sortby,
                   navigation: navigation,
@@ -88,7 +91,7 @@ const ItemsNeedSearch = function () {
                 <div
                   className="result__search__items__page__items__need__search__body__navigations__options__price__dropdown--items"
                   onClick={(e) => {
-                    HandleNavigationResultItemsSortby.price({
+                    HandleNavigationResultItems.price({
                       tag: e.target,
                       query: sortby,
                       navigation: navigation,
@@ -101,7 +104,7 @@ const ItemsNeedSearch = function () {
                 <div
                   className="result__search__items__page__items__need__search__body__navigations__options__price__dropdown--items"
                   onClick={(e) => {
-                    HandleNavigationResultItemsSortby.price({
+                    HandleNavigationResultItems.price({
                       tag: e.target,
                       query: sortby,
                       navigation: navigation,
@@ -123,23 +126,45 @@ const ItemsNeedSearch = function () {
                 /
               </span>
               <span className="result__search__items__page__items__need__search__body__locaiton__options--length">
-                17
+                {maxSteps}
               </span>
             </div>
             <div className="result__search__items__page__items__need__search__body__locaiton--btn">
-              <div className="result__search__items__page__items__need__search__body__locaiton__btn--prev">
+              <div
+                className="result__search__items__page__items__need__search__body__locaiton__btn--prev"
+                onClick={(e) => {
+                  HandleNavigationResultItems.btnPage({
+                    btn: "left",
+                    navigation: navigation,
+                    query: page,
+                    minSteps,
+                    tag: e.target,
+                  });
+                }}
+                maxStep={maxSteps}
+              >
                 <Icons.arrowAngleLeft className="result__search__items__page__items__need__search__body__locaiton__btn__prev--icon" />
               </div>
-              <div className="result__search__items__page__items__need__search__body__locaiton__btn--next result__search__items__page__items__need__search__body__locaiton__btn__next--active">
-                <Icons.arrowAngleRight className="result__search__items__page__items__need__search__body__locaiton__btn__next--icon result__search__items__page__items__need__search__body__locaiton__btn__next__icon--active" />
+              <div
+                onClick={(e) => {
+                  HandleNavigationResultItems.btnPage({
+                    btn: "right",
+                    navigation: navigation,
+                    query: page,
+                    maxSteps,
+                    tag: e.target,
+                  });
+                }}
+                maxStep={maxSteps}
+                className="result__search__items__page__items__need__search__body__locaiton__btn--next result__search__items__page__items__need__search__body__locaiton__btn--active"
+              >
+                <Icons.arrowAngleRight className="result__search__items__page__items__need__search__body__locaiton__btn__next--icon result__search__items__page__items__need__search__body__locaiton__btn__icon--active" />
               </div>
             </div>
           </div>
         </div>
         <div className="result__search__items__page__items__need__search__body--items">
-          <RenderItemsNeedSearch
-            url={"https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c"}
-          />
+          <RenderItemsNeedSearch data={data} />
         </div>
       </div>
     </div>

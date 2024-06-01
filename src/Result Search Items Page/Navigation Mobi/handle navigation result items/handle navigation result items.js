@@ -1,7 +1,7 @@
 
 import css from "../Navigation Mobi.module.scss";
 
-class HandleNavigationResultItems {
+class HandleNavigationResultItemsMobi {
 
     slideRowBarNav(index) {
         let tagSlideBar = document.querySelector(`.${css.navigation__header__bar}`)
@@ -20,4 +20,4 @@ class HandleNavigationResultItems {
     }
 }
 
-export default new HandleNavigationResultItems
+export default new HandleNavigationResultItemsMobi()

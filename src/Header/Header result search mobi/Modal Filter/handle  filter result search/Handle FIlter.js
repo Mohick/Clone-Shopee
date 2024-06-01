@@ -225,6 +225,7 @@ class HandleFilterResultSearch {
               .toLocaleLowerCase()
               .trim()
               .replace(/\s+/g, "")
+              .replace(/đ/g, "d")
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, "") + bar
           );
@@ -245,6 +246,7 @@ class HandleFilterResultSearch {
               .toLocaleLowerCase()
               .trim()
               .replace(/\s+/g, "")
+              .replace(/đ/g, "d")
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, "") + bar,
           ],
@@ -264,8 +266,15 @@ class HandleFilterResultSearch {
     });
     const querySearch = query.get("search");
     const textNavigation = !!price
-      ? "?search=" + querySearch+`&sortby=${sortby}` + queryNavigation.join("") + price
-      : "?search=" + querySearch+`&sortby=${sortby}` + queryNavigation.join("");
+      ? "?search=" +
+        querySearch +
+        `&sortby=${sortby}` +
+        queryNavigation.join("") +
+        price
+      : "?search=" +
+        querySearch +
+        `&sortby=${sortby}` +
+        queryNavigation.join("");
     navigation(textNavigation);
   }
   resetOptions(navigation, query, clearOptions) {
@@ -292,17 +301,18 @@ class HandleFilterResultSearch {
     navigation(textNavigation);
   }
   autoSelectOptions(autoPickOptions) {
+    console.log(3);
     const checkAll = document.querySelectorAll(
       ".modal__filter__result__search__body__items--options"
     );
     const filterAllItemsHadSameWithQuery = [...checkAll].filter((item) => {
-
       return window.location.search.includes(
         item
           .getAttribute("name")
           .toLocaleLowerCase()
           .trim()
           .replace(/\s+/g, "")
+          .replace(/đ/g, "d")
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
       );
@@ -310,7 +320,6 @@ class HandleFilterResultSearch {
     [...filterAllItemsHadSameWithQuery].map((item) => {
       autoPickOptions(item, item.getAttribute("name"));
     });
-    
   }
 }
 

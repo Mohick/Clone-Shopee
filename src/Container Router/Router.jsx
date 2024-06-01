@@ -35,6 +35,8 @@ function RouterPage() {
             <HeaderPCMainPage />
             <HeaderResultSearchMobi/>
             <ResultSearchItemsPage/>
+            <FooterCooperate/>
+            
           </Suspense>
         }
       />

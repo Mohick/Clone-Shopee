@@ -9,6 +9,10 @@ class HandleFilterNavigation {
         .reduce((begin, name) => {
           return begin + name.toLocaleLowerCase();
         }, "")
+        .toLocaleLowerCase()
+        .trim()
+        .replace(/\s+/g, "")
+        .replace(/đ/g, "d")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "") + bar.trim();
     const checkQuery = window.location.search.includes(
@@ -63,7 +67,8 @@ class HandleFilterNavigation {
     );
     const nameTitle = title;
     const bar = "_";
-    switch (true) {
+ 
+    switch (!!inputMax.value && !!inputMin.value) {
       case Number(inputMin.value) > Number(inputMax.value):
         alertInvalid.classList.add(
           "result__search__items__page__filter__body__items__alert--opacity1"
@@ -73,6 +78,7 @@ class HandleFilterNavigation {
         alertInvalid.classList.remove(
           "result__search__items__page__filter__body__items__alert--opacity1"
         );
+ 
         const queryCurrent = !!btnSumitPrice.getAttribute("price")
           ? window.location.search.replace(
               `${btnSumitPrice.getAttribute("price")}`,
@@ -88,6 +94,9 @@ class HandleFilterNavigation {
         navigation(queryCurrent);
         break;
       default:
+        alertInvalid.classList.add(
+          "result__search__items__page__filter__body__items__alert--opacity1"
+        );
         break;
     }
   };
@@ -103,19 +112,25 @@ class HandleFilterNavigation {
           `${titleName}=${star}`
         )
       );
-      boxStar.setAttribute(titleName, `${star}`);
-      console.log(boxStar.getAttribute(titleName));
+      boxStar.setAttribute(titleName, `${star}`); 
+     
     } else {
       navigation(`${query}&${titleName}=${star}`);
       boxStar.setAttribute(titleName, `${star}`);
     }
   }
   openShowMorePC(tag) {
-    const tagParent = tag.parentElement
-    const boxContainerItemNeedShow = tagParent.querySelector('.result__search__items__page__filter__body__items--options--more')
+    const tagParent = tag.parentElement;
+    const boxContainerItemNeedShow = tagParent.querySelector(
+      ".result__search__items__page__filter__body__items--options--more"
+    );
 
-    boxContainerItemNeedShow.classList.add('result__search__items__page__filter__body__items__options__more--height--auto')
-    tag.classList.add('result__search__items__page__filter__body__items__btn__show__more--hidden')
+    boxContainerItemNeedShow.classList.add(
+      "result__search__items__page__filter__body__items__options__more--height--auto"
+    );
+    tag.classList.add(
+      "result__search__items__page__filter__body__items__btn__show__more--hidden"
+    );
   }
 }
 

@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router";
-import handleNavigationResultItems from "./handle navigation result items/handle navigation result items";
+import HandleNavigationResultItemsMobi from './handle navigation result items/handle navigation result items';
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import css from "./Navigation Mobi.module.scss";
 import css1000 from './Navigation Mobi min-width 1000px.module.scss'
@@ -21,8 +21,8 @@ const NavigationResultItems = () => {
             css.navigation__header__items__bar
           )}
           onClick={() => {
-            handleNavigationResultItems.slideRowBarNav(0);
-            handleNavigationResultItems.handleLinksNavigation({
+            HandleNavigationResultItemsMobi.slideRowBarNav(0);
+            HandleNavigationResultItemsMobi.handleLinksNavigation({
               navigation,
               text: "relevance",
             });
@@ -45,8 +45,8 @@ const NavigationResultItems = () => {
             css.navigation__header__items__bar
           )}
           onClick={() => {
-            handleNavigationResultItems.slideRowBarNav(1);
-            handleNavigationResultItems.handleLinksNavigation({
+            HandleNavigationResultItemsMobi.slideRowBarNav(1);
+            HandleNavigationResultItemsMobi.handleLinksNavigation({
               navigation,
               text: "latest",
             });
@@ -69,8 +69,8 @@ const NavigationResultItems = () => {
             css.navigation__header__items__bar
           )}
           onClick={() => {
-            handleNavigationResultItems.slideRowBarNav(2);
-            handleNavigationResultItems.handleLinksNavigation({
+            HandleNavigationResultItemsMobi.slideRowBarNav(2);
+            HandleNavigationResultItemsMobi.handleLinksNavigation({
               navigation,
               text: "topSales",
             });
@@ -90,8 +90,8 @@ const NavigationResultItems = () => {
         <div
           className={clsx(css.navigation__header__items)}
           onClick={() => {
-            handleNavigationResultItems.slideRowBarNav(3);
-            handleNavigationResultItems.handleLinksNavigation({
+            HandleNavigationResultItemsMobi.slideRowBarNav(3);
+            HandleNavigationResultItemsMobi.handleLinksNavigation({
               navigation,
               text: "price",
             });

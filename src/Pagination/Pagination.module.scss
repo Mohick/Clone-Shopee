@@ -1,0 +1,32 @@
+#pagination {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .btn__arrow {
+        padding: 1rem;
+        cursor: pointer;
+
+        .arrow__icon {
+            width: 2rem;
+            height: 2rem;
+            fill: #939393;
+        }
+
+        &.disabled {
+            cursor: default;
+        }
+
+        &:hover:not(.disabled) {
+            .arrow__icon {
+                fill: #ee4d2d;
+            }
+        }
+
+
+    }
+    .lengthPage {
+        display: flex;
+        gap: 2rem;   
+    }
+}

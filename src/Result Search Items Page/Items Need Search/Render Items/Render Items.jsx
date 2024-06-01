@@ -2,42 +2,97 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import css from "./Render Items.module.css";
 import { useLocation } from "react-router";
-const RenderItemsNeedSearch = ({ url }) => {
+const RenderItemsNeedSearch = ({ data }) => {
   const [items, setItems] = useState([]);
   const useQuery = function () {
     return new URLSearchParams(useLocation().search);
   };
   const query = useQuery();
   const byCategory = query.get("byCategory");
+  const shipFrom = query.get("shipFrom");
+  const shippingOptions = query.get("shippingOptions");
+  const brands = query.get("brands");
+  const price = query.get("price");
+  const rating = query.get("rating");
+  const pages = query.get("pages");
+
   useEffect(() => {
     const getDate = setTimeout(() => {
-      axios
-        .get(url)
-        .then((response) => {
-          const data = response.data;
-          const arrayNameByCategory = byCategory.split("_");
+      try {
+        const arrayNameByCategory = byCategory?.split("_");
+        const arrayNameByShip = shipFrom?.split("_");
+        const arrayNameByShipOptions = shippingOptions?.split("_");
+        const arrayNameByBrand = brands?.split("_");
+        const arrayNamePrice = price?.split("_");
+        const rated = Number(rating);
 
-          const filDate = data.filter((item) => {
-            const kind = item.kind
-              .toLocaleLowerCase()
-              .trim()
-              .replace(/\s+/g, "")
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "");
+        const filterDataHaveOnQuery = data.filter((item) => {
+          const kind = item.kind
+            .toLocaleLowerCase()
+            .trim()
+            .replace(/\s+/g, "")
+            .replace(/đ/g, "d")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          const ship = item.ShippedFrom.toLocaleLowerCase()
+            .trim()
+            .replace(/\s+/g, "")
+            .replace(/đ/g, "d")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          const shipOptions = item.shippingOptions
+            .toLocaleLowerCase()
+            .trim()
+            .replace(/\s+/g, "")
+            .replace(/đ/g, "d")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          const brand = item.brands
+            .toLocaleLowerCase()
+            .trim()
+            .replace(/\s+/g, "")
+            .replace(/đ/g, "d")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+          const cost = Number(item.cost.replace(/\./g, ""));
+          const rate = Number(item.rate);
 
-            return arrayNameByCategory.includes(kind);
-          });
-          setItems(filDate);
-        })
-        .catch((error) => {
-          console.log(error);
+          return (
+            arrayNameByCategory?.includes(kind) ||
+            arrayNameByShip?.includes(ship) ||
+            arrayNameByShipOptions?.includes(shipOptions) ||
+            arrayNameByBrand?.includes(brand) ||
+            (arrayNamePrice?.length > 1
+              ? Number(arrayNamePrice[0]) < cost &&
+                Number(arrayNamePrice[1]) > cost
+              : false) ||
+            rate < rated
+          );
         });
+
+        const filterDataHavenOnQuery = data.filter((item) => {
+          return !filterDataHaveOnQuery.includes(item);
+        });
+
+        const dataNeedRender = filterDataHaveOnQuery.concat(
+          filterDataHavenOnQuery
+        );
+        const startSliceArr = Number(pages) <= 1  ? 0 : 40 * (Number(pages)- 1);
+        
+        const itemsNeedFilter = dataNeedRender.slice(
+          startSliceArr,
+          startSliceArr + 40
+        );
+        setItems(itemsNeedFilter);
+      } catch (error) {
+        console.error(error);
+      }
     }, 1000);
+
     return () => {
       clearTimeout(getDate);
     };
-  }, []);
-
+  }, [window.location.search]);
   return items.map((item, index) => {
     return (
       <div className={css.items} key={index}>

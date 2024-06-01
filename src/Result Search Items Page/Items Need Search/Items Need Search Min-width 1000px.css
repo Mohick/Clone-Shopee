@@ -147,6 +147,15 @@
     padding: 1rem;
     background: #fff;
     box-shadow: inset 0 0 0.1rem #0005;
+    position: relative;
+  }
+  .result__search__items__page__items__need__search__body__locaiton__btn--next::after,
+  .result__search__items__page__items__need__search__body__locaiton__btn--prev::after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
   }
   .result__search__items__page__items__need__search__body__locaiton__btn__prev--icon,
   .result__search__items__page__items__need__search__body__locaiton__btn__next--icon {
@@ -154,23 +163,24 @@
     height: 1.5rem;
     fill: #d0d0d0;
   }
-  .result__search__items__page__items__need__search__body__locaiton__btn__prev--active,
-  .result__search__items__page__items__need__search__body__locaiton__btn__next--active {
+
+  .result__search__items__page__items__need__search__body__locaiton__btn--active,
+  .result__search__items__page__items__need__search__body__locaiton__btn--active {
     cursor: pointer;
     background: #ededed;
   }
-  .result__search__items__page__items__need__search__body__locaiton__btn__prev--active:hover,
-  .result__search__items__page__items__need__search__body__locaiton__btn__next--active:hover {
+  .result__search__items__page__items__need__search__body__locaiton__btn--active:hover,
+  .result__search__items__page__items__need__search__body__locaiton__btn--active:hover {
     background: #fff;
   }
-  .result__search__items__page__items__need__search__body__locaiton__btn__prev__icon--active,
-  .result__search__items__page__items__need__search__body__locaiton__btn__next__icon--active {
+  .result__search__items__page__items__need__search__body__locaiton__btn__icon--active,
+  .result__search__items__page__items__need__search__body__locaiton__btn__icon--active {
     fill: #575757;
   }
 
-  .result__search__items__page__items__need__search__body__locaiton__btn__prev__icon--active:hover
+  .result__search__items__page__items__need__search__body__locaiton__btn__icon--active:hover
     > .result__search__items__page__items__need__search__body__locaiton__btn__prev--icon,
-  .result__search__items__page__items__need__search__body__locaiton__btn__next__icon--active:hover
+  .result__search__items__page__items__need__search__body__locaiton__btn__icon--active:hover
     > .result__search__items__page__items__need__search__body__locaiton__btn__next--icon {
     fill: #575757;
   }
