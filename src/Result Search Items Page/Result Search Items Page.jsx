@@ -9,9 +9,9 @@ import "./Result Search Items Page Max-width 600px.css";
 import "./Result Search Items Page Min-width 1000px.css";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination/Pagination";
-const ResultSearchItemsPage = () => {
+const ResultSearchItemsPage =  () => {
   const [items, setItems] = useState([]);
-  useEffect(() => {
+   useEffect(() => {
     const getData = setTimeout(() => {
       axios
         .get("https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c")
@@ -31,7 +31,7 @@ const ResultSearchItemsPage = () => {
         <NavigationResultItems />
 
         <div className="result__search__items__page--filter">
-          <FilterResultSearchItems />
+          <FilterResultSearchItems data={items} />
         </div>
         <div className="result__search__items__page--items">
           <RelateShopResultSearchItems />

@@ -120,7 +120,7 @@ const ItemsNeedSearch = function ({ data }) {
           <div className="result__search__items__page__items__need__search__body--locaiton">
             <div className="result__search__items__page__items__need__search__body__locaiton--options">
               <span className="result__search__items__page__items__need__search__body__locaiton__options--current">
-                1
+              {!!page?page:1}
               </span>
               <span className="result__search__items__page__items__need__search__body__locaiton__options--bar">
                 /

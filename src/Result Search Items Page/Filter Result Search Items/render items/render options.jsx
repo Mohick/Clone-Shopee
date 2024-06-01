@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import HandleFilterNavigation from "../handle filter navigation/handle filter navigation";
 
-function RenderFilterOptionsResultSearch() {
+ function RenderFilterOptionsResultSearch({data}) {
   const [items, setItems] = useState([]);
   const navigation = useNavigate();
   let UseQuery;
@@ -16,10 +16,7 @@ function RenderFilterOptionsResultSearch() {
   const query = UseQuery();
   useEffect(() => {
     const getDate = setTimeout(() => {
-      axios
-        .get("https://run.mocky.io/v3/1a0f57fa-e361-4b7f-8c4f-74dfe3d67a39")
-        .then((response) => {
-          const data = response.data;
+     
 
           let setDate = new Map();
           data.forEach((item) => {
@@ -47,7 +44,7 @@ function RenderFilterOptionsResultSearch() {
           } else {
             setItems([configValueMapToArray]);
           }
-        });
+        
     }, 0);
     return () => {
       clearTimeout(getDate);

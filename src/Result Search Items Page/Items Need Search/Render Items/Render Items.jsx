@@ -179,6 +179,9 @@ const RenderItemsNeedSearch = ({ data }) => {
             </div>
           </div>
         </div>
+        {/* <div className={css.find__similar}>
+        Find Similar
+        </div> */}
       </div>
     );
   });

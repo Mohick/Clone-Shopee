@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router";
 import { useCallback } from "react";
 import handleFilterNavigation from "./handle filter navigation/handle filter navigation";
 
-const FilterResultSearchItems = () => {
+const FilterResultSearchItems = ({data}) => {
   const navigation = useNavigate();
   let UseQuery;
   useCallback(
@@ -29,7 +29,7 @@ const FilterResultSearchItems = () => {
           <div className="result__search__items__page__filter__body__items--title">
             By category
           </div>
-          <RenderFilterOptionsResultSearch />
+          <RenderFilterOptionsResultSearch data={data} />
           <div className="result__search__items__page__filter__body__items--btn--show--more" onClick={(e)=>{
             handleFilterNavigation.openShowMorePC(e.target)
           }}>
