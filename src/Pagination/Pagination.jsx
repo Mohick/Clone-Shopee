@@ -11,11 +11,18 @@ const Pagination = ({length}) => {
   };
   const query = useQuery();
   const page = !!query.get("pages") ? query.get("pages") : 1;
- 
+  length = Math.floor(length / 40) + 1
   useEffect(() => {
     // call when pages has exchange
   }, [page]);
-  const url = !!query.get("pages") ? window.location.search.replace(`&pages=${page}`,"&pages=") : window.location.search.trim()+`&pages=`.trim()
+  let url ;
+
+  if(window.location.search.includes('&')) {
+    url = !!query.get("pages") ? window.location.search.replace(`&pages=${page}`,"&pages=") : window.location.search.trim()+`&pages=`.trim()
+  }else {
+   url =  !!query.get("pages") ? window.location.search.replace(`?pages=${page}`,"?pages=") : window.location.search.trim()+`?pages=`.trim()
+  }
+  console.log(url,window.location.search.includes('&'));
   return (
     <div id={clsx(css.pagination)}>
       <Link to={Number(page) <= 1 ? window.location.search : url+ (Number(page) - 1)}

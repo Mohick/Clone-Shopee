@@ -9,6 +9,7 @@ import IconPlayVideo from "../../Container  Component  SVG ICON/Icon Play Video"
 import IconSaliasingLeft from "../../Container  Component  SVG ICON/Icon Saliasing Right";
 import IconSaliasingRight from "../../Container  Component  SVG ICON/Icon Saliasing Left";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 function DailyDiscoverMainPage() {
   const [items, setItems] = useState([]);
@@ -193,9 +194,9 @@ function DailyDiscoverMainPage() {
             : undefined}
         </div>
         <div className="daily__discover__main__page__footer">
-          <div className="daily__discover__main__page__footer--title">
+          <Link to={"/daily?pages=2"} className="daily__discover__main__page__footer--title">
             See More
-          </div>
+          </Link>
         </div>
       </div>
     </div>

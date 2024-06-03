@@ -1,0 +1,10 @@
+@media screen and (min-width: 700px) {
+    .daily {
+    
+      .body {
+        grid-template-columns: repeat(3,1fr)!important;
+        padding: 0;
+      }
+    }
+  }
+  

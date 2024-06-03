@@ -63,7 +63,7 @@ function InputSearchHeader() {
           <>
             <Link
               className="input__search__header__box__search__dropDown--option--store"
-              to={`/search?search=${item.name}&sortby=relevance`}
+              to={`/search?search=${keySearch}&sortby=relevance`}
             >
               <div className="input__search__header__box__search__dropDown__option__store--icon">
                 <IconStore

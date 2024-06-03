@@ -1,0 +1,62 @@
+@media screen and (min-width: 1000px) {
+    .daily {
+        margin-top: 1rem;
+        display: block;
+        border-bottom: .1rem solid #ee4d2d;
+
+        .layout {
+            .header {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                box-shadow: 0 0 0;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 0;
+                    z-index: -1;
+                    border-bottom: .1rem dotted #111111;
+                }
+
+                .title {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    margin-bottom: 1rem;
+                    margin-top: 2rem;
+                    margin-bottom: 1rem;
+                    color: #fff;
+                    text-transform: uppercase;
+                    background: #ee4d2d;
+                    display: inline-block;
+                    padding: 1.8rem 2rem;
+                    border-radius: 2rem;
+                    -webkit-border-radius: 2rem;
+                    -moz-border-radius: 2rem;
+                    -ms-border-radius: 2rem;
+                    -o-border-radius: 2rem;
+                    flex: 0;
+                    text-wrap: nowrap;
+                }
+
+                .btn__back__page {
+                    display: none;
+                }
+            }
+
+            .body {
+                margin-bottom: 5rem;
+            }
+            
+            .footer {
+                margin-bottom: 8rem;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+}

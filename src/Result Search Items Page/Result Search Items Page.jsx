@@ -37,7 +37,7 @@ const ResultSearchItemsPage =  () => {
           <RelateShopResultSearchItems />
           <ItemsNeedSearch data={items} />
           <div className="result__search__items__page__items--length">
-            <Pagination length={Math.floor(items.length / 40) + 1} />
+            <Pagination length={items.length} />
           </div>
         </div>
       </div>

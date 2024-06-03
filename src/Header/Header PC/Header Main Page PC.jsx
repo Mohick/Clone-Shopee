@@ -216,9 +216,9 @@ function HeaderPCMainPage() {
           </div>
         </div>
         <div className="header__pc__main__page__box--logo-shopping-search">
-          <div className="header__pc__main__page--logo">
+          <Link to={'/'} className="header__pc__main__page--logo">
             <IconLogoShopee width={'100%'} height={'5rem'} fill={'#fff'}/>
-          </div>
+          </Link>
           <div className="header__pc__main__page__box--search">
               <InputSearchHeader />
             <div className="header__pc__main__page__box__search--last">

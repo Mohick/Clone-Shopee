@@ -6,3 +6,6 @@
 .result__search__items__page--filter {
     display: none;
 }
+.result__search__items__page__items--length {
+    display: none;
+}

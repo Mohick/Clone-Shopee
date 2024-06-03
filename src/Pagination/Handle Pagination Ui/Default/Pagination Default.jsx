@@ -11,7 +11,13 @@ const PaginationDefault = ({length}) => {
   const query = useQuery();
   const page = !!query.get("pages") ? query.get("pages") : 1 ;
 
-  const url = !!query.get("pages") ? window.location.search.replace(`&pages=${page}`,"&pages=") : window.location.search.trim()+`&pages=`.trim()
+  let url ;
+
+  if(window.location.search.includes('&')) {
+    url = !!query.get("pages") ? window.location.search.replace(`&pages=${page}`,"&pages=") : window.location.search.trim()+`&pages=`.trim()
+  }else {
+   url =  !!query.get("pages") ? window.location.search.replace(`?pages=${page}`,"?pages=") : window.location.search.trim()+`?pages=`.trim()
+  }
 
   return (
     <div id={clsx(css.box__selection)}>
