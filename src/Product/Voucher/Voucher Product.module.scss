@@ -1,0 +1,71 @@
+.voucher__product {
+    background: #fff;
+    margin-top: 1rem;
+
+    .layout {
+        display: flex;
+        align-items: center;
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #000;
+            flex: 1;
+            text-align: start;
+        }
+
+        .vouchers__outstanding {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: .5rem;
+
+            .vouchers__item {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #000;
+                flex: 1;
+                text-align: start;
+                position: relative;
+                padding: .1rem 2rem;
+                color: #ee4d2d;
+                overflow: hidden;
+                overflow-x: auto;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background: url("./frame_Voucher/frame_Voucher.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    right: 0;
+                    top: 0;
+                    background: url("./frame_Voucher/frame_Voucher.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transform: rotateY(180deg);
+                    -webkit-transform: rotateY(180deg);
+                    -moz-transform: rotateY(180deg);
+                    -ms-transform: rotateY(180deg);
+                    -o-transform: rotateY(180deg);
+                }
+            }
+
+            .icon {
+                width: 1rem;
+                fill: #0000008a;
+            }
+        }
+    }
+}

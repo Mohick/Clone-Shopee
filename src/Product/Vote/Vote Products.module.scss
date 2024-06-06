@@ -1,0 +1,52 @@
+.vote {
+    display: flex;
+    align-items: center;
+
+    .rating {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .star {
+            display: flex;
+            gap: .3rem;
+
+            .icon__svg {
+                width: 1.4rem;
+            }
+
+            .number__star {
+                margin-left: 0.4rem;
+                color: #ee4d2d;
+                font-size: 1.4rem;
+                font-weight: 100;
+                text-transform: capitalize;
+            }
+        }
+
+        .bar {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+        }
+
+        .sold {
+            @extend .bar;
+            text-transform: capitalize;
+        }
+    }
+
+    .btn__like {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+        .icon__empty__heart {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        .icon__heart {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.free__return__product {
+    display: flex;
+    align-items: center;
+    background: #fef6f5;
+
+    .layout {
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        .icon {
+            width: 3.2rem;
+            fill: #fff;
+            height: 3.2rem;
+        }
+
+        .introduce {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            .title {
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: #ee4d2d;
+                line-height: 1.4rem;
+            }
+            .description {
+                font-size: 1.2rem;
+                color: #757170;
+                font-weight: 300;
+                line-height: 1.4rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+    }
+}

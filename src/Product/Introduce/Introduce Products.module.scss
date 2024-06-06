@@ -1,0 +1,53 @@
+.introduce__products {
+    background: #ee4d2d;
+    display: none;
+    .layout {
+        display: flex;
+        align-items: center;
+
+        .price {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            .logo__flash__sale {
+                width: 8.5rem;
+                height: 1.6rem;
+            }
+
+            .cost {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+
+                .priceDeFault {
+                    font-size: 1rem;
+                    color: #fff4f4;
+                    text-underline-position: above;
+                    text-decoration: line-through;
+                }
+
+                .discount {
+                    font-weight: 500;
+                    font-size: 1.3rem;
+                    color: #fff4f4;
+                }
+            }
+        }
+
+        .sold__time {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+
+            .sold {
+                font-weight: 500;
+                font-size: 1.3rem;
+                color: #fff4f4;
+            }
+        }
+    }
+}

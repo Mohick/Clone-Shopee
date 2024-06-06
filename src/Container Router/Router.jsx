@@ -1,5 +1,6 @@
 import { Route, Router, Routes } from "react-router";
 import { Suspense, lazy, memo } from "react";
+
 const MainPage = lazy(() => import("../MainPage/Main Page"));
 const DailyPage = lazy(() => import("../Daily Page/Daily Page"));
 const HeaderPCMainPage = lazy(() =>
@@ -21,6 +22,7 @@ const FooterCertificate = lazy(() =>
 const ResultSearchItemsPage = lazy(() =>
   import("../Result Search Items Page/Result Search Items Page")
 );
+const Product = lazy(() => import("../Product/Product"))
 function RouterPage() {
   return (
     <Routes>
@@ -55,6 +57,14 @@ function RouterPage() {
             <HeaderPCMainPage />
             <DailyPage />
             <FooterCooperate />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/products"
+        element={
+          <Suspense loading="....">
+            <Product />
           </Suspense>
         }
       />

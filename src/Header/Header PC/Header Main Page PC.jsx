@@ -9,9 +9,9 @@ import IconAngleDown from "../../Container  Component  SVG ICON/Icon Angle Down"
 import IconEarth from "../../Container  Component  SVG ICON/Icon Earth";
 import IconLogoShopee from "../../Container  Component  SVG ICON/Icon Logo Shopee";
 import InputSearchHeader from "../Input Search/Input Search";
-import Shopping from "../Shopping/Shopping";
 import TopSearchHeader from "../Top Search/Top Search";
 import {getNextDate} from './End Date  Product'
+import Shopping from "../Shopping/Shopping";
 function HeaderPCMainPage() {
   return (
     <div id="header__pc__main__page">
@@ -225,7 +225,7 @@ function HeaderPCMainPage() {
                <TopSearchHeader/>
             </div>
           </div>
-          <Shopping />
+          <Shopping className="header__pc__main__page__box--icons"/>
         </div>
       </div>
     </div>

@@ -35,6 +35,10 @@
   justify-content: center;
   gap: 2rem;
 }
+.header__main__page__mobi__box__info--icons {
+  width: 2.4rem;
+  fill: #fff;
+}
 .header__main__page__mobi--slider {
   display: block;
   height: 28rem;

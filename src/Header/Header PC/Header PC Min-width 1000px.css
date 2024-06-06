@@ -292,6 +292,10 @@
     flex: 1;
     width: 2rem;
   }
+  .header__pc__main__page__box--icons {
+    width: 2.4rem;
+    fill: #fff;
+  }
   .header__pc__main__page__box__search--last {
     display: flex;
     gap: 1rem;
