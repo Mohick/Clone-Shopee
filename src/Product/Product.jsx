@@ -12,6 +12,9 @@ import PriceProduct from "./Price Product/Price Product";
 import FreeReturnProduct from "./Free Return/Free Return";
 import VoteProducts from "./Vote/Vote Products";
 import VoucherProduct from "./Voucher/Voucher Product";
+import FreeShipProducts from "./Free Ship/Free Ship";
+import MediaProducts from "./Media/Media";
+import InfoShop from "./Info Shop/Info Shop";
 const Product = () => {
   const [items, setItems] = useState(false);
   const useQuery = () => {
@@ -56,6 +59,17 @@ const Product = () => {
         </div>
       </div>
       <VoucherProduct Vouchers={items.Vouchers} />
+      <FreeShipProducts />
+      <MediaProducts />
+      <InfoShop
+        imgShop={items.logoShop}
+        voucherShop={items.Vouchers}
+        nameShop={items.nameShop}
+        localtionsShop={items.locationShop}
+        productShop={items.productsShop}
+        responsiveShop={items.responseRateShop}
+        starShop={items.star}
+      />
     </div>
   );
 };

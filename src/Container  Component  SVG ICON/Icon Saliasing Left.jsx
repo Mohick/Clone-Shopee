@@ -11,7 +11,7 @@ function IconSaliasingLeft({
   >
     <path
       d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3"
-      stroke-width="1"
+      strokeWidth="1"
       transform=""
       stroke="currentColor"
       fill="rgb(246, 145, 19)"

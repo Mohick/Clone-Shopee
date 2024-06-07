@@ -1,0 +1,116 @@
+.info__shop {
+    background: #fff;
+    margin-top: 1rem;
+
+    .layout {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .info__header {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            flex-wrap: wrap;
+
+            .logo__shop {
+                position: relative;
+
+                .img__logo {
+                    width: 6rem;
+                    height: 6rem;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    overflow: hidden;
+                }
+
+
+                box-shadow: inset 0 0 .1rem #0005;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+
+                .preferred {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    -webkit-transform: translateX(-50%);
+                    -moz-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                    -o-transform: translateX(-50%);
+                    background: #ee4d2d;
+                    color: #fff;
+                    padding: .1rem .2rem;
+                    border-radius: .2rem;
+                    -webkit-border-radius: .2rem;
+                    -moz-border-radius: .2rem;
+                    -ms-border-radius: .2rem;
+                    -o-border-radius: .2rem;
+                }
+            }
+
+            .info__text {
+                .name__shop {
+                    font-size: 1.5rem;
+                    line-height: 1.8rem;
+                    color: #000000;
+                    font-weight: 600;
+                    margin-bottom: .5rem;
+                }
+
+                .time__shop__online {
+                    font-size: 1.2rem;
+                    color: #bdbdbd;
+                    font-weight: 100;
+                }
+
+                .localtionsShop {
+                    @extend .time__shop__online;
+                }
+
+            }
+
+            .btn__more {
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+
+                .text__btn {
+                    font-size: 1.2rem;
+                    color: #ee4d2d;
+                    font-weight: 100;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    padding: .5rem 1rem;
+                    border: .2rem solid #ee4d2d;
+                    border-radius: .4rem;
+                    -webkit-border-radius: .4rem;
+                    -moz-border-radius: .4rem;
+                    -ms-border-radius: .4rem;
+                    -o-border-radius: .4rem;
+                    text-wrap: nowrap;
+                }
+            }
+        }
+
+        .info__body {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            .items {
+                font-size: 1.2rem;
+                .paramanter {
+                    color: #ee4d2d;
+                    margin-right: 0.5rem;
+                }
+            }
+
+        }
+    }
+}

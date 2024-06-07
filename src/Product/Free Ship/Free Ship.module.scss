@@ -1,0 +1,44 @@
+.free__ship__products {
+    margin-top: 1rem;
+    background: #fff;
+
+    .layout {
+        display: flex;
+        flex-direction: column;
+        grid-area: 0.5rem;
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            .icon {
+                width: 2.2rem;
+                fill: #fff;
+                height: 3.2rem;
+            }
+
+            .text {
+                font-size: 1.4rem;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+
+                .price {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin-left: 0.5rem;
+                }
+
+                .icon {
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    fill: #333;
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+
+    ;
+}

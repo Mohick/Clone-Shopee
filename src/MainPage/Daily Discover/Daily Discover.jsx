@@ -86,7 +86,7 @@ function DailyDiscoverMainPage() {
           {inView
             ? items.map((item, i) => {
                 return (
-                  <div
+                  <Link to={`/products?title=${item.name}`}
                     className="daily__discover__main__page__body--item"
                     key={i}
                   >
@@ -188,7 +188,7 @@ function DailyDiscoverMainPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 );
               })
             : undefined}
