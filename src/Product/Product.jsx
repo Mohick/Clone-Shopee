@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { DataProduct } from "./Data";
 import { useEffect, useState } from "react";
 import ProductHeaderMobi from "./Product Header/Product Header";
@@ -15,24 +15,42 @@ import VoucherProduct from "./Voucher/Voucher Product";
 import FreeShipProducts from "./Free Ship/Free Ship";
 import MediaProducts from "./Media/Media";
 import InfoShop from "./Info Shop/Info Shop";
+import OrtherProducts from "./Other Product/Other__Products";
+
 const Product = () => {
-  const [items, setItems] = useState(false);
+  const [items, setItems] = useState(null);
+
   const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   };
+
   const title = useQuery().get("title").toLocaleLowerCase();
+
   useEffect(() => {
-    const URLItems = DataProduct.filter((item) => {
-      return item.name === title;
-    });
-    const getFirstItems = URLItems[0];
-    axios.get(getFirstItems.link).then((response) => {
-      const data = response?.data[0];
-      setItems(data);
-    });
-  }, []);
-  console.log(items);
-  return !items ? undefined : (
+    const fetchData = async () => {
+      try {
+        const URLItems = DataProduct.filter((item) => item.name === title);
+        const getFirstItems = URLItems[0];
+
+        const [otherProductsResponse, productResponse] = await Promise.all([
+          axios.get('https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c'),
+          axios.get(getFirstItems.link),
+        ]);
+
+        let data = productResponse.data[0];
+        data.otherProducts = otherProductsResponse.data;
+        setItems(data);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+
+    fetchData();
+  }, [title]);
+
+  if (!items) return null;
+
+  return (
     <div id="Product" className={clsx(css.product)}>
       <SwiperProduct
         data={{
@@ -70,6 +88,7 @@ const Product = () => {
         responsiveShop={items.responseRateShop}
         starShop={items.star}
       />
+      <OrtherProducts otherProducts={items.otherProducts} />
     </div>
   );
 };

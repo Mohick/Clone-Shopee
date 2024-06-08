@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import css from "./Render Items.module.css";
+import css1000 from './Render Items 1000.module.css'
 import { useLocation } from "react-router";
-const RenderItemsNeedSearch = ({ data }) => {
+import clsx from "clsx";
+const RenderItemsNeedSearch = ({ data, lengthShow = undefined ,classSetWidth}) => {
   const [items, setItems] = useState([]);
   const useQuery = function () {
     return new URLSearchParams(useLocation().search);
@@ -77,13 +79,13 @@ const RenderItemsNeedSearch = ({ data }) => {
         const dataNeedRender = filterDataHaveOnQuery.concat(
           filterDataHavenOnQuery
         );
-        const startSliceArr = Number(pages) <= 1  ? 0 : 40 * (Number(pages)- 1);
-        
+        const startSliceArr = Number(pages) <= 1 ? 0 : 40 * (Number(pages) - 1);
+
         const itemsNeedFilter = dataNeedRender.slice(
           startSliceArr,
           startSliceArr + 40
         );
-        setItems(itemsNeedFilter);
+        setItems(itemsNeedFilter.slice(0, lengthShow));
       } catch (error) {
         console.error(error);
       }
@@ -95,7 +97,7 @@ const RenderItemsNeedSearch = ({ data }) => {
   }, [window.location.search]);
   return items.map((item, index) => {
     return (
-      <div className={css.items} key={index}>
+      <div className={clsx(css.items , css1000.items,classSetWidth)} key={index}>
         <div className={css.items__header}>
           <img className={css.items__header__img} src={item.url} alt="" />
           {item.small ? (
