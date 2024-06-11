@@ -1,10 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import css from "./Render Items.module.css";
-import css1000 from './Render Items 1000.module.css'
+import css1000 from "./Render Items 1000.module.css";
 import { useLocation } from "react-router";
 import clsx from "clsx";
-const RenderItemsNeedSearch = ({ data, lengthShow = undefined ,classSetWidth}) => {
+import "../../../handle string char vi to latinh/string__char__vi__to__latinh";
+const RenderItemsNeedSearch = ({
+  data,
+  lengthShow = undefined,
+  classSetWidth,
+}) => {
   const [items, setItems] = useState([]);
   const useQuery = function () {
     return new URLSearchParams(useLocation().search);
@@ -29,33 +34,11 @@ const RenderItemsNeedSearch = ({ data, lengthShow = undefined ,classSetWidth}) =
         const rated = Number(rating);
 
         const filterDataHaveOnQuery = data.filter((item) => {
-          const kind = item.kind
-            .toLocaleLowerCase()
-            .trim()
-            .replace(/\s+/g, "")
-            .replace(/đ/g, "d")
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-          const ship = item.ShippedFrom.toLocaleLowerCase()
-            .trim()
-            .replace(/\s+/g, "")
-            .replace(/đ/g, "d")
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-          const shipOptions = item.shippingOptions
-            .toLocaleLowerCase()
-            .trim()
-            .replace(/\s+/g, "")
-            .replace(/đ/g, "d")
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-          const brand = item.brands
-            .toLocaleLowerCase()
-            .trim()
-            .replace(/\s+/g, "")
-            .replace(/đ/g, "d")
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+          const kind = item.kind.exChangesStringCharViToLatinh();
+          const ship = item.ShippedFrom.exChangesStringCharViToLatinh();
+          const shipOptions =
+            item.shippingOptions.exChangesStringCharViToLatinh();
+          const brand = item.brands.exChangesStringCharViToLatinh();
           const cost = Number(item.cost.replace(/\./g, ""));
           const rate = Number(item.rate);
 
@@ -97,7 +80,10 @@ const RenderItemsNeedSearch = ({ data, lengthShow = undefined ,classSetWidth}) =
   }, [window.location.search]);
   return items.map((item, index) => {
     return (
-      <div className={clsx(css.items , css1000.items,classSetWidth)} key={index}>
+      <div
+        className={clsx(css.items, css1000.items, classSetWidth)}
+        key={index}
+      >
         <div className={css.items__header}>
           <img className={css.items__header__img} src={item.url} alt="" />
           {item.small ? (

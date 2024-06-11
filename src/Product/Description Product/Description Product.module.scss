@@ -1,0 +1,93 @@
+.description__product {
+    background: #fff;
+    margin-top: 1rem;
+
+    .header {
+        display: flex;
+        align-items: center;
+
+        .header__title {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .header__btn__more {
+            @extend .header__title;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: .3rem;
+            justify-content: flex-end;
+
+            .arrow__icon {
+                width: 1rem;
+                height: 1.2rem;
+            }
+        }
+
+    }
+
+    .body {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        border-top: .1rem solid #3333;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        font-weight: 300;
+        overflow: hidden;
+        height: calc(1.5rem * 8);
+
+        .body__title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1.2rem;
+        }
+
+        &.height__auto {
+            height: auto;
+        }
+
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .4rem;
+        padding: 1rem;
+
+        .footer__icon__btn {
+            width: 1rem;
+            height: 1rem;
+            fill: #ee4d2d;
+
+            &.rotate__180deg {
+                transform: rotateX(180deg);
+                -webkit-transform: rotateX(180deg);
+                -moz-transform: rotateX(180deg);
+                -ms-transform: rotateX(180deg);
+                -o-transform: rotateX(180deg);
+                transition: all .3s linear;
+                -webkit-transition: all .3s linear;
+                -moz-transition: all .3s linear;
+                -ms-transition: all .3s linear;
+                -o-transition: all .3s linear;
+            }
+        }
+
+        .footer__text__btn {
+
+            color: #ee4d2d;
+            text-transform: capitalize;
+        }
+
+        &.show__more {
+            border-top: .1rem solid #3333;
+        }
+    }
+}

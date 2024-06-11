@@ -16,6 +16,8 @@ import FreeShipProducts from "./Free Ship/Free Ship";
 import MediaProducts from "./Media/Media";
 import InfoShop from "./Info Shop/Info Shop";
 import OrtherProducts from "./Other Product/Other__Products";
+import DescriptionProduct from "./Description Product/Description Product";
+import RatingProduct from "./Rating Products/Rating Products";
 
 const Product = () => {
   const [items, setItems] = useState(null);
@@ -89,6 +91,8 @@ const Product = () => {
         starShop={items.star}
       />
       <OrtherProducts otherProducts={items.otherProducts} />
+      <DescriptionProduct description={items.productDescription}/>
+      <RatingProduct comment={items.comment} star={items.star}/>
     </div>
   );
 };
