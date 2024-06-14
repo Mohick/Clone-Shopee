@@ -96,12 +96,16 @@ const RatingProduct: React.FC<props> = (props: props) => {
                     })}
                 </div>
                 <div className={clsx(css.body__comment__of__user)}>
-                    {comment.description}
-                    
+                  {comment.description}
                 </div>
               </div>
             );
           })}
+        </div>
+        <div className={css.footer}>
+          <div  className={css.footer__btn}>See All Reviews (283)
+            <Icons.arrowAngleRight className={css.footer__icon__arrow}/>
+          </div>
         </div>
       </div>
     </div>

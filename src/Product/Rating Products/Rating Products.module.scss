@@ -169,5 +169,23 @@
                 border-top: .1rem solid;
             }
         }
+
+        .footer {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 1rem;
+           .footer__btn {
+            font-size: 1.2rem;
+            color: #ee4d2d;
+            display: flex;
+            align-items: center;
+            .footer__icon__arrow {
+                fill: #ee4d2d;
+                width: 1.2rem;
+                margin-left: 0.4rem;
+            }
+           }
+        }
     }
 }

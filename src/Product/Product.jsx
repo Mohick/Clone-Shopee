@@ -2,8 +2,6 @@ import { useLocation } from "react-router-dom";
 import { DataProduct } from "./Data";
 import { useEffect, useState } from "react";
 import ProductHeaderMobi from "./Product Header/Product Header";
-import clsx from "clsx";
-import css from "./Product.module.scss";
 import SwiperProduct from "./Swiper Product/Swiper Product";
 import axios from "axios";
 import IntroduceProducts from "./Introduce/Introduce Products";
@@ -18,6 +16,7 @@ import InfoShop from "./Info Shop/Info Shop";
 import OrtherProducts from "./Other Product/Other__Products";
 import DescriptionProduct from "./Description Product/Description Product";
 import RatingProduct from "./Rating Products/Rating Products";
+import ReltesProduct from "./Relate_Product/Relate_Product";
 
 const Product = () => {
   const [items, setItems] = useState(null);
@@ -26,7 +25,7 @@ const Product = () => {
     return new URLSearchParams(useLocation().search);
   };
 
-  const title = useQuery().get("title").toLocaleLowerCase();
+  const title = useQuery().get("title").toLowerCase();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,14 +33,17 @@ const Product = () => {
         const URLItems = DataProduct.filter((item) => item.name === title);
         const getFirstItems = URLItems[0];
 
-        const [otherProductsResponse, productResponse] = await Promise.all([
-          axios.get('https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c'),
+        await Promise.all([
+          axios.get(
+            "http://localhost:3000/api__search/"
+          ),
           axios.get(getFirstItems.link),
-        ]);
-
-        let data = productResponse.data[0];
-        data.otherProducts = otherProductsResponse.data;
-        setItems(data);
+        ]).then(([otherProductsResponse, productResponse]) => {
+          
+          let data = productResponse.data[0];
+          data.otherProducts = otherProductsResponse.data;
+          setItems(data);
+        });
       } catch (error) {
         console.error("Error fetching data", error);
       }
@@ -49,18 +51,16 @@ const Product = () => {
 
     fetchData();
   }, [title]);
-
-  if (!items) return null;
-
+  if (!items) return ;
   return (
-    <div id="Product" className={clsx(css.product)}>
+    <>
+      <ProductHeaderMobi name={items.name} />
       <SwiperProduct
         data={{
           arrImg: items.images,
           events: items.event,
         }}
       />
-      <ProductHeaderMobi name={items.name} />
       <IntroduceProducts
         data={{
           priceDeFault: items.priceDeFault,
@@ -68,16 +68,10 @@ const Product = () => {
           sold: items.sold,
         }}
       />
-      <div className={css.info__products}>
-        <div className={clsx("layout")}>
-          <TitleProduct name={items.name} />
-          <PriceProduct price={items.discount} />
-        </div>
-        <FreeReturnProduct />
-        <div className={clsx("layout")}>
-          <VoteProducts star={items.star} sold={items.sold} />
-        </div>
-      </div>
+      <TitleProduct name={items.name} />
+      <PriceProduct price={items.discount} />
+      <FreeReturnProduct />
+      <VoteProducts star={items.star} sold={items.sold} />
       <VoucherProduct Vouchers={items.Vouchers} />
       <FreeShipProducts />
       <MediaProducts />
@@ -91,9 +85,10 @@ const Product = () => {
         starShop={items.star}
       />
       <OrtherProducts otherProducts={items.otherProducts} />
-      <DescriptionProduct description={items.productDescription}/>
-      <RatingProduct comment={items.comment} star={items.star}/>
-    </div>
+      <DescriptionProduct description={items.productDescription} />
+      <RatingProduct comment={items.comment} star={items.star} />
+      <ReltesProduct dataRelateProduct={items.otherProducts} />
+    </>
   );
 };
 

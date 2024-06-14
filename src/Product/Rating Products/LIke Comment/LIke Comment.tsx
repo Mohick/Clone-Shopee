@@ -11,31 +11,35 @@ type props = {
 };
 
 const LikeComment: React.FC<props> = (data: props) => {
-  const [show, setShow] = useState(false);
-  const [changesLIke, setChangesLIke] = useState(Number(data.numberVotesComment));
-    console.log(show);
+  const [show, setShow] = useState({
+    like : Number(data.numberVotesComment),
+    show : false
+  });
+ 
     
   return (
     <>
       <Icons.likeNoColorComment
-        className={clsx(data.classCustomLikeNoColor, show ? css.hiddent : undefined)}
+        className={clsx(data.classCustomLikeNoColor, show.show ? css.hiddent : undefined)}
         onClick={()=>{
-            setShow(true)
-            setChangesLIke(()=>{
-                return changesLIke + 1
+            setShow({
+               like : show.like + 1,
+               show : true
             })
+           
         }}
       />
       <Icons.likeHaveColorComponent
-        className={clsx(data.classCustomLikeHaveColor, show ? undefined : css.hiddent)}
+        className={clsx(data.classCustomLikeHaveColor, show.show ? undefined : css.hiddent)}
         onClick={()=>{
-            setShow(false)
-            setChangesLIke(()=>{
-                return changesLIke - 1
+            setShow({
+               like : show.like - 1,
+               show : false
             })
+           
         }}
       />
-        <div className={clsx(data.classCustomText, show ? css.apply__color : undefined)}>Helpful({changesLIke})</div>
+        <div className={clsx(data.classCustomText, show.show ? css.apply__color : undefined)}>Helpful({show.like})</div>
     </>
   );
 };

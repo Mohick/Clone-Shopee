@@ -1,61 +1,66 @@
 .product__header {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    position: fixed;
     left: 0;
     top: 0;
     right: 0;
-    padding: 2rem;
-    .btn__back__page {
-        .icon {
-            width: 2rem;
-            fill: #ee4d2d;
-        }
-    }
+    z-index: 3;
+    width: 100%;
+    position: fixed;
 
-    .name__product {
-        flex: 1;
-        font-size: 2rem;
-        line-height: 2rem;
-        font-weight: 500;
-        height: 2rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        text-transform: capitalize;
-        transition: all .1s ease-in-out;
-        -webkit-transition: all .1s ease-in-out;
-        -moz-transition: all .1s ease-in-out;
-        -ms-transition: all .1s ease-in-out;
-        -o-transition: all .1s ease-in-out;
-        opacity: 0;
-    }
-
-    .btn__shopping {
-        background: #0005;
-        padding: .8rem;
+    .layout {
         display: flex;
+        gap: 1rem;
         align-items: center;
 
-        .icon {
-            width: 1.5rem;
-            fill: #fff;
-            height: 1.5rem;
+        .btn__back__page {
+            .icon {
+                width: 2rem;
+                fill: #ee4d2d;
+            }
         }
 
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
-    }
+        .name__product {
+            flex: 1;
+            font-size: 1.7rem;
+            line-height: 2rem;
+            font-weight: 500;
+            height: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-transform: capitalize;
+            transition: all .1s ease-in-out;
+            -webkit-transition: all .1s ease-in-out;
+            -moz-transition: all .1s ease-in-out;
+            -ms-transition: all .1s ease-in-out;
+            -o-transition: all .1s ease-in-out;
+            opacity: 0;
+        }
 
-    .btn__mores {
-        @extend .btn__shopping;
+        .btn__shopping {
+            background: #0005;
+            padding: .8rem;
+            display: flex;
+            align-items: center;
 
-        .icon {
-            stroke: #fff;
+            .icon {
+                width: 1.5rem;
+                fill: #fff;
+                height: 1.5rem;
+            }
+
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+
+        .btn__mores {
+            @extend .btn__shopping;
+
+            .icon {
+                stroke: #fff;
+            }
         }
     }
 }

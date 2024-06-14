@@ -12,6 +12,7 @@ import css1100 from "./Daily Page 1100.module.scss";
 import { Icons } from "../Container  Component  SVG ICON/Manage Icon";
 import { Link } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
+import  json  from '../daily Manpage.json'
 const DailyPage = () => {
   const [items, setItems] = useState([]);
 
@@ -23,6 +24,7 @@ const DailyPage = () => {
         setItems(data);
       });
   }, []);
+  const a = [...json]
 
   return items.length === 0 ? null : (
     <div
@@ -57,11 +59,11 @@ const DailyPage = () => {
             css1100.body
           )}
         >
-          <RenderItemsNeedSearch data={items} />
+          <RenderItemsNeedSearch data={a} />
         </div>
 
         <div className={clsx(css.footer,css1000.footer)}>
-          <Pagination length={items.length} />
+          <Pagination length={a.length} />
         </div>
       </div>
     </div>

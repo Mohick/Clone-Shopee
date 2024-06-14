@@ -1,0 +1,29 @@
+@media screen and (min-width:500px) {
+    .swiper__product {
+        .layout {
+            display: flex;
+            gap: 1rem;
+
+            .nav__img {
+                overflow: hidden;
+                overflow-y: auto;
+                flex: 1;
+                position: relative;
+                
+                .nav__frame {
+                    position: absolute;
+                    display: flex;
+                    gap: .5rem;
+                    flex-direction: column;
+                    .items__img {
+                    }
+
+                }
+            }
+
+            .swiper__container__slider {
+                flex: 3;
+            }
+        }
+    }
+}

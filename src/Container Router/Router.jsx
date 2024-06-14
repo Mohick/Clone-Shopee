@@ -22,7 +22,7 @@ const FooterCertificate = lazy(() =>
 const ResultSearchItemsPage = lazy(() =>
   import("../Result Search Items Page/Result Search Items Page")
 );
-const Product = lazy(() => import("../Product/Product"))
+const Product = lazy(() => import("../Product/Product"));
 function RouterPage() {
   return (
     <Routes>
@@ -64,7 +64,11 @@ function RouterPage() {
         path="/products"
         element={
           <Suspense loading="....">
+            <HeaderPCMainPage />
+
             <Product />
+            <FooterCooperate />
+
           </Suspense>
         }
       />
