@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import css from "./Rating Products.module.scss";
+import css600 from "./rating_products_600.module.scss"
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import LikeComment from "./LIke Comment/LIke Comment";
 type props = {
@@ -13,11 +14,11 @@ type props = {
 };
 
 const RatingProduct: React.FC<props> = (props: props) => {
-  console.log(props.comment);
+
 
   return (
-    <div className={clsx(css.rating__product)}>
-      <div className={clsx(css.layout, "layout")}>
+    <div className={clsx(css.rating__product,css600.rating__product)}>
+      <div className={clsx(css.layout,css600.layout, "layout")}>
         <div className={clsx(css.header)}>
           <div className={css.header__info__rating}>
             <div className={css.header__box__title__and__star}>
@@ -86,10 +87,13 @@ const RatingProduct: React.FC<props> = (props: props) => {
                     .map((length, index) => {
                       return Number(comment.star) <= index ? (
                         <Icons.starEmpty
+                        key={index}
                           className={css.body__icon__empty__star}
                         />
                       ) : (
                         <Icons.starFull
+                        key={index}
+
                           className={css.body__icon__full__star}
                         />
                       );

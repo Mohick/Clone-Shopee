@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import React from "react";
 import css from "./Info Shop.module.scss";
+import css600 from "./info_shop_600.module.scss"
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
-
 type props = {
   nameShop: string;
   imgShop: string;
@@ -14,11 +14,11 @@ type props = {
 };
 
 const InfoShop: React.FC<props> = (data: props) => {
-  console.log(data);
+
 
   return (
-    <div className={clsx(css.info__shop)}>
-      <div className={clsx(css.layout, "layout")}>
+    <div className={clsx(css.info__shop,css600.info__shop)}>
+      <div className={clsx(css.layout,css600.layout, "layout")}>
         <div className={clsx(css.info__header)}>
           <div className={clsx(css.logo__shop)}>
             <img className={clsx(css.img__logo)} src={data.imgShop} alt="" />

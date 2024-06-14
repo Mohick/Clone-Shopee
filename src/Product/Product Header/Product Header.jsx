@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import Shopping from "../../Header/Shopping/Shopping";
 import css from "./Product Header.module.scss";
+import css600 from "./Product_Header_600.module.scss"
 import { useEffect } from "react";
 
 const ProductHeaderMobi = function ({ name }) {
@@ -33,8 +34,8 @@ const ProductHeaderMobi = function ({ name }) {
     };
   }, []);
   return (
-    <div className={css.product__header}>
-      <div className={clsx(css.layout, "layout")}>
+    <div className={clsx(css.product__header,css600.product__header )}>
+      <div className={clsx(css.layout,css600.layout, "layout")}>
         <div className={clsx(css.btn__back__page)}>
           <Icons.arrowLeftHaveTail className={clsx(css.icon)} />
         </div>

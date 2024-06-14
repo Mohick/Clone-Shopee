@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import ProductHeaderMobi from "./Product Header/Product Header";
 import SwiperProduct from "./Swiper Product/Swiper Product";
 import axios from "axios";
-import IntroduceProducts from "./Introduce/Introduce Products";
 import TitleProduct from "./Title Product/Title Product";
 import PriceProduct from "./Price Product/Price Product";
 import FreeReturnProduct from "./Free Return/Free Return";
@@ -59,13 +58,6 @@ const Product = () => {
         data={{
           arrImg: items.images,
           events: items.event,
-        }}
-      />
-      <IntroduceProducts
-        data={{
-          priceDeFault: items.priceDeFault,
-          discount: items.discount,
-          sold: items.sold,
         }}
       />
       <TitleProduct name={items.name} />

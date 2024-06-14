@@ -1,9 +1,10 @@
 import clsx from "clsx";
 import css from "./Media.module.scss";
+import css600 from "./media_600.module.scss"
 const MediaProducts = () => {
   return (
-    <div className={css.media__products}>
-      <div className={clsx(css.layout, "layout")}>
+    <div className={clsx(css.media__products,css600.media__products)}>
+      <div className={clsx(css.layout,css600.layout, "layout")}>
         <div className={clsx(css.box__items,css.bg__fb)}>
           <img
             className={css.img__logo}

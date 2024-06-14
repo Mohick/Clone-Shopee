@@ -38,6 +38,7 @@
         .body {
             overflow: hidden;
             overflow-x: auto;
+            scrollbar-color:  transparent transparent ;
             .body__frame {
                 display: flex;
                 gap: 1rem;

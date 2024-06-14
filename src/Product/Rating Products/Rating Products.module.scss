@@ -48,11 +48,10 @@
                 }
 
                 .header__box__see__more {
-
                     display: flex;
+                    flex: 1;
                     justify-content: flex-end;
                     align-items: center;
-
                     .header__box__btn {
                         white-space: nowrap;
                         font-size: 1.2rem;

@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import css from "./Introduce Products.module.scss";
 import clsx from "clsx";
-import CountDownTime from "../../Count  Down Time/Count  Down Time";
 type rulesArray = {
   data: Array<any>;
 };
 
-const IntroduceProducts: React.FC<rulesArray> = (data:{data:object}) => {
+const IntroduceProducts: React.FC<rulesArray> = (data: { data: object }) => {
   useEffect(() => {}, []);
   const getObjectData = data.data;
   const toObject: {
@@ -17,7 +16,7 @@ const IntroduceProducts: React.FC<rulesArray> = (data:{data:object}) => {
 
   return (
     <div className={clsx(css.introduce__products)}>
-      <div className={clsx(css.layout,"layout")}>
+      <div className={clsx(css.layout, "layout")}>
         <div className={clsx(css.price)}>
           <div className={clsx(css.logo__flash__sale)}>
             <img
@@ -32,12 +31,6 @@ const IntroduceProducts: React.FC<rulesArray> = (data:{data:object}) => {
               ₫{toObject.priceDeFault}
             </span>
             <span className={clsx(css.discount)}>₫{toObject.discount}</span>
-          </div>
-        </div>
-        <div className={clsx(css.sold__time)}>
-          <div className={clsx(css.sold)}>{toObject.sold}</div>
-          <div>
-            <CountDownTime/>
           </div>
         </div>
       </div>

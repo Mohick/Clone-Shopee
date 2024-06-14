@@ -1,11 +1,15 @@
-.title {
-    font-size: 1.6rem;
-    line-height: 1.6rem;
-    font-weight: 400;
-    height: calc(1.6rem * 2);
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+.product__title {
     margin-top: 1rem;
+    background: #fff;
+
+    .title {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        font-weight: 400;
+        height: calc(1.6rem * 2);
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
 }

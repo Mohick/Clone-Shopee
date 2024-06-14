@@ -12,7 +12,6 @@ type allClass = {
 
 
 const CountDownTime:React.FC<allClass> = (classCountDown) =>{
-    console.log(classCountDown);
     
     return <div>
         <div>

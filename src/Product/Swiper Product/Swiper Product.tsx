@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import css from "./Swiper Product.module.scss";
 import css500 from "./Swiper Product 500.module.scss";
+import css1000 from "./Swiper Product 1000.module.scss";  
 import clsx from "clsx";
 import { handle__click__nav__img } from "./handle__click__nav__img";
 import { handleWhenScrollMainImgBannerProducts } from "./handle__scroll__swiper";
@@ -24,7 +25,7 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
         `.${css.frame}`
       ) as HTMLElement;
       boxFrames.addEventListener("scrollend", () => {
-        handleWhenScrollMainImgBannerProducts(css);
+        handleWhenScrollMainImgBannerProducts(css,boxFrames);
       });
     }, 0);
 
@@ -48,7 +49,7 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
           <div className={clsx(css.frame)}>
             {toObject.arrImg.map((item, index) => {
               return (
-                <div key={index} className={clsx(css.item)}>
+                <div key={index} data-index= {index} className={clsx(css.item)}>
                   <img width={"100%"} height={"100%"} src={item} alt="" />
                 </div>
               );
@@ -70,7 +71,7 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
             </span>
           </div>
         </div>
-        <div className={css500.nav__img}>
+        <div className={clsx(css.nav__img,css500.nav__img)}>
           <div className={css500.nav__frame}>
             {toObject.arrImg.map((item, index) => {
               return (
