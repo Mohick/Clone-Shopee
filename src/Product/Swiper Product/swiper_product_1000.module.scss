@@ -1,3 +1,26 @@
-@media screen and (min-width:1000px){
-    
+@media screen and (min-width:1000px) {
+    .swiper__product {
+        // position: absolute;
+        width: 100%;
+        height: 100%;
+
+        .layout {
+            width: auto;
+            display: block;
+
+            .nav__img {
+                overflow: hidden;
+                overflow-x: auto;
+                scrollbar-width: none;
+                .nav__frame {
+                    position: relative;
+                    flex-direction: row;
+                    gap: .5rem;
+                    .items__img {   
+                        flex: 0 0 calc(100% / 4);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,54 @@
+@media screen and (min-width: 1000px) {
+
+    .quantity {
+        display: flex;
+        gap: 2rem;
+        margin-top: 1rem;
+
+        .quantity__header {
+            .header__title {
+                font-size: 1.2rem;
+                color: #757575;
+            }
+        }
+
+        .quantity__body {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            .body__calculator {
+                display: flex;
+                align-items: center;
+
+                .body__box__icons {
+                    padding: .5rem;
+                    border: .1rem solid #0002;
+                    cursor: pointer;
+
+                    .calculator__plus,
+                    .calculator__minus {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+
+                }
+
+                .calculator__input {
+                    outline: none;
+                    width: 10rem;
+                    font-size: 1.5rem;
+                    padding: .5rem;
+                    border-top: .1rem solid #0002;
+                    border-bottom: .1rem solid #0002;
+                    text-align: center;
+                }
+            }
+            .body__description__products {
+                font-size: 1.3rem ;
+                color: #757575;
+
+            }
+        }
+    }
+
+}

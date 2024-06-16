@@ -1,0 +1,79 @@
+@media screen and (min-width:1000px) {
+    .free__return__product {
+        display: none;
+    }
+
+    .free__return___product__1000 {
+        display: block;
+        width: 100%;
+        margin-top: 2rem;
+
+        .layout {
+            gap: 2rem;
+            display: flex;
+            align-items: center;
+
+            .header {
+                .header__title {
+                    font-size: 1.2rem;
+                    color: #757575;
+                }
+            }
+
+            .body {
+                display: flex;
+                gap: 2rem;
+
+                .body__box__items {
+                    display: flex;
+                    gap: .5rem;
+                    align-items: center;
+
+                    .body__items__title {
+                        font-size: 1.3rem;
+
+                        &:first-child {
+                            color: #757575;
+                        }
+                    }
+
+                    .body__items__icons {
+                        width: 1.4rem;
+                        height: 1.4rem;
+                        position: relative;
+
+                        .dropdown {
+                            position: absolute;
+                            left: -25rem;
+                            width: 50rem;
+                            display: none;
+                            top: calc(100% + 2rem);
+                            background: #fff;
+                            padding: 2rem;
+                            font-size: 1.2rem;
+
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                bottom: 100%;
+                                left: 25rem;
+                                border-bottom: 1rem solid #fff;
+                                border-right: 1rem solid transparent;
+                                border-left: 1rem solid transparent;
+                                border-top: 1rem solid transparent;
+                            }
+
+                            filter: drop-shadow(0 0 .1rem #0003);
+                            -webkit-filter: drop-shadow(0 0 .1rem #0003);
+                        }
+                    }
+
+                    .body__items__icons:hover>.dropdown {
+                        display: block;
+                    }
+
+                }
+            }
+        }
+    }
+}

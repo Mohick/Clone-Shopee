@@ -1,0 +1,23 @@
+@media screen and (min-width: 1000px) {
+    .introduce__product {
+        display: flex;
+        gap: 1rem;
+        background: #fff;
+        margin-top: 3rem;
+        padding-top: 1rem;
+
+        .ui__products {
+            flex: 1;
+
+            .slider__product {
+                position: relative;
+                width: 100%;
+            }
+        }
+
+        .text__info__products {
+            flex: 1.5;
+            padding: 1rem;
+        }
+    }
+}

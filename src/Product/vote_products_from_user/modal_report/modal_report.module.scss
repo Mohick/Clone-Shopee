@@ -1,0 +1,87 @@
+.modal__report {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background: #3335;
+    justify-content: center;
+    align-items: center;
+    z-index: 31;
+    display: none;
+    cursor: pointer;
+    &.open__display_flex {
+        display: flex;
+    }
+
+    .frame__report {
+        display: inline-block;
+        background: #fff;
+        padding: 1rem;
+        width: 50rem;
+        height: 28rem;
+        display: flex;
+        flex-direction: column;
+        scale: 0;
+        &.animation__scale__300ms {
+            scale: 1;
+        }
+        .header {
+            border-bottom: 0.1rem solid #3335;
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.6rem;
+
+            .header__title {
+                font-size: 1.2rem;
+            }
+
+            .btn__close {
+                display: flex;
+                justify-content: flex-end;
+                flex: 1;
+
+                .icon__close {
+                    width: 2rem;
+                    height: 2rem;
+                    display: inline-block;
+                    scale: .8rem;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .body {
+            overflow: hidden;
+            overflow-y: auto;
+            flex: 1;
+
+            .body__select {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+
+                .options {
+                    padding: 2rem;
+                    font-size: 1.3rem;
+                    cursor: pointer;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+
+                    &:hover {
+                        color: #ee4d2d;
+                    }
+
+                }
+            }
+        }
+
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+    }
+}

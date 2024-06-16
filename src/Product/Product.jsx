@@ -16,7 +16,11 @@ import OrtherProducts from "./Other Product/Other__Products";
 import DescriptionProduct from "./Description Product/Description Product";
 import RatingProduct from "./Rating Products/Rating Products";
 import ReltesProduct from "./Relate_Product/Relate_Product";
-
+import css1000 from "./product_1000.module.scss";
+import VoteProductsFromUser from "./vote_products_from_user/vote_products_from_user";
+import FreeReturnProduct1000 from "./Free Return/free_return_1000";
+import FreeShip1000 from "./Free Ship/free_ship_1000";
+import QuantityProduct1000 from "./Quantity/quantity_1000";
 const Product = () => {
   const [items, setItems] = useState(null);
 
@@ -33,12 +37,9 @@ const Product = () => {
         const getFirstItems = URLItems[0];
 
         await Promise.all([
-          axios.get(
-            "http://localhost:3000/api__search/"
-          ),
+          axios.get("http://localhost:3000/api__search/"),
           axios.get(getFirstItems.link),
         ]).then(([otherProductsResponse, productResponse]) => {
-          
           let data = productResponse.data[0];
           data.otherProducts = otherProductsResponse.data;
           setItems(data);
@@ -50,19 +51,36 @@ const Product = () => {
 
     fetchData();
   }, [title]);
-  if (!items) return ;
+  if (!items) return;
   return (
-    <>
+    <div className={"layout"}>
       <ProductHeaderMobi name={items.name} />
-      <SwiperProduct
-        data={{
-          arrImg: items.images,
-          events: items.event,
-        }}
-      />
-      <TitleProduct name={items.name} />
-      <PriceProduct price={items.discount} />
-      <FreeReturnProduct />
+      <div className={css1000.introduce__product}>
+        <div className={css1000.ui__products}>
+          <div className={css1000.slider__product}>
+            <SwiperProduct
+              data={{
+                arrImg: items.images,
+                events: items.event,
+              }}
+            />
+          </div>
+        </div>
+        <div className={css1000.text__info__products}>
+          <TitleProduct name={items.name} />
+          <VoteProductsFromUser
+            star={items.star}
+            rating={items.rating}
+            sold={items.sold}
+          />
+          <PriceProduct price={items.priceDeFault} discount={items.discount} />
+          <FreeReturnProduct />
+          <FreeReturnProduct1000 />
+          <FreeShip1000 />
+          <QuantityProduct1000/>
+        </div>
+      </div>
+
       <VoteProducts star={items.star} sold={items.sold} />
       <VoucherProduct Vouchers={items.Vouchers} />
       <FreeShipProducts />
@@ -80,7 +98,7 @@ const Product = () => {
       <DescriptionProduct description={items.productDescription} />
       <RatingProduct comment={items.comment} star={items.star} />
       <ReltesProduct dataRelateProduct={items.otherProducts} />
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,56 @@
+@media screen and (min-width: 1000px) {
+    .price__product {
+        margin-top: 1.5rem;
+        background: #0001;
+        padding: 1.5rem 0;
+
+        .layout {
+            padding-left: 1.5rem;
+
+            .price {
+                font-size: 2rem;
+
+                .price__default {
+                    color: #929292;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: -.5rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        -o-transform: translateY(-50%);
+                        background: #929292;
+                        width: calc(100% + 1rem);
+                        height: 0.1rem;
+                    }
+                }
+
+                .price__discount {
+                    color: #ee4d2d;
+                    position: relative;
+                    margin-right: 1rem;
+
+                }
+                .price__percent {
+                    background: #ee4d2d;
+                    color: #fff;
+                    font-size: 1.2rem;
+                    padding: 0 1rem;
+                    border-radius: .2rem;
+                    -webkit-border-radius: .2rem;
+                    -moz-border-radius: .2rem;
+                    -ms-border-radius: .2rem;
+                    -o-border-radius: .2rem;
+}
+                .price__default+.price__discount {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}

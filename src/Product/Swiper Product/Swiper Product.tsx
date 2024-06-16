@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import css from "./Swiper Product.module.scss";
 import css500 from "./Swiper Product 500.module.scss";
-import css1000 from "./Swiper Product 1000.module.scss";  
+import css1000 from "./swiper_product_1000.module.scss";  
 import clsx from "clsx";
 import { handle__click__nav__img } from "./handle__click__nav__img";
 import { handleWhenScrollMainImgBannerProducts } from "./handle__scroll__swiper";
@@ -37,9 +37,9 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
   return (
     <div
       id="swiper__product"
-      className={clsx(css.swiper__product, css500.swiper__product)}
+      className={clsx(css.swiper__product, css500.swiper__product,css1000.swiper__product)}
     >
-      <div className={clsx(css.layout, css500.layout, "layout")}>
+      <div className={clsx(css.layout, css500.layout,css1000.layout, "layout")}>
         <div
           className={clsx(
             css.swiper__container__slider,
@@ -71,8 +71,8 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
             </span>
           </div>
         </div>
-        <div className={clsx(css.nav__img,css500.nav__img)}>
-          <div className={css500.nav__frame}>
+        <div className={clsx(css.nav__img,css500.nav__img,css1000.nav__img)}>
+          <div className={clsx(css500.nav__frame,css1000.nav__frame)}>
             {toObject.arrImg.map((item, index) => {
               return (
                 <div
@@ -80,7 +80,7 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
                   onClick={() => {
                     handle__click__nav__img(index, css);
                   }}
-                  className={clsx(css500.items__img)}
+                  className={clsx(css500.items__img,css1000.items__img)}
                 >
                   <img width={"100%"} height={"100%"} src={item} alt="" />
                 </div>
