@@ -1,12 +1,12 @@
 @media screen and (min-width:1000px) {
-    .free__ship__product {
+    .free__ship__products {
         display: none;
     }
 
     .free__ship___product__1000 {
         display: block;
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 3rem;
 
         .layout {
             gap: 2rem;
@@ -16,6 +16,7 @@
                 .header__title {
                     font-size: 1.2rem;
                     color: #757575;
+                    width: 7rem;
                 }
             }
 

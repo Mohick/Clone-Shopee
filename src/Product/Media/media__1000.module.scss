@@ -1,0 +1,58 @@
+@media screen and (min-width: 1000px) {
+    .media__products {
+        display: none;
+    }
+    .media__1000 {
+        display: flex;
+        width: 100%;
+        margin-top: 2rem;
+        justify-content: center;
+
+        .media__logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            flex: 1;
+
+            .logo__img {
+                background: url("./Logo Product Media/logo_media_product.png");
+                padding: 1rem;
+                background-size: 100%;
+                background-position-y: calc( -2rem * var(--bgPosition));
+                background-repeat: no-repeat;
+            }
+            .logo_title {
+                font-size: 1.6rem;
+                font-weight: 300;
+                color: #000;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+        .media__logo  +   .box__like__product {
+            border-left: .1rem solid #0001;
+        }
+        .box__like__product{
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            justify-content: center;
+
+            flex: 1;
+            .icon__like__product{
+                width: 2.3rem;
+                height: 2.3rem;
+                cursor: pointer;
+            }
+            .title__like__product {
+                 font-size: 1.4rem;
+                 font-weight: 400;
+                 color: #000;
+                 margin-top: 1rem;
+                 margin-bottom: 1rem;
+ 
+            }
+        }
+    }
+}

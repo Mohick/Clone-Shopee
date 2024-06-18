@@ -1,0 +1,30 @@
+@media screen and (min-width: 1000px) {
+
+    .info__shop {
+        .layout {
+            padding: 2rem 3rem;
+            display: flex;
+
+            .info__header {
+                justify-content: flex-start;
+
+                .box__btn__visit__info__shop {
+                    flex: 0;
+                    display: flex;
+                    gap: .5rem;
+                   
+
+
+                }
+            }
+
+            .footer {
+                display: none;
+            }
+
+            .info__description {
+                display: none;
+            }
+        }
+    }
+}

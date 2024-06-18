@@ -10,6 +10,7 @@
   --webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   font-family: "Be Vietnam Pro", sans-serif;
+  user-select: none;
 }
 
 html {

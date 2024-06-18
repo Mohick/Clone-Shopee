@@ -1,0 +1,57 @@
+.btn__buy__products__1000 {
+    margin-top: 3rem;
+
+    .box__btn__buy__product {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .box__btn__buy {
+            padding: 1rem;
+            cursor: pointer;
+            background: #ee4d2d;
+            display: flex;
+            justify-content: center;
+            width: 20rem;
+
+            .title__btn__buy {
+                font-size: 1.4rem;
+                text-transform: capitalize;
+                color: #fff;
+                font-weight: 100;
+            }
+
+            border-radius: .3rem;
+            -webkit-border-radius: .3rem;
+            -moz-border-radius: .3rem;
+            -ms-border-radius: .3rem;
+            -o-border-radius: .3rem;
+            border: .1rem solid #ee4d2d;
+
+            &:hover {
+                filter: brightness(.96);
+                -webkit-filter: brightness(.96);
+}
+        }
+
+        .box__btn__cart {
+            @extend .box__btn__buy;
+            background: #ffeee8;
+
+            .icon__btn__cart {
+                width: 1.5rem;
+                height: 1.5rem;
+                fill: #666666;
+                margin-right: 1rem;
+            }
+
+            .title__btn__cart {
+                font-size: 1.4rem;
+                text-transform: capitalize;
+                color: #ee4d2d;
+                font-weight: 100;
+
+            }
+        }
+    }
+}

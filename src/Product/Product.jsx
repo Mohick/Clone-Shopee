@@ -21,6 +21,8 @@ import VoteProductsFromUser from "./vote_products_from_user/vote_products_from_u
 import FreeReturnProduct1000 from "./Free Return/free_return_1000";
 import FreeShip1000 from "./Free Ship/free_ship_1000";
 import QuantityProduct1000 from "./Quantity/quantity_1000";
+import BtnBuyProducts1000 from "./btn__buy__products/btn__buy__products__1000";
+import Media1000 from "./Media/media__1000";
 const Product = () => {
   const [items, setItems] = useState(null);
 
@@ -64,6 +66,7 @@ const Product = () => {
                 events: items.event,
               }}
             />
+            <Media1000 like={items.rating}/>
           </div>
         </div>
         <div className={css1000.text__info__products}>
@@ -77,7 +80,8 @@ const Product = () => {
           <FreeReturnProduct />
           <FreeReturnProduct1000 />
           <FreeShip1000 />
-          <QuantityProduct1000/>
+          <QuantityProduct1000 available={items.available}/>
+          <BtnBuyProducts1000 />
         </div>
       </div>
 

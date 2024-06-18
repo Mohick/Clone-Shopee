@@ -7,7 +7,7 @@ const FreeReturnProduct = () => {
   return (
     <div id="free__return__product" className={clsx(css.free__return__product,css600.free__return__product,css1000.free__return__product)}>
       <div className={clsx(css.layout,css600.layout,"layout")}>
-        <div></div>
+
           <Icons.freeReturn  className={clsx(css.icon)}/>
         <div className={clsx(css.introduce)}>
             <div className={clsx(css.title)}>Change of Mind</div>

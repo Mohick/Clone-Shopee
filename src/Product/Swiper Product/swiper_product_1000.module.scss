@@ -12,12 +12,43 @@
                 overflow: hidden;
                 overflow-x: auto;
                 scrollbar-width: none;
+
                 .nav__frame {
                     position: relative;
                     flex-direction: row;
                     gap: .5rem;
-                    .items__img {   
-                        flex: 0 0 calc(100% / 4);
+
+                    .items__img {
+                        flex: 0 0 calc((100% / 5) - .5rem);
+                    }
+
+                    .box__icon__arrow__left {
+                        position: absolute;
+                        padding: 2rem .5rem;
+                        background: #0003;
+                        cursor: pointer;
+                        left: 0;
+                        &:hover {
+                            filter: brightness(.9);
+                            -webkit-filter: brightness(.9);
+}
+                        .arrow__icon {
+                            width: 1rem;
+                        }
+                        fill: #fff;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        -o-transform: translateY(-50%);
+                    }
+
+
+                    .box__icon__arrow__right {
+                        @extend .box__icon__arrow__left;
+                        left: auto;
+                        right: 0;
                     }
                 }
             }

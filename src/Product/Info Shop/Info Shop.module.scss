@@ -76,26 +76,34 @@
 
             }
 
-            .btn__more {
+            .box__btn__visit__info__shop {
                 flex: 1;
-                display: flex;
-                justify-content: flex-end;
 
-                .text__btn {
-                    font-size: 1.2rem;
-                    color: #ee4d2d;
-                    font-weight: 100;
-                    text-transform: uppercase;
-                    display: inline-block;
-                    padding: .5rem 1rem;
-                    border: .2rem solid #ee4d2d;
-                    border-radius: .4rem;
-                    -webkit-border-radius: .4rem;
-                    -moz-border-radius: .4rem;
-                    -ms-border-radius: .4rem;
-                    -o-border-radius: .4rem;
-                    text-wrap: nowrap;
+                .btn__more {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .text__btn {
+                        font-size: 1.2rem;
+                        color: #ee4d2d;
+                        font-weight: 100;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        padding: .5rem 1rem;
+                        border: .2rem solid #ee4d2d;
+                        border-radius: .4rem;
+                        -webkit-border-radius: .4rem;
+                        -moz-border-radius: .4rem;
+                        -ms-border-radius: .4rem;
+                        -o-border-radius: .4rem;
+                        text-wrap: nowrap;
+                    }
                 }
+
+                .btn__chat {
+                    @extend .btn__more;
+                }
+
             }
         }
 
@@ -122,7 +130,8 @@
             overflow: hidden;
             overflow-x: auto;
             scroll-behavior: smooth;
-            scrollbar-color: transparent transparent; 
+            scrollbar-color: transparent transparent;
+
             .voucher {
                 border: .1rem solid #fbcac1;
                 background: #fff4f4;
