@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import VoteLikeProduct from "../Vote/Like/Vote Like Product";
+import css from "./Media.module.scss"
 import css1000 from "./media__1000.module.scss";
 import { useState } from "react";
 const Media1000 = ({ like }) => {
@@ -8,7 +9,7 @@ const Media1000 = ({ like }) => {
     value: like,
   });
   return (
-    <div className={clsx(css1000.media__1000)}>
+    <div className={clsx(css.media__1000,css1000.media__1000)}>
       <div className={clsx(css1000.media__logo)}>
         <span className={clsx(css1000.logo_title)}>Share : </span>
         <button

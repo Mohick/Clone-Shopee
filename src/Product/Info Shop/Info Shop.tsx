@@ -9,9 +9,12 @@ type props = {
   imgShop: string;
   localtionsShop: string;
   productShop: string | number;
-  voteStar: string | number;
+  starShop: string | number;
   responsiveShop: string | number;
   voucherShop: string[];
+  rating: string | number;
+  timeJoinShop: string;
+  followShop: string | number;
 };
 
 const InfoShop: React.FC<props> = (data: props) => {
@@ -27,11 +30,18 @@ const InfoShop: React.FC<props> = (data: props) => {
             <img className={clsx(css.img__logo)} src={data.imgShop} alt="" />
             <div className={css.preferred}>Preferred+</div>
           </div>
-          <div>
-            <div className={css.info__text}>
+          <div
+            className={clsx(
+              css.header__box__visit__shop,
+              css1000.header__box__visit__shop
+            )}
+          >
+            <div className={clsx(css.info__text, css1000.info__text)}>
               <div className={css.name__shop}>{data.nameShop}</div>
               <div className={css.time__shop__online}>Active 10 hours ago</div>
-              <div className={css.localtionsShop}>{data.localtionsShop}</div>
+              <div className={clsx(css.localtionsShop, css1000.localtionsShop)}>
+                {data.localtionsShop}
+              </div>
             </div>
             <div
               className={clsx(
@@ -40,25 +50,156 @@ const InfoShop: React.FC<props> = (data: props) => {
               )}
             >
               <div className={clsx(css.btn__chat, css1000.btn__chat)}>
-                <div className={css.text__btn}>Chat Shop</div>
+                <div className={clsx(css.text__btn, css1000.text__btn)}>
+                  Chat Shop
+                </div>
               </div>
               <div className={clsx(css.btn__more, css1000.btn__more)}>
-                <div className={css.text__btn}>View Shop</div>
+                <div className={clsx(css.text__btn, css1000.text__btn)}>
+                  View Shop
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className={clsx(css.info__body)}>
-          <div className={clsx(css.items)}>
-            <span className={css.paramanter}>{data.productShop}</span> Products
+        <div className={clsx(css.info__body, css1000.info__body)}>
+          <div
+            className={clsx(
+              css.body__work__underneath__1000,
+              css1000.body__work__underneath__1000
+            )}
+          >
+            <div className={clsx(css.items, css1000.items)}>
+              <span
+                className={clsx(
+                  css.paramanter__prefix,
+                  css1000.paramanter__prefix
+                )}
+              >
+                {data.productShop}
+              </span>
+              Products{" "}
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.productShop}
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+              <span
+                className={clsx(
+                  css.paramanter__prefix,
+                  css1000.paramanter__prefix
+                )}
+              >
+                {data.starShop}
+              </span>{" "}
+              Rating{" "}
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.starShop}
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+              <span
+                className={clsx(
+                  css.paramanter__prefix,
+                  css1000.paramanter__prefix
+                )}
+              >
+                {data.responsiveShop}
+              </span>
+              Chat Response
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.responsiveShop}
+              </span>
+            </div>
           </div>
-          <div className={clsx(css.items)}>
-            <span className={css.paramanter}>{data.productShop}</span> Rating
-          </div>
-          <div className={clsx(css.items)}>
-            <span className={css.paramanter}>{data.responsiveShop}</span> Chat
-            Response
+          <div
+            className={clsx(
+              css.body__work__on__1000,
+              css1000.body__work__on__1000
+            )}
+          >
+            <div className={clsx(css.items, css1000.items)}>
+              Ratings
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.rating}
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+              Response Rate
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.responsiveShop}
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+              Joined
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.timeJoinShop}
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+              Products{" "}
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.productShop}
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+              Response Time
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                within hours
+              </span>
+            </div>
+            <div className={clsx(css.items, css1000.items)}>
+            Follower
+              <span
+                className={clsx(
+                  css.paramanter__suffix,
+                  css1000.paramanter__suffix
+                )}
+              >
+                {data.followShop}
+              </span>
+            </div>
           </div>
         </div>
         <div className={clsx(css.footer, css1000.footer)}>

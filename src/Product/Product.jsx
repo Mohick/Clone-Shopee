@@ -16,6 +16,7 @@ import OrtherProducts from "./Other Product/Other__Products";
 import DescriptionProduct from "./Description Product/Description Product";
 import RatingProduct from "./Rating Products/Rating Products";
 import ReltesProduct from "./Relate_Product/Relate_Product";
+import css from "./products.module.scss";
 import css1000 from "./product_1000.module.scss";
 import VoteProductsFromUser from "./vote_products_from_user/vote_products_from_user";
 import FreeReturnProduct1000 from "./Free Return/free_return_1000";
@@ -23,6 +24,7 @@ import FreeShip1000 from "./Free Ship/free_ship_1000";
 import QuantityProduct1000 from "./Quantity/quantity_1000";
 import BtnBuyProducts1000 from "./btn__buy__products/btn__buy__products__1000";
 import Media1000 from "./Media/media__1000";
+import clsx from "clsx";
 const Product = () => {
   const [items, setItems] = useState(null);
 
@@ -55,7 +57,7 @@ const Product = () => {
   }, [title]);
   if (!items) return;
   return (
-    <div className={"layout"}>
+    <div className={clsx(css.layout, "layout")}>
       <ProductHeaderMobi name={items.name} />
       <div className={css1000.introduce__product}>
         <div className={css1000.ui__products}>
@@ -66,7 +68,7 @@ const Product = () => {
                 events: items.event,
               }}
             />
-            <Media1000 like={items.rating}/>
+            <Media1000 like={items.rating} />
           </div>
         </div>
         <div className={css1000.text__info__products}>
@@ -80,7 +82,7 @@ const Product = () => {
           <FreeReturnProduct />
           <FreeReturnProduct1000 />
           <FreeShip1000 />
-          <QuantityProduct1000 available={items.available}/>
+          <QuantityProduct1000 available={items.available} />
           <BtnBuyProducts1000 />
         </div>
       </div>
@@ -97,9 +99,18 @@ const Product = () => {
         productShop={items.productsShop}
         responsiveShop={items.responseRateShop}
         starShop={items.star}
+        timeJoinShop={items.joinedShop}
+        rating={items.rating}
+        followShop={items.Follower}
       />
       <OrtherProducts otherProducts={items.otherProducts} />
-      <DescriptionProduct description={items.productDescription} />
+      <DescriptionProduct
+        Kind={items.kind}
+        category={items.navigationProducts}
+        discount={100 - (items.discount / items.priceDeFault) * 100}
+        arrayString={items.productDescription}
+        shipFrom={items.locationShop}
+      />
       <RatingProduct comment={items.comment} star={items.star} />
       <ReltesProduct dataRelateProduct={items.otherProducts} />
     </div>

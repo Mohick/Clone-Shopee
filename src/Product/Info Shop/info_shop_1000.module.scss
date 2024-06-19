@@ -4,18 +4,93 @@
         .layout {
             padding: 2rem 3rem;
             display: flex;
+            flex-direction: row;
 
             .info__header {
                 justify-content: flex-start;
 
-                .box__btn__visit__info__shop {
-                    flex: 0;
-                    display: flex;
+                .header__box__visit__shop {
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: flex-start;
                     gap: .5rem;
-                   
 
+                    .info__text {
+                        .localtionsShop {
+                            display: none;
+                        }
+                    }
 
+                    .box__btn__visit__info__shop {
+                        flex: 0;
+                        display: flex;
+                        gap: .5rem;
+                        margin-top: 1rem;
+
+                        .btn__chat {
+                            display: block;
+                            background: #ffeee8;
+                            cursor: pointer;
+
+                            .text__btn {
+                                border: 0.1rem solid#ee4d2d;
+                                border-radius: .2rem;
+                                -webkit-border-radius: .2rem;
+                                -moz-border-radius: .2rem;
+                                -ms-border-radius: .2rem;
+                                -o-border-radius: .2rem;
+                            }
+                        }
+
+                        .btn__more {
+                            @extend .btn__chat;
+                            background: #fff;
+
+                            .text__btn {
+                                color: #333;
+                                border: 0.1rem solid #3333;
+                                border-radius: .2rem;
+                                -webkit-border-radius: .2rem;
+                                -moz-border-radius: .2rem;
+                                -ms-border-radius: .2rem;
+                                -o-border-radius: .2rem;
+                            }
+                        }
+
+                    }
                 }
+            }
+
+            .info__body {
+                width: 100%;
+                padding: 1rem;
+
+                .body__work__underneath__1000 {
+                    display: none;
+                }
+
+                .body__work__on__1000 {
+                    padding: 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 2rem;
+                    .items {
+                        display: flex;
+                        gap: 1rem;
+                        justify-content: space-between;
+                        color: #999999;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        .paramanter__prefix {
+                            display: none;
+                        }
+
+                        .paramanter__suffix {
+                            display: block;
+                        }
+                    }
+                }
+
             }
 
             .footer {

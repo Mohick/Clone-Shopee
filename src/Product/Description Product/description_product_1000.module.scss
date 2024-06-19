@@ -1,0 +1,78 @@
+@media screen and (min-width: 1000px) {
+    .description__product {
+        .layout {
+            padding: 2rem;
+
+            .header {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .header__title {
+                    background: #fafafa;
+                    width: 100%;
+                    padding: 1rem;
+                    font-size: 1.5rem;
+                }
+
+                .header__description {
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .items__description {
+                        font-size: 1.2rem;
+                        display: flex;
+                        gap: 3rem;
+                        text-wrap: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-transform: capitalize;
+
+                        .title__items {
+                            font-weight: 500;
+                            width: 10rem;
+                            color: #999999;
+                        }
+
+                        .value__items {
+                            font-weight: 400;
+                            display: flex;
+                            gap: .5rem;
+                            align-items: center;
+
+                            .arrow__icon__items {
+                                width: 1.2rem;
+                            }
+
+                        }
+                    }
+                }
+
+                .header__btn__more {
+                    display: none;
+                }
+
+                border: 0;
+            }
+
+            .body {
+                border-top: 0;
+                height: auto;
+                .body__title {
+                    background: #fafafa;
+                    width: 100%;
+                    padding: 1rem;
+                    font-size: 1.5rem;
+                }
+                line-height: 2rem;
+
+            }
+
+            .show__more {
+                display: none;
+            }
+        }
+    }
+}

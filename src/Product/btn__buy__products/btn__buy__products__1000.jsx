@@ -1,10 +1,11 @@
 import clsx from "clsx";
+import css from "./btn__buy__products.module.scss"
 import css1000 from "./btn__buy__products__1000.module.scss";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 
 const BtnBuyProducts1000 = () => {
   return (
-    <div className={clsx(css1000.btn__buy__products__1000)}>
+    <div className={clsx(css.btn__buy__products__1000,css1000.btn__buy__products__1000)}>
       <div className={clsx(css1000.box__btn__buy__product)}>
         <div className={clsx(css1000.box__btn__cart)}>
           <Icons.shoppingPlus className={clsx(css1000.icon__btn__cart)} />

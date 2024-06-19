@@ -10,8 +10,7 @@
         .info__header {
             display: flex;
             align-items: center;
-            gap: .5rem;
-            flex-wrap: wrap;
+            gap: 1rem;
 
             .logo__shop {
                 position: relative;
@@ -55,25 +54,33 @@
                 }
             }
 
-            .info__text {
-                .name__shop {
-                    font-size: 1.5rem;
-                    line-height: 1.8rem;
-                    color: #000000;
-                    font-weight: 600;
-                    margin-bottom: .5rem;
-                }
+            .header__box__visit__shop {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
 
-                .time__shop__online {
-                    font-size: 1.2rem;
-                    color: #bdbdbd;
-                    font-weight: 100;
-                }
+                .info__text {
+                    .name__shop {
+                        font-size: 1.5rem;
+                        line-height: 1.8rem;
+                        color: #000000;
+                        font-weight: 600;
+                        margin-bottom: .5rem;
+                    }
 
-                .localtionsShop {
-                    @extend .time__shop__online;
-                }
+                    .time__shop__online {
+                        font-size: 1.2rem;
+                        color: #bdbdbd;
+                        font-weight: 100;
+                    }
 
+                    .localtionsShop {
+                        @extend .time__shop__online;
+                        display: block;
+                    }
+
+                }
             }
 
             .box__btn__visit__info__shop {
@@ -102,23 +109,37 @@
 
                 .btn__chat {
                     @extend .btn__more;
+                    display: none;
                 }
 
             }
         }
 
         .info__body {
-            display: flex;
-            gap: 1rem;
             margin-top: 0.5rem;
 
-            .items {
-                font-size: 1.2rem;
+            .body__work__underneath__1000 {
+                display: flex;
+                gap: 1rem;
 
-                .paramanter {
-                    color: #ee4d2d;
-                    margin-right: 0.5rem;
+                .items {
+                    font-size: 1.2rem;
+
+                    .paramanter__prefix {
+                        color: #ee4d2d;
+                        margin-right: 0.5rem;
+                    }
+
+                    .paramanter__suffix {
+                        @extend .paramanter__prefix;
+                        display: none;
+                    }
                 }
+
+            }
+            .body__work__on__1000{
+                @extend .body__work__underneath__1000;
+                display: none;
             }
 
         }

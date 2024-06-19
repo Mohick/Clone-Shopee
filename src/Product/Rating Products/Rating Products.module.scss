@@ -124,7 +124,7 @@
 
                     .body__like {
                         display: flex;
-                        gap: .5rem;
+                        gap: 1rem;
 
                         .body__have__color__like,
                         .body__no__color__like {
@@ -154,6 +154,7 @@
                     .body__icon__full__star {
                         width: 1rem;
                         height: 1rem;
+                        fill: red;
                     }
                 }
                 .body__comment__of__user {
@@ -165,7 +166,7 @@
             }
 
             .body__items+.body__items {
-                border-top: .1rem solid;
+                border-top: .1rem solid #dddddd;
             }
         }
 

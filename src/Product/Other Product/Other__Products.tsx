@@ -2,6 +2,7 @@ import React from "react";
 import RenderItemsNeedSearch from "../../Result Search Items Page/Items Need Search/Render Items/Render Items";
 import css from "./Other__Products.module.scss";
 import css600 from "./other_products_600.module.scss"
+import css1000 from "./other_products_1000.module.scss"
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import clsx from "clsx";
 type props = {
@@ -12,7 +13,7 @@ const OrtherProducts: React.FC<props> = (data: props) => {
   const renderData = data.otherProducts.slice(0, 4) as [];
 
   return (
-    <div className={clsx(css.orther__products,css600.orther__products)}>
+    <div className={clsx(css.orther__products,css600.orther__products,css1000.orther__products)}>
       <div className={clsx(css.layout,css600.layout, "layout")}>
         <div className={clsx(css.header)}>
           <div className={css.header__title}>From The Same Shop</div>
