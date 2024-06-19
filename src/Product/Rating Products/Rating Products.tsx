@@ -98,7 +98,7 @@ const RatingProduct: React.FC<props> = (props: props) => {
               Đóng gói cẩn thận (123)
             </div>
           </div>
-          <div className={css1000.header__filter__star}>
+          <div className={clsx(css.header__filter__star,css1000.header__filter__star)}>
             <div className={css1000.header__filter__title}>
               <div className={css1000.text__title}>{props.star} out of 5</div>
               <div className={css1000.box__icon__star}>

@@ -33,7 +33,7 @@ const DescriptionProduct = (data: descriptionProduct) => {
           <div className={clsx(css.header__title, css1000.header__title)}>
             Products Specification
           </div>
-          <div className={clsx(css1000.header__description)}>
+          <div className={clsx(css.header__description,css1000.header__description)}>
             <div className={clsx(css1000.items__description)}>
               <div className={css1000.title__items}>Category</div>
               <div

@@ -25,6 +25,8 @@ import QuantityProduct1000 from "./Quantity/quantity_1000";
 import BtnBuyProducts1000 from "./btn__buy__products/btn__buy__products__1000";
 import Media1000 from "./Media/media__1000";
 import clsx from "clsx";
+import VoucherProduct1000 from "./Voucher/voucher_product_1000";
+import DropdownBuyProduct from "./dropdown__buy__product/dropdown__buy__product";
 const Product = () => {
   const [items, setItems] = useState(null);
 
@@ -79,6 +81,7 @@ const Product = () => {
             sold={items.sold}
           />
           <PriceProduct price={items.priceDeFault} discount={items.discount} />
+          <VoucherProduct1000 voucher={items.Vouchers} urlImgShop={items.logoShop}/>
           <FreeReturnProduct />
           <FreeReturnProduct1000 />
           <FreeShip1000 />
@@ -113,6 +116,7 @@ const Product = () => {
       />
       <RatingProduct comment={items.comment} star={items.star} />
       <ReltesProduct dataRelateProduct={items.otherProducts} />
+      <DropdownBuyProduct/>
     </div>
   );
 };

@@ -489,32 +489,26 @@ export const Icons = {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeMiterlimit="10"
-              stroke="#ee4d2d" // Set stroke color here
             />
-            <circle cx="6" cy="13.5" r="1" fill="#ee4d2d" /> // Set fill color
-            here
-            <circle cx="11.5" cy="13.5" r="1" fill="#ee4d2d" /> // Set fill
-            color here
+            <circle cx="6" cy="13.5" r="1" />
+
+            <circle cx="11.5" cy="13.5" r="1" />
           </g>
           <line
-            fill="none"
             strokeLinecap="round"
             strokeMiterlimit="10"
             x1="7.5"
             x2="10.5"
             y1="7"
             y2="7"
-            stroke="#ee4d2d" // Set stroke color here
           />
           <line
-            fill="none"
             strokeLinecap="round"
             strokeMiterlimit="10"
             x1="9"
             x2="9"
             y1="8.5"
             y2="5.5"
-            stroke="#ee4d2d" // Set stroke color here
           />
         </g>
       </svg>
@@ -522,18 +516,35 @@ export const Icons = {
   },
   starVoteProduct: (props: IconProps) => {
     return (
-      <svg
-        viewBox="0 0 15 15"
-        x="0"
-        y="0"
-        {...props}
-      >
+      <svg viewBox="0 0 15 15" x="0" y="0" {...props}>
         <polygon
           points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"
         ></polygon>
+      </svg>
+    );
+  },
+  chat: (props: IconProps) => {
+    return (
+      <svg
+        enable-background="new 0 0 15 15"
+        viewBox="0 0 15 15"
+        role="img"
+        {...props}
+      >
+        <g stroke="none">
+          <path
+            d="m11.2 4.1c-1.1-1.3-3-2.2-5-2.2-3.4 0-6.2 2.3-6.2 5.2 0 1.7.9 3.2 2.4 4.2l-.7 1.4s-.2.4.1.6c.3.3 1.1-.1 1.1-.1l2.4-.9c.3.1.6.1.9.1.7
+           0 1.5-.1 2.1-.3.5.2 1 .2 1.6.2h.6l2.1 1.5c.6.4.8.1.8-.4v-2.2c.9-.8 1.5-1.8 1.5-3 0-2-1.6-3.6-3.7-4.1zm-5.6 7.3h-.5-.2l-1.8.7.5-1.1-.7-.5c-1.3-.8-2-2-2-3.4 0-2.3 2.3-4.2 
+           5.2-4.2 2.8 0 5.2 1.9 5.2 4.2s-2.4 4.3-5.2 4.3c-.2 0-.4 0-.5 0zm6.8-.8v1.2c0 .6-.1.4-.4.2l-1-.8c-.4.1-.8.1-1.2.1 1.5-1 2.5-2.5 2.5-4.2 0-.6-.1-1.1-.3-1.7 1.2.6
+            1.9 1.6 1.9 2.7 0 1-.5 1.9-1.5 2.5z"
+          ></path>
+          <circle cx="3.1" cy="7.1" r=".8"></circle>
+          <circle cx="9.1" cy="7.1" r=".8"></circle>
+          <circle cx="6.1" cy="7.1" r=".8"></circle>
+        </g>
       </svg>
     );
   },

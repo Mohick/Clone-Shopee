@@ -10,11 +10,13 @@
             font-size: 1.3rem;
             font-weight: 500;
         }
-
+        .header__description{
+            display: none
+        }
         .header__btn__more {
             @extend .header__title;
             flex: 1;
-            display: flex;
+            display: none;
             align-items: center;
             gap: .3rem;
             justify-content: flex-end;

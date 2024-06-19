@@ -6,15 +6,28 @@
         padding: 0 2rem;
 
         .price {
-            font-size: 1.6rem;
-            line-height: 1.6rem;
-            font-weight: 600;
-            height: calc(1.6rem * 2);
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            color: #ee4d2d;
+
+            .price__default {
+                display: none;
+            }
+
+            .price__discount {
+                display: block;
+                font-size: 1.6rem;
+                line-height: 1.6rem;
+                font-weight: 600;
+                height: calc(1.6rem * 2);
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                color: #ee4d2d;
+            }
+
+            .price__percent {
+                display: none;
+            }
         }
+
     }
 }

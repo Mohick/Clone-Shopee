@@ -17,7 +17,7 @@
                 .header__title {
                     font-size: 1.2rem;
                     color: #757575;
-                    width: 7rem;
+                    width: 10rem;
                 }
             }
 
@@ -42,7 +42,7 @@
                         width: 1.4rem;
                         height: 1.4rem;
                         position: relative;
-
+                        z-index: 1;
                         .dropdown {
                             position: absolute;
                             left: -25rem;

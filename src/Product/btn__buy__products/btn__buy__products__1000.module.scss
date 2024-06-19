@@ -2,6 +2,7 @@
     .btn__buy__products__1000 {
         margin-top: 3rem;
         display: block;
+
         .box__btn__buy__product {
             display: flex;
             gap: 1rem;
@@ -40,9 +41,10 @@
                 background: #ffeee8;
 
                 .icon__btn__cart {
+                    fill: #ee4d2d;
+                    stroke: #ee4d2d;
                     width: 1.5rem;
                     height: 1.5rem;
-                    fill: #666666;
                     margin-right: 1rem;
                 }
 

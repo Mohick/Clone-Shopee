@@ -9,6 +9,8 @@
 
             .price {
                 font-size: 2rem;
+                display: flex;
+                align-items: center;
 
                 .price__default {
                     color: #929292;
@@ -28,14 +30,21 @@
                         width: calc(100% + 1rem);
                         height: 0.1rem;
                     }
+                    display: block;
                 }
+
 
                 .price__discount {
                     color: #ee4d2d;
                     position: relative;
+                    display: block;
                     margin-right: 1rem;
+                    font-size: 2rem;
+                    line-height: normal;
+                    height: auto;
 
                 }
+
                 .price__percent {
                     background: #ee4d2d;
                     color: #fff;
@@ -46,9 +55,13 @@
                     -moz-border-radius: .2rem;
                     -ms-border-radius: .2rem;
                     -o-border-radius: .2rem;
-}
+                    display: block;
+                }
+
                 .price__default+.price__discount {
                     margin-left: 1rem;
+                    display: block;
+
                 }
             }
         }

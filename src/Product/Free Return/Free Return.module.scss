@@ -7,6 +7,7 @@
         gap: 1rem;
         display: flex;
         align-items: center;
+
         .icon {
             width: 3.2rem;
             fill: #fff;
@@ -17,12 +18,15 @@
             display: flex;
             flex-direction: column;
             gap: .5rem;
+            overflow: hidden;
+
             .title {
                 font-size: 1.6rem;
                 font-weight: 600;
                 color: #ee4d2d;
                 line-height: 1.4rem;
             }
+
             .description {
                 font-size: 1.2rem;
                 color: #757170;
@@ -30,11 +34,15 @@
                 line-height: 1.4rem;
                 white-space: nowrap;
                 text-overflow: ellipsis;
+                flex: 1;
+                width: 100%;
                 overflow: hidden;
+
             }
         }
     }
 }
+
 .free__return___product__1000 {
     display: none;
 }
