@@ -13,6 +13,11 @@
 
             .body__info__products {
                 .body__box__info__text {
+                    .body__info__text__title{
+                        height: 2.6rem;
+                        width: 28rem;
+                        -webkit-line-clamp: 2;
+                    }
                     .body__info__text__return {
                         .body__time__return {
                             padding: .5rem;

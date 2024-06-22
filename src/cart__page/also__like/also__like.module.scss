@@ -1,0 +1,19 @@
+.you__also__like {
+    .you__also__like__layout {
+        .header {
+            margin-bottom: 1rem;
+            .header__title {
+                font-size: 1.5rem;
+                color: #757575;
+                width: 10rem;
+                text-align: center;
+                width: 100%;
+            }
+        }
+        .body{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 1rem;
+        }
+    }
+}

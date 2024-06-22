@@ -45,7 +45,7 @@ const RenderItemsIncart = (props: Props) => {
             <img width={"100%"} height={"100%"} src={data.url} alt="" />
           </div>
           <div className={clsx(css.body__box__info__text,css1000.body__box__info__text)}>
-            <div className={clsx(css.body__info__text__title)}>{data.name}</div>
+            <div className={clsx(css.body__info__text__title,css1000.body__info__text__title)}>{data.name}</div>
             <div className={clsx(css.body__info__text__return,css1000.body__info__text__return)}>
               <span className={clsx(css.body__time__return,css1000.body__time__return)}>Change of Mind in 15 Days</span>
             </div>

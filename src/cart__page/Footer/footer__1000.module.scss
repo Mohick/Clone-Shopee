@@ -1,0 +1,192 @@
+@media screen and (min-width: 1000px) {
+    .footer__cart__than__1000 {
+        .footer__cart__than__1000__layout {
+            position: relative;
+
+            &.active__fixed {
+                bottom: 0;
+                position: fixed;
+                margin: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: .01rem;
+                    background: rgba(255, 255, 255, 0.8);
+                    top: 0;
+                    left: 0;
+                    z-index: 1000;
+                    box-shadow: 0 0 .5rem #555;
+                    z-index: -1;
+                }
+            }
+
+            box-shadow: none;
+
+            .footer__items__select__voucher {
+
+
+                .footer__box__apply__voucher {
+                    align-items: center;
+
+                    .footer__box__title__icon {
+                        padding: 1rem 0;
+
+                        .footer__apply__voucher__title {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .footer__btn__open__modal__voucher {
+                        font-size: 1.5rem;
+                        color: #05a;
+                    }
+                }
+            }
+
+            .footer__items__select__coin {
+                padding: 1rem 0;
+
+                &.disable {
+                    position: relative;
+
+                    ::after {
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        background: rgba(255, 255, 255, 0.1);
+                    }
+                }
+
+                .footer__box__apply__coin {
+                    width: 50%;
+
+
+                    .footer__box__check__title__description__icon {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        .footer__checkbox {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+
+                        .footer__box__title__icon {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+
+                            .footer__apply__coin__icon {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                            }
+
+                            .footer__apply__coin__title {
+                                text-transform: capitalize;
+                                font-size: 1.5rem;
+                            }
+
+                            .footer__apply__coin__description {
+                                display: flex;
+                                gap: .5rem;
+                                font-size: 1.5rem;
+                                align-items: center;
+
+                                .footer__apply__coin__description__icon {
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+
+                                }
+                            }
+                        }
+                    }
+
+                    .footer__discount__with__coin {
+                        font-size: 1.5rem;
+                    }
+                }
+
+            }
+
+            .footer__items__buy__products {
+                display: flex;
+                padding: 1rem 0;
+
+                .footer__box__selections {
+                    display: flex;
+                    gap: 1rem;
+                    flex: 1;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    .footer__input__checkbox {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+
+                    .footer__option__select__all {
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                    }
+
+                    .footer__option__del {
+                        @extend .footer__option__select__all;
+                        display: block
+                    }
+
+                    .footer__option__del__all {
+                        @extend .footer__option__select__all;
+                        display: block
+                    }
+
+                    .footer__option__go__like {
+                        @extend .footer__option__select__all;
+                        display: block;
+                        color: tomato;
+                    }
+                }
+
+                .footer__box__info__buy__product {
+
+
+                    .footer_info__amount__products {
+                        font-size: 1.5rem;
+                        display: flex;
+                        gap: .5rem;
+                        .footer_num__amount__products {
+                            font-size: 1.5rem;
+                            display: block;
+                        }
+                    }
+
+                    .footer_info__cost__products {
+                        font-size: 2rem;
+                        color: tomato;
+                    }
+
+                    .footer_info__btn__buy__products {
+                        padding: 1rem 5rem;
+                    }
+                }
+
+            }
+
+        }
+
+        transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+    }
+}

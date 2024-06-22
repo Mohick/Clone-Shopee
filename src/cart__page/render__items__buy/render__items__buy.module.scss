@@ -63,7 +63,7 @@
             align-items: center;
             gap: 1rem;
             flex: 1;
-
+            overflow: hidden;
             .body__box__input {
                 .body__input__checkbox {
                     width: 1.5rem;
@@ -84,7 +84,7 @@
                 flex-direction: column;
                 gap: .5rem;
                 justify-content: center;
-
+                overflow: hidden;
                 .body__info__text__title {
                     font-size: 1.3rem;
                     font-weight: 400;
@@ -96,6 +96,7 @@
                     text-overflow: ellipsis;
                     text-wrap: wrap;
                     overflow: hidden;
+                    width: 100%;
                 }
 
                 .body__info__text__return {

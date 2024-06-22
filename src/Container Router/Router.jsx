@@ -77,6 +77,8 @@ function RouterPage() {
         element={
           <Suspense loading="....">
             <CartPage />
+            <FooterCooperate />
+            
           </Suspense>
         }
       />
