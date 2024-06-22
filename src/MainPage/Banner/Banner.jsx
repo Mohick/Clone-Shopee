@@ -9,7 +9,7 @@ function BannerMainPage() {
       <div className="banner__main__page--layout layout">
         <div className="banner__main__page--banner"> 
           <BannerShope
-            url={"https://run.mocky.io/v3/498c1915-de64-426a-9f0b-38cb9099ddd0"}
+            url={"http://localhost:3000/api__banner__side__event"}
             classItems={"BannerMainPage"}
           />
         </div>

@@ -2,14 +2,36 @@
     margin-top: 1rem;
     background: #fff;
 
-    .title {
-        font-size: 1.6rem;
-        line-height: 1.6rem;
-        font-weight: 400;
-        height: calc(1.6rem * 2);
+    .layout {
+
+        display: flex;
+        gap: 1rem;
         overflow: hidden;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        .box__preferred{
+
+            .preferred {
+                padding: .2rem 1rem;
+                background: tomato;
+                color: #fff;
+                border-radius: 1rem;
+                font-size: 1.2rem;
+                display: inline-block;
+            }
+        }
+
+        .title {
+            font-size: 1.6rem;
+            line-height: 1.6rem;
+            font-weight: 400;
+            height: calc(1.6rem * 2);
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            text-wrap: wrap;
+            flex: 1;
+
+        }
     }
 }

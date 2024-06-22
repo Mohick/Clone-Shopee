@@ -12,20 +12,14 @@ import css1100 from "./Daily Page 1100.module.scss";
 import { Icons } from "../Container  Component  SVG ICON/Manage Icon";
 import { Link } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
-import  json  from '../daily Manpage.json'
 const DailyPage = () => {
   const [items, setItems] = useState([]);
-
   useEffect(() => {
-    axios
-      .get("https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c")
-      .then((response) => {
-        const data = response.data;
-        setItems(data);
-      });
+    axios.get("http://localhost:3000/api__search").then((response) => {
+      const data = response.data;
+      setItems(data);
+    });
   }, []);
-  const a = [...json]
-
   return items.length === 0 ? null : (
     <div
       className={clsx(
@@ -59,11 +53,11 @@ const DailyPage = () => {
             css1100.body
           )}
         >
-          <RenderItemsNeedSearch data={a} />
+          <RenderItemsNeedSearch data={items} />
         </div>
 
-        <div className={clsx(css.footer,css1000.footer)}>
-          <Pagination length={a.length} />
+        <div className={clsx(css.footer, css1000.footer)}>
+          <Pagination length={items.length} />
         </div>
       </div>
     </div>

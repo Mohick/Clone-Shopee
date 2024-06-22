@@ -24,14 +24,14 @@ const PaginationDefault = ({length}) => {
         { arrLength.length > 5 ?
       <>
         {arrLength.map((length, index) => {
-          return <Link to={ url+ (index + 1)} className={clsx(css.options, Number(page) == index+1 ? css.active : undefined)}>{index + 1}</Link>;
+          return <Link to={ url+ (index + 1)} key={index} className={clsx(css.options, Number(page) == index+1 ? css.active : undefined)}>{index + 1}</Link>;
         })}
         <div className={clsx(css.options)}>
             ...
         </div>
       </>
       :arrLength.map((length, index) => {
-        return <Link to={ url+ (index + 1)} className={clsx(css.options, Number(page) == index+1 ? css.active : undefined)}>{index + 1}</Link>;
+        return <Link to={ url+ (index + 1)} key={index} className={clsx(css.options, Number(page) == index+1 ? css.active : undefined)}>{index + 1}</Link>;
       })
       }
     </div>

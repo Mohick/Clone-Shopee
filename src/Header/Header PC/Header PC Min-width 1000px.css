@@ -9,6 +9,10 @@
     -o-transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 1rem;
   }
+  .HeaderInfoShopee {
+    background: #f53d2d;
+    width: 100%;
+  }
   .header__pc__main__page--navigation {
     display: flex;
     justify-content: space-between;
@@ -245,10 +249,10 @@
     right: calc((100% / 2.5) / 4);
     bottom: calc(100% + 1rem);
   }
-  .header__pc__main__page__navigation__info__box--profiles:hover >
-  .header__pc__main__page__navigation__info__profiles--dropdown,
+  .header__pc__main__page__navigation__info__box--profiles:hover
+    > .header__pc__main__page__navigation__info__profiles--dropdown,
   .header__pc__main__page__navigation__info__box--language:hover
-  >  .header__pc__main__page__navigation__info__language--dropdown {
+    > .header__pc__main__page__navigation__info__language--dropdown {
     scale: 1;
     opacity: 1;
   }
@@ -285,8 +289,7 @@
     width: 100%;
     margin-top: 2rem;
   }
-  .header__pc__main__page--logo{
-   
+  .header__pc__main__page--logo {
   }
   .header__pc__main__page__box--search {
     flex: 1;
@@ -299,7 +302,7 @@
   .header__pc__main__page__box__search--last {
     display: flex;
     gap: 1rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     color: #fff;
     font-size: 1.2rem;
   }

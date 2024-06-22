@@ -21,6 +21,7 @@ function BannerShope({ url, classItems }) {
       clearTimeout(allow);
     };
   }, []);
+  if (items.length == 0) return;
   return (
     <div
       className={`shopee__banner__body--banner ${(
@@ -96,7 +97,9 @@ function BannerShope({ url, classItems }) {
               <div
                 key={index}
                 className={`shopee__banner__body__banner__dot--items
-                ${("" + classItems).trim()}__shopee__banner__body__banner__dot--items shopee__banner__body__banner__dot__items--active`}
+                ${(
+                  "" + classItems
+                ).trim()}__shopee__banner__body__banner__dot--items shopee__banner__body__banner__dot__items--active`}
                 onClick={() => {
                   HandleScrollBannerShopee.handleDotsItems(
                     item,

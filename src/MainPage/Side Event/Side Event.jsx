@@ -9,7 +9,7 @@ function SideEventMainPage() {
   useEffect(() => {
     const callAPI = setTimeout(() => {
       axios
-        .get("https://run.mocky.io/v3/24b22676-1dd3-417d-9e0d-da405f098ea4")
+        .get("http://localhost:3000/site__events__main__page")
         .then((response) => {
           const dataArry = response.data[0].items;
           const dataArry1 = response.data[1].items;
@@ -24,7 +24,7 @@ function SideEventMainPage() {
   }, []);
 
   useCallback(() => {}, []);
-
+  if(items.length == 0) return
   return (
     <div id="side__event">
       <div className="side__event--layout layout">

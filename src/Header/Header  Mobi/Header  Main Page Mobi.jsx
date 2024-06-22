@@ -8,7 +8,7 @@ function HeaderMainPageMobi() {
   return (
     <div id="header__main__page__mobi">
      <div className="header__main__page__mobi--slider">
-     <BannerShopee url={'https://run.mocky.io/v3/498c1915-de64-426a-9f0b-38cb9099ddd0'} classItems={'bannerMobiPC'}/>
+     <BannerShopee url={'http://localhost:3000/api__banner__side__event'} classItems={'bannerMobiPC'}/>
      </div>
       <div className="header__main__page__mobi--layout layout">
         <div className="header__main__page__mobi--box--cpm--search">

@@ -14,7 +14,7 @@ function CategoriesMainPage() {
     let mounted = true;
 
     axios
-      .get("https://run.mocky.io/v3/32501418-769c-42fe-b3cd-46404a7aaebd")
+      .get("http://localhost:3000/api__categores__main__page")
       .then((response) => {
         if (mounted) {
           const data = response.data;
@@ -30,7 +30,7 @@ function CategoriesMainPage() {
       mounted = false;
     };
   }, []);
-
+  if(items.length == 0) return
   return (
     <div id="categories__main__page">
       <div className="categories__main__page--layout layout">

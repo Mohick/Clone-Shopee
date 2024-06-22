@@ -1,0 +1,31 @@
+.header__cart__page {
+    
+    background: #fff;
+    .cart__layout {
+        display: flex;
+        gap: 1rem;
+
+        .header__icon__arrow {
+            width: 2rem;
+            fill: #f53e2d;
+            height: 2rem;
+        }
+
+        .header__title {
+            flex: 1;
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+
+        .header__btn__edit {
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+    }
+}
+
+.header__cart__than__1000 {
+    display: none;
+}

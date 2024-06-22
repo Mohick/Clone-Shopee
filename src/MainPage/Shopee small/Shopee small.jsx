@@ -97,7 +97,7 @@ function ShopeeSmallMainPage() {
         <div className="shopee__small--body">
           <div className="shopee__small__body--banner">
           <BannerShope
-            url={"https://run.mocky.io/v3/24ca186f-cb3a-4a2f-8cf8-8f65370e91ec"} classItems={'small'}
+            url={"http://localhost:3000/api__banner__side__event"} classItems={'small'}
           />
           </div>
           <ShopeeSmallItemsMainPage />

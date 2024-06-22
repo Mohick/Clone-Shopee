@@ -1,0 +1,45 @@
+@media screen and (min-width: 1000px) {
+    .products__in_cart {
+        margin-top: 2rem;
+
+        .products__in_cart__layout {
+
+            .products__in_cart__header {
+                padding: 2rem;
+                display: flex;
+                background: #fff;
+
+                .header__product {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    .header__product__check {
+                        width: 1.4rem;
+                        height: 1.4rem;
+                    }
+
+                    .header__product__name {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .box__header__info {
+                    display: grid;
+                    flex: 1;
+                    grid-template-columns: repeat(4, 1fr);
+
+                    .header__info__items {
+                        font-size: 1.3rem;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .products__in_cart__body {
+                margin-top: 2rem;
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@ function ShopeeSmallItemsMainPage() {
   useEffect(() => {
     let allow = true;
     axios
-      .get("https://run.mocky.io/v3/8fc070c2-cf1f-4010-bd51-8ab0dfe920d1")
+      .get("http://localhost:3000/api__small__main__page")
       .then((response) => {
         if (allow) {
           const data = response.data;

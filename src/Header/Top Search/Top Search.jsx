@@ -8,7 +8,7 @@ function TopSearchHeader() {
     let allow = true;
     if (allow) {
       axios
-        .get("https://run.mocky.io/v3/ee2a6539-54ae-4412-9dd7-670bbe598a33")
+        .get("http://localhost:3000/api__top__search")
         .then((res) => {
           setItems(res.data);
         })

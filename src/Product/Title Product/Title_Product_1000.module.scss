@@ -1,9 +1,12 @@
-.product__title {
-    margin-top: 0;  
-    .layout {
-        .title {
-            font-size: 2rem;
-            line-height: 2rem;
+@media screen and (min-width: 1000px) {
+    .product__title {
+        margin-top: 0;  
+        .layout {
+            .title {
+                font-size: 2rem;
+                line-height: 2rem;
+                height: 4rem;
+            }
         }
     }
 }

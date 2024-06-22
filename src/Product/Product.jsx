@@ -86,7 +86,7 @@ const Product = () => {
           <FreeReturnProduct1000 />
           <FreeShip1000 />
           <QuantityProduct1000 available={items.available} />
-          <BtnBuyProducts1000 />
+          <BtnBuyProducts1000 id={items.id} nameProduct={items.name} />
         </div>
       </div>
 
@@ -116,7 +116,7 @@ const Product = () => {
       />
       <RatingProduct comment={items.comment} star={items.star} />
       <ReltesProduct dataRelateProduct={items.otherProducts} />
-      <DropdownBuyProduct/>
+      <DropdownBuyProduct nameProducts={items.name}/>
     </div>
   );
 };

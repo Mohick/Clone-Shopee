@@ -1,0 +1,89 @@
+@media screen and (min-width: 1000px) {
+    .render__items__in__cart {
+
+        .render__items__in__cart__header {
+
+            .box__btn__edit {
+                display: none;
+            }
+        }
+
+        .render__items__in__cart__body {
+            flex-direction: row;
+
+            .body__info__products {
+                .body__box__info__text {
+                    .body__info__text__return {
+                        .body__time__return {
+                            padding: .5rem;
+                            margin-top: .5rem;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+            }
+
+            .body__info__price__products {
+                grid-template-columns: repeat(4, 1fr);
+                align-items: center;
+                justify-content: center;
+
+                .body__box__price__product {
+                    justify-content: center;
+                }
+
+                .body__box__amount__product {
+                    flex-direction: column;
+                }
+
+                .body__box__total__cost__product {
+                    display: flex;
+                    justify-content: center;
+
+                    .body__total__cost__product {
+                        font-size: 1.3rem;
+                        color: tomato;
+
+                        .total__cost {
+                            color: currentColor;
+                        }
+                    }
+                }
+
+                .body__box__btn__delete__product {
+                    @extend .body__box__total__cost__product;
+
+                    .body__btn__delete__product {
+                        font-size: 1.3rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .render__items__in__cart__footer {
+            .footer__options__voucher {
+                .footer__description__options__voucher {
+                    flex: none;
+                }
+
+                .footer__box__btn__more__voucher {
+                    .footer__btn__more__voucher {
+                        display: block;
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                        color: #05a;
+                    }
+
+                    .footer__icon__more__voucher {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}

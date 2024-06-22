@@ -1,0 +1,105 @@
+@media screen and (min-width: 1000px) {
+    .header__cart__page {
+        display: none;
+    }
+
+    .header__cart__than__1000 {
+        background: #fff;
+        display: block;
+        .header__cart__than__1000__layout {
+            .header {
+                display: flex;
+                padding: 2rem 0;
+
+                .box__logo__name__page {
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+
+                    .header__box__icons__logo {
+                        display: flex;
+                        align-items: flex-end;
+                        height: 100%;
+
+                        .header__icons__logo {
+                            width: 15rem;
+                            height: 4rem;
+                            fill: #ee4d2d;
+                        }
+                    }
+
+                    .header__box__name__page {
+                        display: flex;
+                        align-items: flex-end;
+                        height: 100%;
+                        padding-left: 2rem;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 1px;
+                            height: 70%;
+                            background: #ee4d2d;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            -webkit-transform: translateY(-50%);
+                            -moz-transform: translateY(-50%);
+                            -ms-transform: translateY(-50%);
+                            -o-transform: translateY(-50%);
+                        }
+
+                        .header__name__page {
+                            font-size: 1.7rem;
+                            flex: 1;
+                            color: #ee4d2d;
+                            font-size: 400;
+                        }
+                    }
+                }
+
+                .box__search__voucher {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    border: .2rem solid #ee4d2d;
+                    height: 4rem;
+                    .box__input__search {
+                        flex: 1;
+                        background: #fff;
+
+                        .input__search {
+                            flex: 1;
+                            width: 100%;
+                            padding: 1rem;
+                            outline: none;
+                            &::placeholder {
+                                color: gray;
+                            }
+                        }
+                    }
+
+                    .box__btn__find {
+                        padding: 2rem;
+                        background: #ee4d2d;
+
+                        .icon__find {
+                            fill: #fff;
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                    }
+
+                    border-radius: .3rem;
+                    -webkit-border-radius: .3rem;
+                    -moz-border-radius: .3rem;
+                    -ms-border-radius: .3rem;
+                    -o-border-radius: .3rem;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}

@@ -34,11 +34,11 @@ const RenderItemsNeedSearch = ({
         const rated = Number(rating);
 
         const filterDataHaveOnQuery = data.filter((item) => {
-          const kind = item.kind.exChangesStringCharViToLatinh();
-          const ship = item.ShippedFrom.exChangesStringCharViToLatinh();
+          const kind = item.kind?.exChangesStringCharViToLatinh();
+          const ship = item.ShippedFrom?.exChangesStringCharViToLatinh();
           const shipOptions =
-            item.shippingOptions.exChangesStringCharViToLatinh();
-          const brand = item.brands.exChangesStringCharViToLatinh();
+            item.shippingOptions?.exChangesStringCharViToLatinh();
+          const brand = item.brands?.exChangesStringCharViToLatinh();
           const cost = Number(item.cost.replace(/\./g, ""));
           const rate = Number(item.rate);
 
@@ -167,9 +167,7 @@ const RenderItemsNeedSearch = ({
             </div>
           </div>
         </div>
-        {/* <div className={css.find__similar}>
-        Find Similar
-        </div> */}
+   
       </div>
     );
   });

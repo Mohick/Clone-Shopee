@@ -110,6 +110,7 @@
 }
 .items__body__star {
   margin-top: 1rem;
+  display: flex;
 }
 .items__body__sold {
   margin-left: 1rem;
@@ -140,9 +141,12 @@
   color: #26aa99;
   padding-right: .3rem;
   border-right: .1rem solid #eeee;
+  display: flex;
 }
 .items__body__location__shop {
   margin-left: 0.3rem;
+  display: flex;
+
 }
 .items__body__location__shop__name {
   font-size: 1rem;

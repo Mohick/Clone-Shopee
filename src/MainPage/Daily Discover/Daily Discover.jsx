@@ -18,7 +18,7 @@ function DailyDiscoverMainPage() {
   useEffect(() => {
     let allow = true;
     axios
-      .get("https://run.mocky.io/v3/e99a5be3-9162-4969-be88-8df53da91724")
+      .get("http://localhost:3000/api__daily")
       .then((response) => {
         if (allow) {
           const data = response.data;

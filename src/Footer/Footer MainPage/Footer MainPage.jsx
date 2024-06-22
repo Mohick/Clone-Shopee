@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import FooterMainPageCategories from "./Footer MainPage Categories";
 import "./Footer MainPage Max-width 600px.css";
 import "./Footer MainPage Min-width 1000px.css";

@@ -23,6 +23,7 @@ const ResultSearchItemsPage = lazy(() =>
   import("../Result Search Items Page/Result Search Items Page")
 );
 const Product = lazy(() => import("../Product/Product"));
+const CartPage = lazy(() => import("../cart__page/cart__page"));
 function RouterPage() {
   return (
     <Routes>
@@ -68,7 +69,14 @@ function RouterPage() {
 
             <Product />
             <FooterCooperate />
-
+          </Suspense>
+        }
+      />
+      <Route
+        path="/cart"
+        element={
+          <Suspense loading="....">
+            <CartPage />
           </Suspense>
         }
       />

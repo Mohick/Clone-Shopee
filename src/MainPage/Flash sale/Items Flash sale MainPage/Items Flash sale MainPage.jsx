@@ -11,7 +11,7 @@ function ItemsFlashSaleMainPage() {
   useEffect(() => {
     let allow = true;
     axios
-      .get("https://run.mocky.io/v3/73725fc9-97fb-4c39-af43-944486343d7c")
+      .get("http://localhost:3000/flash__sell__main__page")
       .then((response) => {
         if (allow) {
           const data = response.data;
