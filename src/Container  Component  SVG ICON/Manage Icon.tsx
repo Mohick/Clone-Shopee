@@ -460,7 +460,7 @@ export const Icons = {
   minus: (props: IconProps) => {
     return (
       <svg
-        enable-background="new 0 0 10 10"
+        enableBackground="new 0 0 10 10"
         viewBox="0 0 10 10"
         x="0"
         y="0"
@@ -473,7 +473,7 @@ export const Icons = {
   plus: (props: IconProps) => {
     return (
       <svg
-        enable-background="new 0 0 10 10"
+        enableBackground="new 0 0 10 10"
         viewBox="0 0 10 10"
         x="0"
         y="0"

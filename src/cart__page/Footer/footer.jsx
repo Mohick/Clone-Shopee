@@ -2,10 +2,12 @@ import clsx from "clsx";
 import css from "./footer.module.scss";
 import css1000 from "./footer__1000.module.scss";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
-import { getCookie, getCookies } from "typescript-cookie";
+import { getCookie } from "typescript-cookie";
 import { useEffect } from "react";
 import { handleResizeCart, handleScrollFooterCart } from "./handle__scroll__footer";
-const FooterCart = () => {
+import { check__all__items__input } from "../handle_dom_cart/handle_dom_cart";
+const FooterCart = ({items}) => {
+   
   useEffect(()=>{
    const setTime = setTimeout(() => {
     if(window.innerWidth > 1000) {
@@ -23,7 +25,8 @@ const FooterCart = () => {
    window.removeEventListener("scroll", handleScrollFooterCart)
 
     }
-  },[])
+  },[document.querySelectorAll("input[type=checkbox]:checked")])
+  console.log(3);
   return (
     <div className={clsx(css.footer__cart__than__1000, css1000.footer__cart__than__1000)}>
     <div className={clsx(css.footer__cart__than__1000__layout, css1000.footer__cart__than__1000__layout, "layout")}>
@@ -62,19 +65,20 @@ const FooterCart = () => {
         </div>
         <div className={clsx(css.footer__items__buy__products, css1000.footer__items__buy__products)}>
             <div className={clsx(css.footer__box__selections, css1000.footer__box__selections)}>
-                <input className={clsx(css.footer__input__checkbox, css1000.footer__input__checkbox)} type="checkbox" />
+                <input className={clsx(css.footer__input__checkbox, css1000.footer__input__checkbox)}  onClick={(e)=>{
+                check__all__items__input(e.target)
+              }} type="checkbox" />
                 <div className={clsx(css.footer__option__select__all, css1000.footer__option__select__all)}>
                     Select All ({getCookie("lengthCart")})
                 </div>
                 <div className={clsx(css.footer__option__del, css1000.footer__option__del)}>Delete</div>
-                <div className={clsx(css.footer__option__del__all, css1000.footer__option__del__all)}>Remove inactive products</div>
                 <div className={clsx(css.footer__option__go__like, css1000.footer__option__go__like)}>Move to My Likes</div>
             </div>
             <div className={clsx(css.footer__box__info__buy__product, css1000.footer__box__info__buy__product)}>
                 <div className={clsx(css.footer_info__amount__products, css1000.footer_info__amount__products)}>
-                    Total (<span className={clsx(css.footer_num__amount__products, css1000.footer_num__amount__products)}>0</span> item):
+                    Total<span className={clsx(css.footer_num__amount__products, css1000.footer_num__amount__products)}>({Number()}</span> item):
                 </div>
-                <div className={clsx(css.footer_info__cost__products, css1000.footer_info__cost__products)}>₫0</div>
+                <div className={clsx(css.footer_info__cost__products, css1000.footer_info__cost__products)}>₫ {Number()}</div>
                 <div className={clsx(css.footer_info__btn__buy__products, css1000.footer_info__btn__buy__products)}>check out</div>
             </div>
         </div>

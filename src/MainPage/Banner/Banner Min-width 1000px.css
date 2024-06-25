@@ -6,6 +6,7 @@
   .banner__main__page--layout {
     display: flex;
     gap: 1rem;
+    background: #fff;
   }
   .banner__main__page--banner {
     flex: 3;

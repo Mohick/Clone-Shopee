@@ -1,27 +1,10 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 import css from "./products__in__cart.module.scss";
 import css1000 from "./products__in__cart__1000.module.scss";
-import { getCookie } from "typescript-cookie";
-import axios from "axios";
 import RenderItemsIncart from "../render__items__buy/render__items__buy";
-const ProductsInCart = () => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    const startProduct = setTimeout(async () => {
-      
-      await axios.get("http://localhost:3000/api__search").then((result) => {
-        const data = result.data;
-        const resFilter = data.filter((item) => {
-          return getCookie(item.name);
-        });
-        setItems(resFilter);
-      }, 0);
-    });
-    return () => {
-      clearTimeout(startProduct);
-    };
-  }, []);
+import { check__all__items__input } from "../handle_dom_cart/handle_dom_cart";
+const ProductsInCart = ({items}) => {
+
   return (
     <div className={clsx(css.products__in_cart, css1000.products__in_cart)}>
       <div className={clsx("layout", css.products__in_cart__layout,css1000.products__in_cart__layout)}>
@@ -30,6 +13,9 @@ const ProductsInCart = () => {
             <input
               className={clsx(css1000.header__product__check)}
               type="checkbox"
+              onClick={(e)=>{
+                check__all__items__input(e.target)
+              }}
             />
             <div className={clsx(css1000.header__product__name)}>Product</div>
           </div>
@@ -45,6 +31,7 @@ const ProductsInCart = () => {
           return  <RenderItemsIncart key={index} data={data}/>
          })}
         </div>
+        
       </div>
     </div>
   );

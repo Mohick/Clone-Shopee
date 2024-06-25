@@ -6,7 +6,7 @@
 
             .products__in_cart__header {
                 padding: 2rem;
-                display: flex;
+                display: flex !important    ;
                 background: #fff;
 
                 .header__product {

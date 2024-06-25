@@ -35,7 +35,7 @@
 
                 .footer__box__apply__voucher {
                     align-items: center;
-
+                    width: 50%;
                     .footer__box__title__icon {
                         padding: 1rem 0;
 
@@ -130,8 +130,8 @@
                     align-items: center;
                     flex-wrap: wrap;
                     .footer__input__checkbox {
-                        width: 2rem;
-                        height: 2rem;
+                        width: 1.5rem;
+                        height: 1.5rem;
                     }
 
                     .footer__option__select__all {
@@ -140,11 +140,6 @@
                     }
 
                     .footer__option__del {
-                        @extend .footer__option__select__all;
-                        display: block
-                    }
-
-                    .footer__option__del__all {
                         @extend .footer__option__select__all;
                         display: block
                     }

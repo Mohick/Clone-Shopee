@@ -144,12 +144,6 @@
                     display: none;
                 }
 
-                .footer__option__del__all {
-                    @extend .footer__option__select__all;
-                    display: none;
-
-                }
-
                 .footer__option__go__like {
                     @extend .footer__option__select__all;
                     display: none;

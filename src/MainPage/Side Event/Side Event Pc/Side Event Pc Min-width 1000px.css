@@ -2,8 +2,9 @@
   #side__event__pc__main__page {
     width: 100%;
     display: block !important;
-    margin-top: 2rem;
+    padding-top: 2rem;
     padding-bottom: 2rem;
+    margin-top: 0 !important;
   }
   .side__event__pc__main__page--frame {
     display: flex;
