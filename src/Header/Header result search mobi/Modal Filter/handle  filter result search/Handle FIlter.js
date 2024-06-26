@@ -301,7 +301,7 @@ class HandleFilterResultSearch {
     navigation(textNavigation);
   }
   autoSelectOptions(autoPickOptions) {
-    console.log(3);
+
     const checkAll = document.querySelectorAll(
       ".modal__filter__result__search__body__items--options"
     );

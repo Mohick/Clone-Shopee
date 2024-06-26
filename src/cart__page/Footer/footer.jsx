@@ -6,6 +6,7 @@ import { getCookie } from "typescript-cookie";
 import { useEffect } from "react";
 import { handleResizeCart, handleScrollFooterCart } from "./handle__scroll__footer";
 import { check__all__items__input } from "../handle_dom_cart/handle_dom_cart";
+import { resultOfAllProductsHasChecked, saveOrRemoveSavePrice } from "../calculator_result_products_have__choose/caculato_result_products_have__choose";
 const FooterCart = ({items}) => {
    
   useEffect(()=>{
@@ -26,7 +27,6 @@ const FooterCart = ({items}) => {
 
     }
   },[document.querySelectorAll("input[type=checkbox]:checked")])
-  console.log(3);
   return (
     <div className={clsx(css.footer__cart__than__1000, css1000.footer__cart__than__1000)}>
     <div className={clsx(css.footer__cart__than__1000__layout, css1000.footer__cart__than__1000__layout, "layout")}>
@@ -65,8 +65,10 @@ const FooterCart = ({items}) => {
         </div>
         <div className={clsx(css.footer__items__buy__products, css1000.footer__items__buy__products)}>
             <div className={clsx(css.footer__box__selections, css1000.footer__box__selections)}>
-                <input className={clsx(css.footer__input__checkbox, css1000.footer__input__checkbox)}  onClick={(e)=>{
-                check__all__items__input(e.target)
+                <input className={clsx(css.footer__input__checkbox, css1000.footer__input__checkbox)}  onClick={ async (e)=>{
+               await check__all__items__input(e.target)
+               await saveOrRemoveSavePrice()
+               await resultOfAllProductsHasChecked()
               }} type="checkbox" />
                 <div className={clsx(css.footer__option__select__all, css1000.footer__option__select__all)}>
                     Select All ({getCookie("lengthCart")})
@@ -76,9 +78,10 @@ const FooterCart = ({items}) => {
             </div>
             <div className={clsx(css.footer__box__info__buy__product, css1000.footer__box__info__buy__product)}>
                 <div className={clsx(css.footer_info__amount__products, css1000.footer_info__amount__products)}>
-                    Total<span className={clsx(css.footer_num__amount__products, css1000.footer_num__amount__products)}>({Number()}</span> item):
+                    Total (<span className={clsx(css.footer_num__amount__products, css1000.footer_num__amount__products)}>{`${Number().toFixed()}`.createDotsNumber()}</span> ) item:
                 </div>
-                <div className={clsx(css.footer_info__cost__products, css1000.footer_info__cost__products)}>₫ {Number()}</div>
+                <div className={clsx(css.footer_info__cost__products, css1000.footer_info__cost__products)}>₫ 
+                    <span className={css.footer__result__cost__products}>{`${Number()}`.createDotsNumber()}</span></div>
                 <div className={clsx(css.footer_info__btn__buy__products, css1000.footer_info__btn__buy__products)}>check out</div>
             </div>
         </div>

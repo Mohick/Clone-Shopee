@@ -22,7 +22,7 @@ const Pagination = ({length}) => {
   }else {
    url =  !!query.get("pages") ? window.location.search.replace(`?pages=${page}`,"?pages=") : window.location.search.trim()+`?pages=`.trim()
   }
-  console.log(url,window.location.search.includes('&'));
+
   return (
     <div id={clsx(css.pagination)}>
       <Link to={Number(page) <= 1 ? window.location.search : url+ (Number(page) - 1)}

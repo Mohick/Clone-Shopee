@@ -4,8 +4,18 @@ import css1000 from "./render__items__buy__1000.module.scss";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
 import { getCookie } from "typescript-cookie";
 import clsx from "clsx";
-import { check__an__items__input, check__box__items } from "../handle_dom_cart/handle_dom_cart";
-import { handleOnBlurInput, handlePlusOrMinus } from "./handle__price__products/handle__price__products";
+import {
+  check__an__items__input,
+  check__box__items,
+} from "../handle_dom_cart/handle_dom_cart";
+import {
+  handleOnBlurInput,
+  handlePlusOrMinus,
+} from "./handle__price__products/handle__price__products";
+import {
+  resultOfAllProductsHasChecked,
+  saveOrRemoveSavePrice,
+} from "../calculator_result_products_have__choose/caculato_result_products_have__choose";
 
 type Props = {
   data: {
@@ -21,11 +31,11 @@ type Props = {
 const RenderItemsIncart = (props: Props) => {
   const data = props.data;
 
-  const [value,setValue]=useState<string|number>(`${getCookie(`${data.name}`)}`)
+  const [value, setValue] = useState<string | number>(
+    `${getCookie(`${data.name}`)}`
+  );
 
-    useEffect(()=>{
-
-    },[value])
+  useEffect(() => {}, [value]);
   return (
     <div
       className={clsx(
@@ -43,8 +53,10 @@ const RenderItemsIncart = (props: Props) => {
           <input
             className={clsx(css.header__input__checkbox)}
             type="checkbox"
-            onClick={(e)=>{
-              check__box__items(e.target,css.render__items__in__cart)
+            onClick={async (e) => {
+              await check__box__items(e.target, css.render__items__in__cart);
+              await saveOrRemoveSavePrice();
+              await resultOfAllProductsHasChecked();
             }}
           />
         </div>
@@ -72,11 +84,14 @@ const RenderItemsIncart = (props: Props) => {
         >
           <div className={clsx(css.body__box__input)}>
             <input
-              onClick={(e) => {
-                check__an__items__input({
+              name={data.name}
+              onClick={async (e) => {
+                await check__an__items__input({
                   elementInput: e.target,
-                  classNameBoxItems:css.render__items__in__cart
-                })
+                  classNameBoxItems: css.render__items__in__cart,
+                });
+                await saveOrRemoveSavePrice();
+                await resultOfAllProductsHasChecked();
               }}
               className={clsx(css.body__input__checkbox)}
               type="checkbox"
@@ -137,7 +152,7 @@ const RenderItemsIncart = (props: Props) => {
           >
             <div className={clsx(css.body__price__default)}>₫280.000</div>
             <div className={clsx(css.body__price__discount)}>
-              ₫{`${Number(data.cost).toFixed(3)}`.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+              ₫{`${Number(data.cost)}`.createDotsNumber()}
             </div>
           </div>
           <div
@@ -147,9 +162,20 @@ const RenderItemsIncart = (props: Props) => {
             )}
           >
             <div className={clsx(css.body__box__edit__amount__product)}>
-              <div className={clsx(css.body__box__btn__minus__product)}  onClick={()=>{
-                setValue(handlePlusOrMinus(`${css.body__input__number__product}`,"minus",data.name))
-              }}>
+              <div
+                className={clsx(css.body__box__btn__minus__product)}
+                onClick={async () => {
+                  await setValue(
+                    handlePlusOrMinus(
+                      `${css.body__input__number__product}`,
+                      "minus",
+                      data.name
+                    )
+                  );
+                  await saveOrRemoveSavePrice();
+                  await resultOfAllProductsHasChecked();
+                }}
+              >
                 <Icons.minus className={clsx(css.body__btn__minus__product)} />
               </div>
               <div className={clsx(css.body__box__input__product)}>
@@ -157,14 +183,31 @@ const RenderItemsIncart = (props: Props) => {
                   className={clsx(css.body__input__number__product)}
                   type="number"
                   defaultValue={getCookie(data.name)}
-                  onBlur={(e)=>{
-                    setValue(handleOnBlurInput(e.target.value,data.name,e.target))
+                  name={data.name}
+                  data-cost={data.cost}
+                  onBlur={async (e) => {
+                    await setValue(
+                      handleOnBlurInput(e.target.value, data.name, e.target)
+                    );
+                    await saveOrRemoveSavePrice();
+                    await resultOfAllProductsHasChecked();
                   }}
                 />
               </div>
-              <div className={clsx(css.body__box__btn__plus__product)} onClick={()=>{
-                setValue(handlePlusOrMinus(`${css.body__input__number__product}`,"plus",data.name))
-              }}>
+              <div
+                className={clsx(css.body__box__btn__plus__product)}
+                onClick={async () => {
+                  await setValue(
+                    handlePlusOrMinus(
+                      `${css.body__input__number__product}`,
+                      "plus",
+                      data.name
+                    )
+                  );
+                  await saveOrRemoveSavePrice();
+                  await resultOfAllProductsHasChecked();
+                }}
+              >
                 <Icons.plus className={clsx(css.body__btn__plus__product)} />
               </div>
             </div>
@@ -184,7 +227,7 @@ const RenderItemsIncart = (props: Props) => {
             >
               ₫{" "}
               <span className={clsx(css.total__cost, css1000.total__cost)}>
-                {`${(Number(data.cost) * Number(value)).toFixed(3)}`.replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                {`${Number(data.cost) * Number(value)}`.createDotsNumber()}
               </span>
             </div>
           </div>

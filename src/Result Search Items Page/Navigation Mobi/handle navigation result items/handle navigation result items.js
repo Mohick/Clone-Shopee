@@ -14,7 +14,6 @@ class HandleNavigationResultItemsMobi {
     handleLinksNavigation(data) {
         let tagSlideBar = document.querySelector(`.${css.navigation__header__bar}`)
         const query = window.location.search.replace(tagSlideBar.getAttribute("name"),data.text)
-        console.log(query);
         data.navigation(query) 
         // tagSlideBar.setAttribute("name", data.text)
     }

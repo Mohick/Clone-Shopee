@@ -7,9 +7,6 @@ declare global {
     const item = {
         kind: "Đặng Thị Thuý"
     };
-    
-    const kind = item.kind.exChangesStringCharViToLatinh();
-    console.log(kind);  output: "dangthithuy"
          * 
          * @returns {"String"}
          */

@@ -15,7 +15,6 @@ const handleWhenScrollMainImgBannerProducts = (css: {
         const itemsHaveValueNearLeftFrame = Math.ceil(localtionFromLeftScreenToFrameItems - localtionFromLeftScreenToItem)
         if ((sizeOfFrame / 2) > itemsHaveValueNearLeftFrame) {
             const getAttributeDataIndex = item.getAttribute("data-index")
-            console.log(getAttributeDataIndex);
             lengthOfSwiper.innerHTML = `${Number(getAttributeDataIndex) + 1}`
             break;
         }

@@ -3,8 +3,10 @@ import { setCookie } from "typescript-cookie"
 
 const handleOnBlurInput = (amountProduct: number | string, nameProduct: string,element?:any): number => {
     
-    if (Number(amountProduct) < 0) {
-        amountProduct = 1
+    if (Number(amountProduct) <= 0) {
+        console.log(3);
+        
+        element.value = 1
         return 1
     }
     setCookie(nameProduct, amountProduct)

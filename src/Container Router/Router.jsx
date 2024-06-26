@@ -78,7 +78,6 @@ function RouterPage() {
           <Suspense loading="....">
             <CartPage />
             <FooterCooperate />
-            
           </Suspense>
         }
       />

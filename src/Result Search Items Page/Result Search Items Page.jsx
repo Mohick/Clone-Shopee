@@ -14,7 +14,7 @@ const ResultSearchItemsPage =  () => {
    useEffect(() => {
     const getData = setTimeout(() => {
       axios
-        .get("https://run.mocky.io/v3/94311c5e-d335-4641-8b5d-2a1e9d045b3c")
+        .get("http://localhost:3000/api__search/")
         .then((result) => {
           const data = result.data;
           setItems(data);

@@ -41,7 +41,6 @@ const Media1000 = ({ like }) => {
       <div className={css1000.box__like__product}>
         <div
           onClick={() => {
-            console.log(Number(like));
             liked.check
               ? setLike({
                   check: false,

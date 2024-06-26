@@ -32,7 +32,7 @@ const RatingProduct: React.FC<props> = (props: props) => {
     setShow(ob)
     
   }, []);
-  console.log(show);
+
   
   if (show == null) return;
   return (

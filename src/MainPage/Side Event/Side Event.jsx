@@ -14,7 +14,6 @@ function SideEventMainPage() {
           const dataArry = response.data[0].items;
           const dataArry1 = response.data[1].items;
           const dataArry2 = response.data[2].items;
-          console.log(response);
           setItems([dataArry, dataArry1, dataArry2]);
         });
     }, 0);

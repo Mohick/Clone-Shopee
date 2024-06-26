@@ -112,10 +112,5 @@ const check__box__items = (tagElement: HTMLElement, classNameBoxItems: string) =
 
 }
 
-const printCostProduct = ()=>{
-
-}
-
-
 
 export { check__all__items__input, check__an__items__input, check__box__items }

@@ -169,6 +169,9 @@
                 .footer_info__cost__products {
                     font-size: 1.5rem;
                     color: tomato;
+                    .footer__result__cost__products{
+                        color: currentColor;
+                    }
                 }
 
                 .footer_info__btn__buy__products {
