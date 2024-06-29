@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { handleResizeCart, handleScrollFooterCart } from "./handle__scroll__footer";
 import { check__all__items__input } from "../handle_dom_cart/handle_dom_cart";
 import { resultOfAllProductsHasChecked, saveOrRemoveSavePrice } from "../calculator_result_products_have__choose/caculato_result_products_have__choose";
+import { handleDelHasChecked } from "../render__items__buy/handle__del__items/handle__del__items";
 const FooterCart = ({items}) => {
    
   useEffect(()=>{
@@ -73,7 +74,7 @@ const FooterCart = ({items}) => {
                 <div className={clsx(css.footer__option__select__all, css1000.footer__option__select__all)}>
                     Select All ({getCookie("lengthCart")})
                 </div>
-                <div className={clsx(css.footer__option__del, css1000.footer__option__del)}>Delete</div>
+                <div className={clsx(css.footer__option__del, css1000.footer__option__del)} onClick={handleDelHasChecked}>Delete</div>
                 <div className={clsx(css.footer__option__go__like, css1000.footer__option__go__like)}>Move to My Likes</div>
             </div>
             <div className={clsx(css.footer__box__info__buy__product, css1000.footer__box__info__buy__product)}>

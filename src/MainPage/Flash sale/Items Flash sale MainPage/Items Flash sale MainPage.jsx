@@ -11,7 +11,7 @@ function ItemsFlashSaleMainPage() {
   useEffect(() => {
     let allow = true;
     axios
-      .get("http://localhost:3000/flash__sell__main__page")
+      .get("https://json-be-shopee.onrender.com/flash__sell__main__page")
       .then((response) => {
         if (allow) {
           const data = response.data;

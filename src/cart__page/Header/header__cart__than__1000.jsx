@@ -3,6 +3,7 @@ import css from "./header__cart.module.scss";
 import css1000 from "./header__cart__1000.module.scss";
 import HeaderInfoShopee from "../../Header/Header PC/header__info";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
+import { Link } from "react-router-dom";
 const HeaderCartThan1000 = () => {
   return (
     <>
@@ -13,9 +14,9 @@ const HeaderCartThan1000 = () => {
         >
           <div className={css1000.header}>
             <div className={css1000.box__logo__name__page}>
-              <div className={css1000.header__box__icons__logo}>
+              <Link to={"/"} className={css1000.header__box__icons__logo}>
                 <Icons.logoShopee className={css1000.header__icons__logo} />
-              </div>
+              </Link>
               <div className={css1000.header__box__name__page}>
                 <div className={css1000.header__name__page}>Shopping Cart</div>
               </div>

@@ -8,7 +8,7 @@ function TopSearchHeader() {
     let allow = true;
     if (allow) {
       axios
-        .get("http://localhost:3000/api__top__search")
+        .get("https://json-be-shopee.onrender.com/api__top__search")
         .then((res) => {
           setItems(res.data);
         })

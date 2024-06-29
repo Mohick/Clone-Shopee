@@ -3,11 +3,6 @@ import cssFooter from "../Footer/footer.module.scss"
 import cssRender from "../render__items__buy/render__items__buy.module.scss"
 import { getCookie } from "typescript-cookie";
 
-type ruleSavePrice = {
-    titleProduct: string;
-    priceProduct: string | number;
-}[]
-
 
 const resultOfAllProductsHasChecked = () => {
     const inputHasChecked: HTMLInputElement[] = Array.from(document.querySelectorAll(`.${cssRender.body__input__checkbox}:checked`))
@@ -24,7 +19,7 @@ const saveOrRemoveSavePrice = async () => {
     itemsHasChecked.forEach((item) => {
         obMapHasChecked.set(item.name, true)
     })
-    await axios.get("http://localhost:3000/filter__cart").then((res) => {
+    await axios.get("https://json-be-shopee.onrender.com/filter__cart").then((res) => {
         const dataHasRes: {
             name: string
             cost: string | number

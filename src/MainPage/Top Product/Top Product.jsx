@@ -11,7 +11,7 @@ function TopProductMainPage() {
     let allow = true;
 
     axios
-      .get("http://localhost:3000/top__products__main__page")
+      .get("https://json-be-shopee.onrender.com/top__products__main__page")
       .then((response) => {
         if (allow) {
           const data = response.data;

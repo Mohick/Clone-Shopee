@@ -9,7 +9,7 @@ function SideEventMainPage() {
   useEffect(() => {
     const callAPI = setTimeout(() => {
       axios
-        .get("http://localhost:3000/site__events__main__page")
+        .get("https://json-be-shopee.onrender.com/site__events__main__page")
         .then((response) => {
           const dataArry = response.data[0].items;
           const dataArry1 = response.data[1].items;

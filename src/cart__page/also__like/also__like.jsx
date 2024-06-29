@@ -13,7 +13,7 @@ const YouAlsoLike = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api__search").then((response) => {
+    axios.get("https://json-be-shopee.onrender.com/api__search").then((response) => {
       const data = response.data;
       setItems(data);
     });

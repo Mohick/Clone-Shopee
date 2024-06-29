@@ -6,7 +6,7 @@ const DataProduct: {
 }[] = [
         {
             "name": "Combo 2 Túi Sữa Tăng Cân Muscle Mass Gainer".toLocaleLowerCase(),
-            link: 'http://localhost:3000/api__products'
+            link: 'https://json-be-shopee.onrender.com/api__products'
         }
     ]
 

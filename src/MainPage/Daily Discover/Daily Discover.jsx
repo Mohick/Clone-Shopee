@@ -18,7 +18,7 @@ function DailyDiscoverMainPage() {
   useEffect(() => {
     let allow = true;
     axios
-      .get("http://localhost:3000/api__daily")
+      .get("https://json-be-shopee.onrender.com/api__daily")
       .then((response) => {
         if (allow) {
           const data = response.data;

@@ -39,11 +39,13 @@ function BannerShope({ url, classItems }) {
           ).trim()}__shopee__banner__body__banner__img--last--sub`}
         >
           <img
+            className="h-full"
             loading="lazy"
             width={"100%"}
             height={"100%"}
             src={items[items.length - 1]?.url}
             alt=""
+            
           />
         </div>
         <div
@@ -62,6 +64,7 @@ function BannerShope({ url, classItems }) {
                 ).trim()}__shopee__banner__body__banner__img__main--items`}
               >
                 <img
+                  className="h-full"
                   loading="lazy"
                   width={"100%"}
                   height={"100%"}
@@ -78,6 +81,7 @@ function BannerShope({ url, classItems }) {
           ).trim()}__shopee__banner__body__banner__img--first--sub`}
         >
           <img
+            className="h-full"
             loading="lazy"
             width={"100%"}
             height={"100%"}

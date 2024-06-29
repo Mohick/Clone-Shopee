@@ -125,18 +125,20 @@
         .footer__items__buy__products {
             display: flex;
             padding: .5rem 0;
-
+            gap: .5rem;
             .footer__box__selections {
                 display: flex;
-                gap: 1rem;
+                gap: .5rem;
+                align-items: center;
                 .footer__input__checkbox {
                     width: 1.5rem;
                     height: 1.5rem;
                 }
 
                 .footer__option__select__all {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     cursor: pointer;
+                    text-wrap: nowrap
                 }
 
                 .footer__option__del {
@@ -155,22 +157,30 @@
                 display: flex;
                 justify-content: flex-end;
                 flex: 1;
-                gap: 1rem;
+                gap: .5rem;
                 align-items: center;
+                text-wrap: nowrap;
+                flex-wrap:wrap ;
 
                 .footer_info__amount__products {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
 
                     .footer_num__amount__products {
-                        display: none;
+                        display: inline;
                     }
                 }
 
                 .footer_info__cost__products {
                     font-size: 1.5rem;
                     color: tomato;
+                    overflow: hidden;
+                    
                     .footer__result__cost__products{
                         color: currentColor;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                       
                     }
                 }
 

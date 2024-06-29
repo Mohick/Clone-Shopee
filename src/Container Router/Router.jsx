@@ -1,6 +1,6 @@
 import { Route, Router, Routes } from "react-router";
 import { Suspense, lazy, memo } from "react";
-
+const Page404 = lazy(() => import("../404 Page/page__404"));
 const MainPage = lazy(() => import("../MainPage/Main Page"));
 const DailyPage = lazy(() => import("../Daily Page/Daily Page"));
 const HeaderPCMainPage = lazy(() =>
@@ -78,6 +78,14 @@ function RouterPage() {
           <Suspense loading="....">
             <CartPage />
             <FooterCooperate />
+          </Suspense>
+        }
+      />
+        <Route
+        path="*"
+        element={
+          <Suspense loading="....">
+            <Page404/>
           </Suspense>
         }
       />

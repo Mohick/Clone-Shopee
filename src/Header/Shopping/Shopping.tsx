@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import css from "./Shopping.module.scss";
 import { getCookie } from 'typescript-cookie';
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
@@ -13,8 +13,7 @@ const Shopping: React.FC<rulesSVG> = function (props) {
 
   useEffect(() => {
     setLengthCart(getCookie('lengthCart'))
-  }, [cookies]);
-
+  }, [cookies]);;
   
   return (
     <Link to={"/cart"} className={css.shopping}>
@@ -28,4 +27,4 @@ const Shopping: React.FC<rulesSVG> = function (props) {
   );
 };
 
-export default Shopping;
+export default memo(Shopping);

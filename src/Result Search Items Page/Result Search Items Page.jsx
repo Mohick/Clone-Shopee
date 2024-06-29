@@ -14,7 +14,7 @@ const ResultSearchItemsPage =  () => {
    useEffect(() => {
     const getData = setTimeout(() => {
       axios
-        .get("http://localhost:3000/api__search/")
+        .get("https://json-be-shopee.onrender.com/api__search/")
         .then((result) => {
           const data = result.data;
           setItems(data);

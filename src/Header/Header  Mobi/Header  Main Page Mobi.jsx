@@ -8,7 +8,7 @@ function HeaderMainPageMobi() {
   return (
     <div id="header__main__page__mobi">
      <div className="header__main__page__mobi--slider">
-     <BannerShopee url={'http://localhost:3000/api__banner__side__event'} classItems={'bannerMobiPC'}/>
+     <BannerShopee url={'https://json-be-shopee.onrender.com/api__banner__side__event'} classItems={'bannerMobiPC'}/>
      </div>
       <div className="header__main__page__mobi--layout layout">
         <div className="header__main__page__mobi--box--cpm--search">

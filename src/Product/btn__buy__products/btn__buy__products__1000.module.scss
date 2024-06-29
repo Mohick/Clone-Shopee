@@ -39,7 +39,7 @@
             .box__btn__cart {
                 @extend .box__btn__buy;
                 background: #ffeee8;
-
+                cursor: pointer;
                 .icon__btn__cart {
                     fill: #ee4d2d;
                     stroke: #ee4d2d;

@@ -13,8 +13,8 @@ function HeaderResultSearchMobi() {
   useEffect(() => {
     const getDate = setTimeout(() => {
       axios
-        .get("https://run.mocky.io/v3/1a0f57fa-e361-4b7f-8c4f-74dfe3d67a39")
-        .then((response) => {
+        .get("htthttps://json-be-shopee.onrender.com/api__top__search")
+        .then((response) => {https
           const data = response.data;
           setItems(data);
         });

@@ -97,7 +97,7 @@ function ShopeeSmallMainPage() {
         <div className="shopee__small--body">
           <div className="shopee__small__body--banner">
           <BannerShope
-            url={"http://localhost:3000/api__banner__side__event"} classItems={'small'}
+            url={"https://json-be-shopee.onrender.com/banner__small/"} classItems={'small'}
           />
           </div>
           <ShopeeSmallItemsMainPage />

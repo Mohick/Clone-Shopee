@@ -14,7 +14,7 @@ function CategoriesMainPage() {
     let mounted = true;
 
     axios
-      .get("http://localhost:3000/api__categores__main__page")
+      .get("https://json-be-shopee.onrender.com/api__categores__main__page")
       .then((response) => {
         if (mounted) {
           const data = response.data;

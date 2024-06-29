@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Icons } from "../../Container  Component  SVG ICON/Manage Icon";
-import { handleBtnGrowOrDownBuyProduct } from "./handle_quantity__1000";
+import { handleBtnGrowOrDownBuyProduct, handleOnBlurQuantilyProducst } from "./handle_quantity__1000";
 import css from "./quantity.module.scss"
 import css1000 from "./quantity_1000.module.scss";
 const QuantityProduct1000 = ({available}) => {
@@ -23,9 +23,8 @@ const QuantityProduct1000 = ({available}) => {
             className={css1000.calculator__input}
             type="number"
             defaultValue={1}
-            onChange={(e)=>{
-              if(Number(e.target.value)< available) return 
-              e.target.value = available
+            onBlur={(e)=>{
+              handleOnBlurQuantilyProducst(e.target,available)
             }}
           />
           <div

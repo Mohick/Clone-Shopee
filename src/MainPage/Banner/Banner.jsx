@@ -9,7 +9,7 @@ function BannerMainPage() {
       <div className="banner__main__page--layout layout">
         <div className="banner__main__page--banner"> 
           <BannerShope
-            url={"http://localhost:3000/api__banner__side__event"}
+            url={"https://json-be-shopee.onrender.com/api__banner__side__event"}
             classItems={"BannerMainPage"}
           />
         </div>
@@ -20,6 +20,7 @@ function BannerMainPage() {
               height={"100%"}
               src="./Main Page Site Event/side event 1.jpg"
               alt=""
+              className="h-full"
             />
           </div>
           <div className="banner__main__page__box__frame_side_event--img">
@@ -28,6 +29,7 @@ function BannerMainPage() {
               height={"100%"}
               src="./Main Page Site Event/side event 2.jpg"
               alt=""
+              className="h-full"
             />
           </div>
         </div>

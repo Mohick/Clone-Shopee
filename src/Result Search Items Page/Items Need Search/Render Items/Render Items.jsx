@@ -5,6 +5,7 @@ import css1000 from "./Render Items 1000.module.css";
 import { useLocation } from "react-router";
 import clsx from "clsx";
 import "../../../handle string char vi to latinh/string__char__vi__to__latinh";
+import { Link } from "react-router-dom";
 const RenderItemsNeedSearch = ({
   data,
   lengthShow = undefined,
@@ -80,7 +81,7 @@ const RenderItemsNeedSearch = ({
   }, [window.location.search]);
   return items.map((item, index) => {
     return (
-      <div
+      <Link to={`/products?title=${item.name}`}
         className={clsx(css.items, css1000.items, classSetWidth)}
         key={index}
       >
@@ -168,7 +169,7 @@ const RenderItemsNeedSearch = ({
           </div>
         </div>
    
-      </div>
+      </Link>
     );
   });
 };

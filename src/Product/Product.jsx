@@ -1,32 +1,33 @@
 import { useLocation } from "react-router-dom";
 import { DataProduct } from "./Data";
-import { useEffect, useState } from "react";
-import ProductHeaderMobi from "./Product Header/Product Header";
-import SwiperProduct from "./Swiper Product/Swiper Product";
-import axios from "axios";
-import TitleProduct from "./Title Product/Title Product";
-import PriceProduct from "./Price Product/Price Product";
-import FreeReturnProduct from "./Free Return/Free Return";
-import VoteProducts from "./Vote/Vote Products";
-import VoucherProduct from "./Voucher/Voucher Product";
-import FreeShipProducts from "./Free Ship/Free Ship";
-import MediaProducts from "./Media/Media";
-import InfoShop from "./Info Shop/Info Shop";
-import OrtherProducts from "./Other Product/Other__Products";
-import DescriptionProduct from "./Description Product/Description Product";
-import RatingProduct from "./Rating Products/Rating Products";
-import ReltesProduct from "./Relate_Product/Relate_Product";
-import css from "./products.module.scss";
-import css1000 from "./product_1000.module.scss";
-import VoteProductsFromUser from "./vote_products_from_user/vote_products_from_user";
-import FreeReturnProduct1000 from "./Free Return/free_return_1000";
-import FreeShip1000 from "./Free Ship/free_ship_1000";
-import QuantityProduct1000 from "./Quantity/quantity_1000";
-import BtnBuyProducts1000 from "./btn__buy__products/btn__buy__products__1000";
-import Media1000 from "./Media/media__1000";
+import { lazy, useEffect, useState } from "react";
+import css from "./products.module.scss"
+import css1000 from "./product_1000.module.scss"
 import clsx from "clsx";
-import VoucherProduct1000 from "./Voucher/voucher_product_1000";
-import DropdownBuyProduct from "./dropdown__buy__product/dropdown__buy__product";
+import axios from "axios";
+const ProductHeaderMobi = lazy(() => import('./Product Header/Product Header'));
+const SwiperProduct = lazy(() => import('./Swiper Product/Swiper Product'));
+const TitleProduct = lazy(() => import('./Title Product/Title Product'));
+const PriceProduct = lazy(() => import('./Price Product/Price Product'));
+const FreeReturnProduct = lazy(() => import('./Free Return/Free Return'));
+const VoteProducts = lazy(() => import('./Vote/Vote Products'));
+const VoucherProduct = lazy(() => import('./Voucher/Voucher Product'));
+const FreeShipProducts = lazy(() => import('./Free Ship/Free Ship'));
+const MediaProducts = lazy(() => import('./Media/Media'));
+const InfoShop = lazy(() => import('./Info Shop/Info Shop'));
+const OrtherProducts = lazy(() => import('./Other Product/Other__Products'));
+const DescriptionProduct = lazy(() => import('./Description Product/Description Product'));
+const RatingProduct = lazy(() => import('./Rating Products/Rating Products'));
+const ReltesProduct = lazy(() => import('./Relate_Product/Relate_Product'));
+const VoteProductsFromUser = lazy(() => import('./vote_products_from_user/vote_products_from_user'));
+const FreeReturnProduct1000 = lazy(() => import('./Free Return/free_return_1000'));
+const FreeShip1000 = lazy(() => import('./Free Ship/free_ship_1000'));
+const QuantityProduct1000 = lazy(() => import('./Quantity/quantity_1000'));
+const BtnBuyProducts1000 = lazy(() => import('./btn__buy__products/btn__buy__products__1000'));
+const Media1000 = lazy(() => import('./Media/media__1000'));
+const VoucherProduct1000 = lazy(() => import('./Voucher/voucher_product_1000'));
+const DropdownBuyProduct = lazy(() => import('./dropdown__buy__product/dropdown__buy__product'));
+const Page404 = lazy(() => import('../404 Page/page__404'));
 const Product = () => {
   const [items, setItems] = useState(null);
 
@@ -41,15 +42,21 @@ const Product = () => {
       try {
         const URLItems = DataProduct.filter((item) => item.name === title);
         const getFirstItems = URLItems[0];
-
-        await Promise.all([
-          axios.get("http://localhost:3000/api__search/"),
-          axios.get(getFirstItems.link),
-        ]).then(([otherProductsResponse, productResponse]) => {
-          let data = productResponse.data[0];
-          data.otherProducts = otherProductsResponse.data;
-          setItems(data);
-        });
+        if (getFirstItems?.link) {
+          await Promise.all([
+            axios.get("https://json-be-shopee.onrender.com/api__search/"),
+            axios.get(getFirstItems.link),
+          ]).then(([otherProductsResponse, productResponse]) => {
+            let data = productResponse.data[0];
+            data.otherProducts = otherProductsResponse.data;
+            console.log(data);
+            setItems(data);
+          });
+        } else {
+          setItems({
+            error: true,
+          });
+        }
       } catch (error) {
         console.error("Error fetching data", error);
       }
@@ -58,8 +65,11 @@ const Product = () => {
     fetchData();
   }, [title]);
   if (!items) return;
+  if (items.error) return <Page404 />;
   return (
-    <div className={clsx(css.layout, "layout")}>
+      <>
+      
+      <div className={clsx(css.layout, "layout")}>
       <ProductHeaderMobi name={items.name} />
       <div className={css1000.introduce__product}>
         <div className={css1000.ui__products}>
@@ -81,7 +91,10 @@ const Product = () => {
             sold={items.sold}
           />
           <PriceProduct price={items.priceDeFault} discount={items.discount} />
-          <VoucherProduct1000 voucher={items.Vouchers} urlImgShop={items.logoShop}/>
+          <VoucherProduct1000
+            voucher={items.Vouchers}
+            urlImgShop={items.logoShop}
+          />
           <FreeReturnProduct />
           <FreeReturnProduct1000 />
           <FreeShip1000 />
@@ -116,8 +129,10 @@ const Product = () => {
       />
       <RatingProduct comment={items.comment} star={items.star} />
       <ReltesProduct dataRelateProduct={items.otherProducts} />
-      <DropdownBuyProduct nameProducts={items.name}/>
+      <DropdownBuyProduct nameProducts={items.name} />
     </div>
+      
+      </>
   );
 };
 

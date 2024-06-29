@@ -21,7 +21,7 @@ function InputSearchHeader() {
     const callAPI = setTimeout(() => {
       if (keySearch.trim().length > 0) {
         axios
-          .get("http://localhost:3000/api__daily")
+          .get("https://json-be-shopee.onrender.com/api__daily")
           .then((response) => {
             const data = response.data;
             const items = data
@@ -32,7 +32,7 @@ function InputSearchHeader() {
             setItems(items);
           });
       }
-    }, 100);
+    }, 300);
     return () => {
       clearTimeout(callAPI);
     };
@@ -97,7 +97,7 @@ function InputSearchHeader() {
           <>
             <Link
               className="input__search__header__box__search__dropDown--event"
-              to={"/search?search=${item.name}&sortby=relevance"}
+              to={`/search?search=Siêu sale hàng Nhật&sortby=relevance`}
             >
               <div className="input__search__header__box__search__dropDown__event--title">
                 Siêu sale hàng Nhật

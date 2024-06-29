@@ -11,7 +11,7 @@ function ShopeeSmallItemsMainPage() {
   useEffect(() => {
     let allow = true;
     axios
-      .get("http://localhost:3000/api__small__main__page")
+      .get("https://json-be-shopee.onrender.com/api__small__main__page")
       .then((response) => {
         if (allow) {
           const data = response.data;

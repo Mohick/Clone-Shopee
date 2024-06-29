@@ -11,7 +11,7 @@ const RelateShopResultSearchItems = function () {
   useEffect(() => {
     const getDate = setTimeout(() => {
       axios
-        .get("https://run.mocky.io/v3/309514d9-cd7f-45d0-87ea-ce83fae1b23e")
+        .get("https://json-be-shopee.onrender.com/info_store_relate")
         .then((res) => {
           const data = res.data;
           setItems(data);

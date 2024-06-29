@@ -1,37 +1,65 @@
-import { useEffect, useState } from "react";
-import FooterCart from "./Footer/footer";
-import HeaderCartThan1000 from "./Header/header__cart__than__1000";
-import HeaderCartPageUnder1000 from "./Header/header__cart__under__1000";
-import YouAlsoLike from "./also__like/also__like";
-import ProductsInCart from "./products__in__cart/products__in__cart";
-import axios from "axios";
-import { getCookie } from "typescript-cookie";
+import { lazy, useEffect, useState } from "react";
 
+const FooterCart = lazy(() => import("./Footer/footer"));
+const HeaderCartThan1000 = lazy(() =>
+  import("./Header/header__cart__than__1000")
+);
+const HeaderCartPageUnder1000 = lazy(() =>
+  import("./Header/header__cart__under__1000")
+);
+const YouAlsoLike = lazy(() => import("./also__like/also__like"));
+const ProductsInCart = lazy(() =>
+  import("./products__in__cart/products__in__cart")
+);
+const Emptycart = lazy(() => import("./empty__cart/empty__cart"));
+import axios from "axios";
+import { getCookie, getCookies } from "typescript-cookie";
+import { useCookies } from "react-cookie";
 const CartPage = () => {
   const [items, setItems] = useState([]);
+  const [cookies] = useCookies()
   useEffect(() => {
+    let allow = true
     const startProduct = setTimeout(async () => {
-      
-      await axios.get("http://localhost:3000/filter__cart").then((result) => {
+     if(allow) {
+      await axios
+      .get("https://json-be-shopee.onrender.com/filter__cart")
+      .then((result) => {
         const data = result.data;
         const resFilter = data.filter((item) => {
           return getCookie(item.name);
         });
-        setItems(resFilter);
-      }, 0);
-    });
+        if (resFilter.length > 0) {
+          setItems(resFilter);
+        } else {
+          setItems({
+            error: true,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+     }
+    }, 0);
     return () => {
       clearTimeout(startProduct);
+      allow = false;
     };
-  }, []);
-  if(items.length == 0) return ;
+  }, [cookies]);
   return (
     <>
-      <HeaderCartPageUnder1000/>
-      <HeaderCartThan1000/>
-      <ProductsInCart items={items}/>
-      <FooterCart items={items[0]}/>
-      <YouAlsoLike/>
+      <HeaderCartPageUnder1000 />
+      <HeaderCartThan1000 />
+      {items.error ? (
+        <Emptycart />
+      ) : (
+        <>
+          <ProductsInCart items={items} />
+          <FooterCart items={items[0]} />
+        </>
+      )}
+      <YouAlsoLike />
     </>
   );
 };

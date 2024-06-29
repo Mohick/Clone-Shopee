@@ -2,12 +2,11 @@
 import cssRender from "../render__items__buy/render__items__buy.module.scss"
 import css1000Product from "../products__in__cart/products__in__cart__1000.module.scss";
 import cssFooter from "../Footer/footer.module.scss"
-import { InputHTMLAttributes } from "react";
-const check__all__items__input = (tagElement: HTMLInputElement) => {
+const check__all__items__input = (tagElement: HTMLInputElement | null) => {
     const btnCheckAll = document.querySelector(`.${css1000Product.header__product__check}`) as HTMLInputElement
     const btnCheckAllFooter = document.querySelector(`.${cssFooter.footer__input__checkbox}`) as HTMLInputElement
 
-    if (tagElement.checked) {
+    if (tagElement?.checked) {
         const inputBoxProductHaveCheck: HTMLInputElement[] = Array.from(document.querySelectorAll(`.${cssRender.header__input__checkbox}:not(:checked)`))
         const inputHaveCheck: HTMLInputElement[] = Array.from(document.querySelectorAll(`.${cssRender.body__input__checkbox}:not(:checked)`))
         inputBoxProductHaveCheck.forEach(inputCheckbox => {
@@ -33,7 +32,7 @@ const check__all__items__input = (tagElement: HTMLInputElement) => {
 }
 
 type props__check__an__items__input = {
-    elementInput: HTMLInputElement,
+    elementInput: HTMLInputElement | null,
     classNameBoxItems: string
 }
 const check__an__items__input = (props: props__check__an__items__input) => {
@@ -41,7 +40,7 @@ const check__an__items__input = (props: props__check__an__items__input) => {
     const inputNotCheck: HTMLInputElement[] = Array.from(document.querySelectorAll(`.${cssRender.body__input__checkbox}`))
 
     let start: number = 1
-    let element:any | HTMLElement = props.elementInput.parentElement;
+    let element:any | HTMLElement = props?.elementInput?.parentElement;
     for (let i = 0; i < start; i++) {
         if (element?.classList.contains(`${props.classNameBoxItems}`)) {
             start = i
@@ -55,7 +54,7 @@ const check__an__items__input = (props: props__check__an__items__input) => {
         }
     }
 
-    if (props.elementInput.checked) {
+    if (props?.elementInput?.checked) {
         const checkBoxAll = element?.querySelector(`.${cssRender.header__input__checkbox}`)
         checkBoxAll.checked = true
     } else {
@@ -75,10 +74,10 @@ const check__an__items__input = (props: props__check__an__items__input) => {
 }
 
 
-const check__box__items = (tagElement: HTMLElement, classNameBoxItems: string) => {
+const check__box__items = (tagElement: HTMLElement |null, classNameBoxItems: string) => {
     
     let start: number = 1
-    let element:any | HTMLElement = tagElement.parentElement;
+    let element:any | HTMLElement = tagElement?.parentElement;
     for (let i = 0; i < start; i++) {
         if (element.classList.contains(`${classNameBoxItems}`)) {
             start = i
@@ -91,7 +90,7 @@ const check__box__items = (tagElement: HTMLElement, classNameBoxItems: string) =
             continue
         }
     }
-    if (tagElement.checked) {
+    if (tagElement?.checked) {
         const checkBoxAll = element?.querySelector(`.${cssRender.body__input__checkbox}`)
         checkBoxAll.checked = true
     } else {
