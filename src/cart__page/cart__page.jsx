@@ -15,40 +15,44 @@ const Emptycart = lazy(() => import("./empty__cart/empty__cart"));
 import axios from "axios";
 import { getCookie, getCookies } from "typescript-cookie";
 import { useCookies } from "react-cookie";
+import EndLoadingPage from "../Loading/end__loading";
+import LoadingPage from "../Loading/loading__page";
 const CartPage = () => {
   const [items, setItems] = useState([]);
-  const [cookies] = useCookies()
+  const [cookies] = useCookies();
   useEffect(() => {
-    let allow = true
+    let allow = true;
     const startProduct = setTimeout(async () => {
-     if(allow) {
-      await axios
-      .get("https://json-be-shopee.onrender.com/filter__cart")
-      .then((result) => {
-        const data = result.data;
-        const resFilter = data.filter((item) => {
-          return getCookie(item.name);
-        });
-        if (resFilter.length > 0) {
-          setItems(resFilter);
-        } else {
-          setItems({
-            error: true,
+      if (allow) {
+        await axios
+          .get("https://json-be-shopee.onrender.com/filter__cart")
+          .then((result) => {
+            const data = result.data;
+            const resFilter = data.filter((item) => {
+              return getCookie(item.name);
+            });
+            if (resFilter.length > 0) {
+              setItems(resFilter);
+            } else {
+              setItems({
+                error: true,
+              });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
           });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-     }
+      }
     }, 0);
     return () => {
       clearTimeout(startProduct);
       allow = false;
     };
   }, [cookies]);
+  if (items.length == 0) return <LoadingPage/>;
   return (
     <>
+      <EndLoadingPage />
       <HeaderCartPageUnder1000 />
       <HeaderCartThan1000 />
       {items.error ? (

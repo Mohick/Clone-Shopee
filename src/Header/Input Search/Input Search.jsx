@@ -32,7 +32,7 @@ function InputSearchHeader() {
             setItems(items);
           });
       }
-    }, 300);
+    }, 100);
     return () => {
       clearTimeout(callAPI);
     };

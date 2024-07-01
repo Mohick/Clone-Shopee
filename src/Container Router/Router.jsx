@@ -1,8 +1,10 @@
 import { Route, Router, Routes } from "react-router";
 import { Suspense, lazy, memo } from "react";
+
 const Page404 = lazy(() => import("../404 Page/page__404"));
 const MainPage = lazy(() => import("../MainPage/Main Page"));
 const DailyPage = lazy(() => import("../Daily Page/Daily Page"));
+const  LoadingPage = lazy (() => import("../Loading/loading__page"));
 const HeaderPCMainPage = lazy(() =>
   import("../Header/Header PC/Header Main Page PC")
 );
@@ -30,7 +32,7 @@ function RouterPage() {
       <Route
         path="/"
         element={
-          <Suspense loading="....">
+          <Suspense fallback={<LoadingPage/>}>
             <HeaderPCMainPage />
             <HeaderMainPageMobi />
             <MainPage />
@@ -43,7 +45,7 @@ function RouterPage() {
       <Route
         path="/search"
         element={
-          <Suspense loading="....">
+          <Suspense fallback={<LoadingPage/>}>
             <HeaderPCMainPage />
             <HeaderResultSearchMobi />
             <ResultSearchItemsPage />
@@ -54,7 +56,7 @@ function RouterPage() {
       <Route
         path="/daily"
         element={
-          <Suspense loading="....">
+          <Suspense fallback={<LoadingPage/>}>
             <HeaderPCMainPage />
             <DailyPage />
             <FooterCooperate />
@@ -64,7 +66,7 @@ function RouterPage() {
       <Route
         path="/products"
         element={
-          <Suspense loading="....">
+          <Suspense fallback={<LoadingPage/>}>
             <HeaderPCMainPage />
 
             <Product />
@@ -75,7 +77,7 @@ function RouterPage() {
       <Route
         path="/cart"
         element={
-          <Suspense loading="....">
+          <Suspense fallback={<LoadingPage/>}>
             <CartPage />
             <FooterCooperate />
           </Suspense>
@@ -84,7 +86,7 @@ function RouterPage() {
         <Route
         path="*"
         element={
-          <Suspense loading="....">
+          <Suspense fallback={<LoadingPage/>}>
             <Page404/>
           </Suspense>
         }

@@ -5,6 +5,8 @@ import css from "./products.module.scss"
 import css1000 from "./product_1000.module.scss"
 import clsx from "clsx";
 import axios from "axios";
+import EndLoadingPage from "../Loading/end__loading";
+import LoadingPage from "../Loading/loading__page";
 const ProductHeaderMobi = lazy(() => import('./Product Header/Product Header'));
 const SwiperProduct = lazy(() => import('./Swiper Product/Swiper Product'));
 const TitleProduct = lazy(() => import('./Title Product/Title Product'));
@@ -64,11 +66,11 @@ const Product = () => {
 
     fetchData();
   }, [title]);
-  if (!items) return;
+  if (!items) return <LoadingPage/>;
   if (items.error) return <Page404 />;
   return (
       <>
-      
+      <EndLoadingPage/>
       <div className={clsx(css.layout, "layout")}>
       <ProductHeaderMobi name={items.name} />
       <div className={css1000.introduce__product}>

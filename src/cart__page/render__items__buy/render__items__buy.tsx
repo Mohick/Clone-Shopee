@@ -139,7 +139,7 @@ const RenderItemsIncart = (props: Props) => {
               />
             </div>
             <div className={clsx(css.body__box__img)}>
-              <img width={"100%"} height={"100%"} src={data.url} alt="" />
+              <img width={"100%"} height={"100%"} src={data.url ?data.url :"./img__default__project.gif"} alt="" />
             </div>
             <div
               className={clsx(

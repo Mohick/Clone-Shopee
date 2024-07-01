@@ -7,6 +7,7 @@
     align-items: center;
     font-size: 1.6rem;
     font-weight: 600;
+    text-transform: capitalize;
   }
   .result__search__items__page__items__need__search__header--icon {
     width: 1.6rem;

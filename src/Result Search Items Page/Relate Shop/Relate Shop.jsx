@@ -6,24 +6,9 @@ import "./Relate Shop Min-witdh 1000px.css";
 
 import axios from "axios";
 
-const RelateShopResultSearchItems = function () {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    const getDate = setTimeout(() => {
-      axios
-        .get("https://json-be-shopee.onrender.com/info_store_relate")
-        .then((res) => {
-          const data = res.data;
-          setItems(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, 1000);
-    return () => {
-      clearTimeout(getDate);
-    };
-  }, []);
+const RelateShopResultSearchItems = function ({info_store_relate}) {
+  const [items, setItems] = useState(info_store_relate);
+
   return (
     <div id="relate__shop__sesult__search__items">
       <div className="relate__shop__sesult__search__items--layout layout">
@@ -119,6 +104,7 @@ const RelateShopResultSearchItems = function () {
       </div>
     </div>
   );
+
 };
 
 export default RelateShopResultSearchItems;

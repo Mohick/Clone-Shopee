@@ -1,4 +1,5 @@
 import "./Header  Main Page Mobi Max-width 600px.css";
+import "./Header  Main Page Mobi Min-width 600px.css";
 import "./Header  Main Page Mobi Min-width 1000px.css";
 import InputSearchHeader from "../Input Search/Input Search";
 import BannerShopee from "../../Library Banner/Banner Shopee";

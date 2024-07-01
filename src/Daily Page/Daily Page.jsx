@@ -12,6 +12,8 @@ import css1100 from "./Daily Page 1100.module.scss";
 import { Icons } from "../Container  Component  SVG ICON/Manage Icon";
 import { Link } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
+import LoadingPage from "../Loading/loading__page";
+import EndLoadingPage from "../Loading/end__loading";
 const DailyPage = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -20,7 +22,7 @@ const DailyPage = () => {
       setItems(data);
     });
   }, []);
-  return items.length === 0 ? null : (
+  return items.length === 0 ? <LoadingPage/> : (
     <div
       className={clsx(
         css.daily,
@@ -32,6 +34,7 @@ const DailyPage = () => {
         css1100.daily
       )}
     >
+      <EndLoadingPage/>
       <div className={clsx(css.layout, css1000.layout, "layout")}>
         <div className={clsx(css.header, css1000.header)}>
           <Link
