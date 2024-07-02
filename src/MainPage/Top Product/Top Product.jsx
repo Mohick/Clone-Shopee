@@ -5,24 +5,10 @@ import "./Top Product Min-width 1000px.css";
 import IconAngleRight from "../../Container  Component  SVG ICON/Icon Angle Right";
 import IconAngleLeft from "../../Container  Component  SVG ICON/Icon Angle Left";
 import handleArrowTopProduct from "./handle arrow top product/handle arrow top product";
+import reducerBanner from "../store/create__store";
 function TopProductMainPage() {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    let allow = true;
-
-    axios
-      .get("https://json-be-shopee.onrender.com/top__products__main__page")
-      .then((response) => {
-        if (allow) {
-          const data = response.data;
-          setItems(data);
-        }
-      });
-    return () => {
-      allow = false;
-    };
-  }, []);
-  if (items.length == 0) return;
+  const { itemsTopProducts } = reducerBanner()
+   if (itemsTopProducts.length == 0) return;
   return (
     <div id="top__product__main__page">
       <div className="top__product__main__page--layout layout">
@@ -41,7 +27,7 @@ function TopProductMainPage() {
         </div>
         <div className="top__product__main__page--body">
           <div className="top__product__main__page__body--frame">
-            {items.map((item, i) => {
+            {itemsTopProducts.map((item, i) => {
               return (
                 <div className="top__product__main__page__body--items" key={i}>
                   <div className="top__product__main__page__body__items--header">

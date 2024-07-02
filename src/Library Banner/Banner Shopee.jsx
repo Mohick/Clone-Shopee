@@ -1,32 +1,20 @@
-import axios from "axios";
-import { memo, useState } from "react";
-import { useEffect } from "react";
+
+import { memo, useEffect } from "react";
 import "./Banner Shopee Max-width 600px.css";
 import "./Banner Shopee Min-width 1000px.css";
 import IconAngleRight from "../Container  Component  SVG ICON/Icon Angle Right";
 import IconAngleLeft from "../Container  Component  SVG ICON/Icon Angle Left";
 import HandleScrollBannerShopee from "./handle Banner shopee";
 import HandleScrollBanner from "./Handle Scroll ";
-import LoadingPage from "../Loading/loading__page";
-import EndLoadingPage from "../Loading/end__loading";
 
-function BannerShope({ url, classItems }) {
-  const [items, setItems] = useState([]);
+
+function BannerShope({ items=[], classItems }) {
   useEffect(() => {
-    const allow = setTimeout(() => {
-      axios.get(url).then((response) => {
-        const data = response.data;
-        setItems(data);
-      });
-    }, 0);
-    return () => {
-      clearTimeout(allow);
-    };
-  }, []);
-  if (items.length == 0) return <LoadingPage />;
+    
+  },[])
+  if(items.length == 0) return;
   return (
     <>
-      <EndLoadingPage />
       <div
         className={`shopee__banner__body--banner ${(
           "" + classItems

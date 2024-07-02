@@ -6,25 +6,14 @@ import "./Items Flash sale MainPage Main-width 1000px.css";
 import IconAngleRight from "../../../Container  Component  SVG ICON/Icon Angle Right";
 import IconAngleLeft from "../../../Container  Component  SVG ICON/Icon Angle Left";
 import { handleArrowFlashSale } from "./handle arrow Flash Sale/handle arrow Flash Sale";
+import reducerBanner from "../../store/create__store";
 function ItemsFlashSaleMainPage() {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    let allow = true;
-    axios
-      .get("https://json-be-shopee.onrender.com/flash__sell__main__page")
-      .then((response) => {
-        if (allow) {
-          const data = response.data;
-          setItems(data);
-        }
-      });
-    return () => {
-      allow = false;
-    };
-  }, []);
+
+  const {itemsFlashSales} = reducerBanner()
+  console.log(itemsFlashSales);
   return (
     <div className="flash__sale--body">
-      {items.map((items, index) => {
+      {itemsFlashSales.map((items, index) => {
         return (
           <div className="flash__sale__body--items" key={index}>
             <div className="flash__sale__body__items--img">

@@ -11,13 +11,18 @@
         .render__items__in__cart__body {
             flex-direction: row;
 
-            .body__info__products {
-                .body__box__info__text {
-                    .body__info__text__title{
-                        height: 2.6rem;
+            .body__info {
+                flex-direction: row;
+                .body__info__products {
+                    .body__box__info__text {
+                        .body__info__text__title {
+                            height: 2.6rem;
+                        }
+
                         width: 28rem;
                         -webkit-line-clamp: 2;
                     }
+
                     .body__info__text__return {
                         .body__time__return {
                             padding: .5rem;
@@ -29,10 +34,12 @@
             }
 
             .body__info__price__products {
-                grid-template-columns: repeat(4, 1fr);
+               
+                grid-template-columns: repeat(4, 1fr) !important;
                 align-items: center;
                 justify-content: center;
                 gap: .5rem;
+                flex-direction: row;
                 .body__box__price__product {
                     justify-content: center;
                 }
@@ -42,7 +49,7 @@
                 }
 
                 .body__box__total__cost__product {
-                    display: flex;
+                    display: flex !important;
                     justify-content: center;
 
                     .body__total__cost__product {
@@ -57,7 +64,7 @@
 
                 .body__box__btn__delete__product {
                     @extend .body__box__total__cost__product;
-
+                    display: block;
                     .body__btn__delete__product {
                         font-size: 1.3rem;
                         cursor: pointer;

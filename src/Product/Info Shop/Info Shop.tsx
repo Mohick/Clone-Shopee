@@ -26,7 +26,7 @@ const InfoShop: React.FC<props> = (data: props) => {
         className={clsx(css.layout, css600.layout, css1000.layout, "layout")}
       >
         <div className={clsx(css.info__header, css1000.info__header)}>
-          <div className={clsx(css.logo__shop)}>
+          <div className={clsx(css.logo__shop,css1000.logo__shop)}>
             <img className={clsx(css.img__logo)} src={data.imgShop} alt="" />
             <div className={css.preferred}>Preferred+</div>
           </div>

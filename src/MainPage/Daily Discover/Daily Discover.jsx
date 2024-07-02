@@ -10,21 +10,15 @@ import IconSaliasingLeft from "../../Container  Component  SVG ICON/Icon Saliasi
 import IconSaliasingRight from "../../Container  Component  SVG ICON/Icon Saliasing Left";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
+import reducerBanner from "../store/create__store";
 
 function DailyDiscoverMainPage() {
-  const [items, setItems] = useState([]);
-  
   const { ref, inView } = useInView({ threshold: 0,triggerOnce: true });
+
+  const {itemsDailyPages} = reducerBanner()
+
   useEffect(() => {
     let allow = true;
-    axios
-      .get("https://json-be-shopee.onrender.com/api__daily")
-      .then((response) => {
-        if (allow) {
-          const data = response.data;
-          setItems(data);
-        }
-      });
     const checkSizeScreen = setTimeout(() => {
       if (window.innerWidth >= 900) {
         const getHeightHeader = document.getElementById(
@@ -84,7 +78,7 @@ function DailyDiscoverMainPage() {
 
         <div className="daily__discover__main__page--body" ref={ref}>
           {inView
-            ? items.map((item, i) => {
+            ? itemsDailyPages.map((item, i) => {
                 return (
                   <Link to={`/products?title=${item.name}`}
                     className="daily__discover__main__page__body--item"

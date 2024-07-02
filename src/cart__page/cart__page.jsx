@@ -38,6 +38,7 @@ const CartPage = () => {
                 error: true,
               });
             }
+            
           })
           .catch((error) => {
             console.log(error);

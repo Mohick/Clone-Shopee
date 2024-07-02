@@ -8,7 +8,10 @@
 
             .info__header {
                 justify-content: flex-start;
-
+                flex: 1;
+                .logo__shop{
+                    width: 8rem;
+                }
                 .header__box__visit__shop {
                     justify-content: flex-start;
                     flex-direction: column;

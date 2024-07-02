@@ -114,7 +114,8 @@ const RenderItemsIncart = (props: Props) => {
         <div
           className={clsx(
             css.body__info,
-            "flex flex-col flex-grow-0 flex-shrink-0 basis-[100%] overflow-hidden"
+            css1000.body__info,
+            "flex flex-col flex-grow-0 flex-shrink-0 basis-[100%]  overflow-hidden"
           )}
         >
           <div

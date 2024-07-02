@@ -32,7 +32,7 @@ function RouterPage() {
       <Route
         path="/"
         element={
-          <Suspense fallback={<LoadingPage/>}>
+          <Suspense fallback={""}>
             <HeaderPCMainPage />
             <HeaderMainPageMobi />
             <MainPage />
@@ -45,7 +45,7 @@ function RouterPage() {
       <Route
         path="/search"
         element={
-          <Suspense fallback={<LoadingPage/>}>
+          <Suspense fallback={""}>
             <HeaderPCMainPage />
             <HeaderResultSearchMobi />
             <ResultSearchItemsPage />
@@ -56,7 +56,7 @@ function RouterPage() {
       <Route
         path="/daily"
         element={
-          <Suspense fallback={<LoadingPage/>}>
+          <Suspense fallback={""}>
             <HeaderPCMainPage />
             <DailyPage />
             <FooterCooperate />
@@ -66,7 +66,7 @@ function RouterPage() {
       <Route
         path="/products"
         element={
-          <Suspense fallback={<LoadingPage/>}>
+          <Suspense fallback={""}>
             <HeaderPCMainPage />
 
             <Product />
@@ -77,7 +77,7 @@ function RouterPage() {
       <Route
         path="/cart"
         element={
-          <Suspense fallback={<LoadingPage/>}>
+          <Suspense fallback={""}>
             <CartPage />
             <FooterCooperate />
           </Suspense>
@@ -86,7 +86,7 @@ function RouterPage() {
         <Route
         path="*"
         element={
-          <Suspense fallback={<LoadingPage/>}>
+          <Suspense fallback={""}>
             <Page404/>
           </Suspense>
         }

@@ -5,8 +5,10 @@ import ShopeeSmallItemsMainPage from "./Shopee Small Items/Shopee Small Items";
 import "./Shopee small Max-width 600px.css";
 import './Shopee Small Min-width 900px.css'
 import "./Shopee small Min-width 1000px.css";
+import reducerBanner from "../store/create__store";
 
 function ShopeeSmallMainPage() {
+  const {itemsBannerSmall} = reducerBanner()
   return (
     <div id="shopee__small">
       <div className="shopee__small--layout layout">
@@ -97,7 +99,7 @@ function ShopeeSmallMainPage() {
         <div className="shopee__small--body">
           <div className="shopee__small__body--banner">
           <BannerShope
-            url={"https://json-be-shopee.onrender.com/banner__small/"} classItems={'small'}
+            items={itemsBannerSmall} classItems={'small'}
           />
           </div>
           <ShopeeSmallItemsMainPage />
