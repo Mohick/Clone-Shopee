@@ -77,33 +77,35 @@ const SwiperProduct: React.FC<rulesArray> = (data) => {
             </span>
           </div>
         </div>
-        <div className={clsx(css.nav__img, css500.nav__img, css1000.nav__img)}>
-          <div className={clsx(css500.nav__frame, css1000.nav__frame)}>
-            {toObject.arrImg.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  onMouseMove={() => {
-                    handle__click__nav__img(index, css);
-                  }}
-                  className={clsx(css500.items__img, css1000.items__img)}
-                >
-                  <img width={"100%"} height={"100%"} src={item} alt="" />
-                </div>
-              );
-            })}
-            <div className={css1000.box__icon__arrow__left} onClick={()=>{
-              handleBtnClickArrow(css1000,"left")
-            }}>
-              <Icons.arrowAngleLeft className={css1000.arrow__icon} />
+        <div className={clsx(css1000.nav__box__img)}>
+          <div className={clsx(css.nav__img, css500.nav__img, css1000.nav__img)}>
+            <div className={clsx(css500.nav__frame, css1000.nav__frame)}>
+              {toObject.arrImg.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    onMouseMove={() => {
+                      handle__click__nav__img(index, css);
+                    }}
+                    className={clsx(css500.items__img, css1000.items__img)}
+                  >
+                    <img width={"100%"} height={"100%"} src={item} alt="" />
+                  </div>
+                );
+              })}
             </div>
-            <div className={css1000.box__icon__arrow__right} 
-            onClick={()=>{
-              handleBtnClickArrow(css1000,"right")
+          </div>
+          <div className={css1000.box__icon__arrow__left} onClick={() => {
+            handleBtnClickArrow(css1000, "left")
+          }}>
+            <Icons.arrowAngleLeft className={css1000.arrow__icon} />
+          </div>
+          <div className={css1000.box__icon__arrow__right}
+            onClick={() => {
+              handleBtnClickArrow(css1000, "right")
             }}
-            >
-              <Icons.arrowAngleRight className={css1000.arrow__icon}/>
-            </div>
+          >
+            <Icons.arrowAngleRight className={css1000.arrow__icon} />
           </div>
         </div>
       </div>

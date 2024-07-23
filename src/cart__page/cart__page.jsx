@@ -25,7 +25,7 @@ const CartPage = () => {
     const startProduct = setTimeout(async () => {
       if (allow) {
         await axios
-          .get("https://json-be-shopee.onrender.com/filter__cart")
+          .get("http://localhost:3000/filter__cart")
           .then((result) => {
             const data = result.data;
             const resFilter = data.filter((item) => {

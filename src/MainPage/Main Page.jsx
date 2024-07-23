@@ -11,17 +11,17 @@ import TopProductMainPage from "./Top Product/Top Product";
 import DailyDiscoverMainPage from "./Daily Discover/Daily Discover";
 
 function MainPage() {
-  const { allow,callAllApiMainPage } = reducerBanner();
+  const {allow,callAllApiMainPage } = reducerBanner();
   useEffect(() => {
-    let allow = true;
-    if(allow) {
+    let allows = true;
+    if(allows) {
       callAllApiMainPage()
     } 
     return () => {
-      allow = false;
+      allows = false;
     } 
   }, []);
-  if (allow == 0) return <LoadingPage />;
+  if (!allow) return <LoadingPage />;
   return (
     <>
       <EndLoadingPage />

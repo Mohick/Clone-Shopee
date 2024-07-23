@@ -59,8 +59,8 @@ const DescriptionProduct = (data: descriptionProduct) => {
               <div className={css1000.value__items}> {data.Kind}</div>
             </div>
             <div className={clsx(css1000.items__description)}>
-              <div className={css1000.title__items}> Discouunt Product </div>
-              <div className={css1000.value__items}> {data.discount}%</div>
+              <div className={css1000.title__items}> Discount Product </div>
+              <div className={css1000.value__items}> {Number(data.discount).toFixed(0)}%</div>
             </div>
             <div className={clsx(css1000.items__description)}>
               <div className={css1000.title__items}> Ship From </div>

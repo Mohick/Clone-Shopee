@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Icons } from "../Container  Component  SVG ICON/Manage Icon";
 import FilterResultSearchItems from "./Filter Result Search Items/Filter Result Search Items";
 import ItemsNeedSearch from "./Items Need Search/Items Need Search";
 import NavigationResultItems from "./Navigation Mobi/Navigation Mobi";
@@ -10,7 +9,6 @@ import "./Result Search Items Page Min-width 1000px.css";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination/Pagination";
 import EndLoadingPage from "../Loading/end__loading";
-import HeaderResultSearchMobi from "../Header/Header result search mobi/Header Result Search Mobi";
 const ResultSearchItemsPage = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {

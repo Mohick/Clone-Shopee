@@ -1,8 +1,11 @@
-import { getCookie, removeCookie, setCookie } from "typescript-cookie"
+import { getCookie, getCookies, removeCookie, setCookie } from "typescript-cookie"
+import cssFooter from "../../Footer/footer.module.scss"
 import css from "../render__items__buy.module.scss"
-const handle__del__single__item = (nameProduct:string) => {
+import axios from "axios"
 
-    
+const handle__del__single__item = async (nameProduct: string) => {
+
+    await removePriceDeleMoveTotalCost(nameProduct)
     removeCookie(nameProduct)
     if (Number(getCookie("lengthCart")) > 1) {
         setCookie("lengthCart", Number(getCookie("lengthCart")) - 1)
@@ -58,5 +61,35 @@ const handleBtnDelUnder1000px = async (tagElement: HTMLDivElement | null, classI
     }
 
 }
+
+const removePriceDeleMoveTotalCost = async (nameProduct: string) => {
+
+    await axios.get("http://localhost:3000/filter__cart").then((response) => {
+        const data: {
+            name: string
+            cost: string | number
+        }[] = response.data;
+        const itemDel = data.filter((item) => {
+            return item.name === nameProduct;
+        });
+        const getKeyCookies = Object.keys(getCookies())
+        const restItems = data.filter((item) => {
+
+            if (getKeyCookies.includes(item.name) && !itemDel.includes(item)) {
+
+                return getKeyCookies.includes(item.name);
+            }
+        });
+        const totalCostItemsRest = restItems.reduce((initValue, items) => {
+            return initValue + (Number(items.cost) * Number(getCookie(items.name)))
+        }, 0)
+        const divPriceFooter = document.querySelector(`.${cssFooter.footer__result__cost__products}`) as HTMLDivElement
+        if (divPriceFooter) {
+            divPriceFooter.innerHTML = `${totalCostItemsRest}`.createDotsNumber()
+        }
+
+    })
+}
+
 
 export { handle__del__single__item, handleDelHasChecked, handleBtnDelUnder1000px }

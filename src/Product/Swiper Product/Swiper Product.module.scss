@@ -5,15 +5,15 @@
 
         .swiper__container__slider {
             position: relative;
-
             .frame {
+
                 overflow: hidden;
                 position: relative;
                 overflow-x: auto;
                 width: 100%;
                 scroll-snap-type: x mandatory;
                 scrollbar-color: transparent transparent;
-                display: flex;
+                display: inline-flex;
 
                 .item {
                     flex: 0 0 100%;

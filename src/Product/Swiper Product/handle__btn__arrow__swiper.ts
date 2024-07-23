@@ -13,6 +13,7 @@ const handleBtnClickArrow = (css: Css, nameBtn: string) => {
                 left: frameSwiper.scrollLeft - frameSwiper.clientWidth,
                 behavior: "smooth"
             })
+            break;
 
 
         case "right":

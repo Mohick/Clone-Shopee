@@ -10,13 +10,14 @@
                 flex: 1;
                 position: relative;
                 display: block;
+
                 .nav__frame {
                     position: absolute;
                     display: flex;
                     gap: .5rem;
                     flex-direction: column;
-                    .items__img {
-                    }
+
+                    .items__img {}
 
                 }
             }
