@@ -64,7 +64,7 @@ const handleBtnDelUnder1000px = async (tagElement: HTMLDivElement | null, classI
 
 const removePriceDeleMoveTotalCost = async (nameProduct: string) => {
 
-    await axios.get("http://localhost:3000/filter__cart").then((response) => {
+    await axios.get("https://json-be-shopee.onrender.com/filter__cart").then((response) => {
         const data: {
             name: string
             cost: string | number
