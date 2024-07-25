@@ -8,7 +8,7 @@ interface Product {
 const DataProduct: Product[] = [
     {
         name: "combo 2 túi sữa tăng cân muscle mass gainer".toLowerCase(),
-        link: 'https://json-be-shopee.onrender.com/api__products'
+        link: 'https://json-be-shopee.onrender.com/combo_2_tui_sua_tang_can_muscle_mass_gainer'
     },
     {
         name: "máy hút bụi mini godwell không dây lực hút 6000mpa làm sạch bàn phím, ô tô,nhỏ gọn pin sạc tiện lợi".toLowerCase(),
